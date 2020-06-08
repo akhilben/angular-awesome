@@ -43,6 +43,8 @@ Angular is a great and leading framework for developing various web applications
 
 <!-- CHOOSING IDE -->
 ## Choosing IDE
+<details>
+  <summary>Click to expand</summary>
 There are several powerful free and paid IDE's available in the market today. Choosing the right IDE is very important for development since not all IDE's are great for every language/framework/library. Below is a list of recommended IDE's to choose from:
 
 1. <img src="images/code.svg" alt="VS Code" width="30" height="30" vertical-align="middle"> &nbsp; <b>[Visual Studio Code](https://code.visualstudio.com/)</b><br />
@@ -72,6 +74,8 @@ There are several powerful free and paid IDE's available in the market today. Ch
  
    
  >Although, the above two are the most recommended IDE's for developing Angular applications, there are few more IDE's worth checking out and are great for developing such as Github's [Atom](https://atom.io/) and [Sublime Text](https://www.sublimetext.com/). Another IDE that's worth checking out is the [Angular IDE](https://www.genuitec.com/products/angular-ide/) by Codemix, which is a dedicated, powerful IDE for Angular.
+ 
+ </details>
    
 
 ### Prerequisites
