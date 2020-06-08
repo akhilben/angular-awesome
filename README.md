@@ -23,8 +23,6 @@
 
 * [Purpose](#purpose)
 * [Choosing IDE](#choosing-ide)
-  * [Visual Studio Code](#vs-code)
-  * [WebStorm](#webstorm)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
@@ -70,13 +68,15 @@ There are several powerful free and paid IDE's available in the market today. Ch
    * [Prettier](https://plugins.jetbrains.com/plugin/10456-prettier):<br />
    This plugin adds support for Prettier, an opinionated <b>code formatter</b>. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.<br />
    * [GitToolBox](https://plugins.jetbrains.com/plugin/7499-gittoolbox):<br />
-   This plugin <b>extends Git Integration</b> with additional features such as <b>status display, auto fetch, inline blame annotation, commit dialog completion, behind notifications</b> and more.
+   This plugin <b>extends Git Integration</b> with additional features such as <b>status display, auto fetch, inline blame annotation, commit dialog completion, behind notifications</b> and more.  
  
+ <br />
    
  >Although, the above two are the most recommended IDE's for developing Angular applications, there are few more IDE's worth checking out and are great for developing such as Github's [Atom](https://atom.io/) and [Sublime Text](https://www.sublimetext.com/). Another IDE that's worth checking out is the [Angular IDE](https://www.genuitec.com/products/angular-ide/) by Codemix, which is a dedicated, powerful IDE for Angular.
  
- </details>
+ </details>  
    
+ <br />
    
 | :heart: _Bottom Line_ : It's recommended to use [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/) |
 | --- |
