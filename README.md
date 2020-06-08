@@ -22,8 +22,8 @@
 ## Table of Contents
 
 * [Purpose](#purpose)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
+* [Choosing IDE](#choosing-ide)
+  * [Visual Studio Code](#vs-code)
   * [Installation](#installation)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
@@ -45,12 +45,12 @@ Angular is a great and leading framework for developing various web applications
 ## Choosing IDE
 There are several powerful free and paid IDE's available in the market today. Choosing the right IDE is very important for development since not all IDE's are great for every language/framework/library. Below is a list of recommended IDE's to choose from:
 
-1. <img src="images/code.svg" alt="VS Code" width="30" height="30" style="vertical-align:middle;"> &nbsp; <b>[Visual Studio Code](https://code.visualstudio.com/)</b><br />
+1. <img src="images/code.svg" alt="VS Code" width="30" height="30" vertical-align="middle"> &nbsp; <b>[Visual Studio Code](https://code.visualstudio.com/)</b><br />
    VS Code is a very powerful code editor from Microsoft which is highly recommended for working with Angular. Why? It has a great <b>support for TypeScript</b> out of the box. Moreover, it has <b>syntax highlighting</b> and autocomplete with <b>IntelliSense</b>, which provides smart completions based on variable types, function definitions, and imported modules. Adding up to many other powerfull features, it is <b>highly customizable with tons of extensions</b>, especially for Angular. Below is a list of few vs code extensions that are useful while developing Angular applications. <br /><br />
    * [TS Lint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin):<br />
    A must have extension which marks the code where you have a problem and display a <b>list of warnings & errors</b> on hovering it. It even have an <b>autofix problems</b> functionality. This will help you to adhere to the recommented styleguides and conventions for Angular.<br />
    * [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template):<br />
-   This extension provides a rich editing experience for Angular templates, both inline and external templates including <b>completions lists, AOT diagnostic messages, quick info and go to definition</b><br />
+   This extension provides a rich editing experience <b>for Angular templates</b>, both inline and external templates including <b>completions lists, AOT diagnostic messages, quick info and go to definition</b><br />
    * [Angular Snippets](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2):<br />
    This extension adds <b>snippets for Angular for TypeScript, HTML and NgRx</b>. This will help you save a lot of time while developing applications. Just type part of a snippet, press enter, and the snippet unfolds! [Angular 8 Snippets](https://marketplace.visualstudio.com/items?itemName=Mikael.Angular-BeastCode) is also another similar, honorable mention.
    * [Angular Schematics](https://marketplace.visualstudio.com/items?itemName=cyrilletuzi.angular-schematics):<br />
