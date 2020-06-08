@@ -5,7 +5,7 @@
     <img src="images/logo.svg" alt="Logo" width="150" height="150">
   </a>
 
-  <h3 align="center">Angular Awesome</h3>
+  <h3 align="center">:star: Angular Awesome :star:</h3>
 
   <p align="center">
     A curated list of Angular best practices and tips for building better, scalable and performant enterprise level applications.
@@ -33,14 +33,14 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## Purpose
+## :star2: Purpose
 
 Angular is a great and leading framework for developing various web applications. But, for starters, it's really difficult for them to know which way they should do certain things, and whether they are doing it right or not. Even for experienced devolepers, during the development process, they tend to make mistakes by forgetting some rules and recommendations. This is for those folks as a reference to look at from time to time to refresh memory and to develop better. Step in to find some of the recommended good practices and tips for building awesome Angular applications.
 
 
 
 <!-- CHOOSING IDE -->
-## Choosing IDE
+## :sunglasses: Choosing IDE
 <details>
   <summary>Click to expand</summary>
 There are several powerful free and paid IDE's available in the market today. Choosing the right IDE is very important for development since not all IDE's are great for every language/framework/library. Below is a list of recommended IDE's to choose from:
@@ -83,7 +83,7 @@ There are several powerful free and paid IDE's available in the market today. Ch
   
   
 <!-- STARTER KITS -->
-## Using Starter Kits
+## :tada: Using Starter Kits
 <details>
   <summary>Click to expand</summary>
   
