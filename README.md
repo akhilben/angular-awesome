@@ -144,7 +144,7 @@ PR Close #11721
 
 <br />
    
-| :heart: _Bottom Line_ : Use commit guidelines from the [official Angular repo](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) and use it for generating changelogs. |
+| :heart: _Bottom Line_ : Follow commit guidelines of the [official Angular repo](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) and use it for generating changelogs. |
 | --- |
 
 
