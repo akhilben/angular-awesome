@@ -24,7 +24,7 @@
 * [Purpose](#star2-purpose)
 * [Choosing IDE](#sunglasses-choosing-ide)
 * [Using Starter Kits](#tada-using-starter-kits)
-* [Roadmap](#roadmap)
+* [Commit Guidelines](#snowflake-commit-guidelines)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
@@ -102,17 +102,50 @@ There is no doubt that the Angular CLI's `ng new` command generates a decent bas
 | :heart: _Bottom Line_ : Use starters/boilerplates to save initial setup time and for a smooth start. |
 | --- |
 
-### Installation
- 
-1. Clone the repo
-```sh
-git clone https://github.com/github_username/repo.git
-```
-2. Install NPM packages
-```sh
-npm install
-```
 
+## :snowflake: Commit Guidelines
+ <details>
+  <summary>Click to expand</summary>
+
+Usually developers tend to add some random commit messages which doesn't actually add any value to the project. By using some precise rules over how the commit messages are formatted can lead to more readable messages that are easy to follow when looking through the project history. We can even generate changelogs from such commit messages :astonished:! It's recommended to follow the commit guidelines from the [official Angular repo](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).<br />
+* Each commit message consists of a **header**, a **body**, and a **footer (optional)**. The header has a special format that includes a type, and a subject: <br />
+  ```
+  <type>: <subject>
+  <BLANK LINE>
+  <body>
+  <BLANK LINE>
+  <footer>
+  ```
+* The `type` can be any of the following:<br />
+  - **docs**: Documentation only changes
+  - **feat**: A new feature
+  - **fix**: A bug fix
+  - **perf**: A code change that improves performance
+  - **refactor**: A code change that neither fixes a bug nor adds a feature
+  - **test**: Adding missing tests or correcting existing tests
+
+* The `footer` should contain a closing reference issue if any.
+
+<br />
+
+Eg:
+```
+fix: no password validations
+
+length and pattern validations for password
+
+PR Close #11721
+```
+<br />
+
+> :bulb: **_Tip_** : Use [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog) or it’s [standard version](https://github.com/conventional-changelog/standard-version) to generate changelogs and release notes from project's commit messages and metadata with this commit guideline.
+
+</details>
+
+<br />
+   
+| :heart: _Bottom Line_ : Use commit guidelines from the [official Angular repo](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) and use it for generating changelogs. |
+| --- |
 
 
 <!-- USAGE EXAMPLES -->
