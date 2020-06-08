@@ -23,7 +23,7 @@
 
 * [Purpose](#purpose)
 * [Choosing IDE](#choosing-ide)
-* [Using Starter Kits](#starter-kits)
+* [Using Starter Kits](#using-starter-kits)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
