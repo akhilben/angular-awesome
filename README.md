@@ -77,6 +77,10 @@ There are several powerful free and paid IDE's available in the market today. Ch
  
  </details>
    
+   
+| :heart: _Bottom Line_ : It's recommended to use [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/) |
+| --- |
+  
 
 ### Prerequisites
 
