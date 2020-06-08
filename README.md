@@ -45,7 +45,7 @@ Angular is a great and leading framework for developing various web applications
 ## Choosing IDE
 There are several powerful free and paid IDE's available in the market today. Choosing the right IDE is very important for development since not all IDE's are great for every language/framework/library. Below is a list of recommended IDE's to choose from:
 
-1. <img src="images/code.png" alt="VS Code" width="30" height="30" style="vertical-align:middle;"> <b>[Visual Studio Code](https://code.visualstudio.com/)</b><br />
+1. <img src="images/code.svg" alt="VS Code" width="30" height="30" style="vertical-align:middle;"> <b>[Visual Studio Code](https://code.visualstudio.com/)</b><br />
    VS Code is a very powerful code editor from Microsoft which is highly recommended for working with Angular. Why? It has a great <b>support for TypeScript</b> out of the box. Moreover, it has <b>syntax highlighting</b> and autocomplete with <b>IntelliSense</b>, which provides smart completions based on variable types, function definitions, and imported modules. Adding up to many other powerfull features, it is <b>highly customizable with tons of extensions</b>, especially for Angular. Below is a list of few vs code extensions that are useful while developing Angular applications. <br /><br />
    * [TS Lint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin):<br />
    A must have extension which marks the code where you have a problem and display a <b>list of warnings & errors</b> on hovering it. It even have an <b>autofix problems</b> functionality. This will help you to adhere to the recommented styleguides and conventions for Angular.<br />
