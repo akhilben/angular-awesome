@@ -21,9 +21,9 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [Purpose](#purpose)
-* [Choosing IDE](#choosing-ide)
-* [Using Starter Kits](#using-starter-kits)
+* [Purpose](#star2-purpose)
+* [Choosing IDE](#sunglasses-choosing-ide)
+* [Using Starter Kits](#tada-using-starter-kits)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
