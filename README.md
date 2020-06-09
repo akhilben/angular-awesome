@@ -192,7 +192,8 @@ PR Close #11721
 
 <br />
 
-> :bulb: **_Tip_** : Want to add more rules on top of the Angular CLI configuration? It's highly recommended to use the [Angular TSLint Preset](https://github.com/mgechev/tslint-angular) by [@mgechev](https://github.com/mgechev).
+> :bulb: **_Tips_** : Want to add more rules on top of the Angular CLI configuration? It's highly recommended to use the [Angular TSLint Preset](https://github.com/mgechev/tslint-angular) by [@mgechev](https://github.com/mgechev).<br />
+It's highly recommended to use [Husky 🐶](https://github.com/typicode/husky) to check for lint issues on a git commit hook and avoid bad commit/push.
 
 
 ### Prettier
@@ -211,6 +212,7 @@ Great :clap:! But, how will the prettier and tslint work together? It’s simple
 <br />
 
 > :bulb: **_Tip_** : Use [tslint-config-prettier](https://github.com/prettier/tslint-config-prettier) to use TSLint and Prettier without conflicts.
+
   
  </details>
 
