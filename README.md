@@ -25,6 +25,7 @@
 * [Choosing IDE](#sunglasses-choosing-ide)
 * [Using Starter Kits](#tada-using-starter-kits)
 * [Commit Guidelines](#snowflake-commit-guidelines)
+* [Configuring Your Project](#construction-worker-configuring-your-project)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
@@ -256,6 +257,10 @@ import { RandomService } from '@core/services/random.service'
  
  </details>
 
+<br />
+   
+| :heart: _Bottom Line_ : Setup tslint for code quality rules and Prettier for code formatting rules and use pre-commit hooks to check for lint issues. Add aliases for folders to remove relative paths in import statements. |
+| :--- |
 
 
 <!-- ROADMAP -->
