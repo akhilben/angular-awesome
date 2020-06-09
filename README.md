@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/akhilben/angular-best-practices">
-    <img src="images/logo.svg" alt="Logo" width="150" height="150">
+    <img src="images/logo.svg" alt="Logo" width="250" height="250">
   </a>
 
   <h3 align="center">:star: Angular Awesome :star:</h3>
@@ -157,7 +157,7 @@ PR Close #11721
   There is no doubt that Angular CLI has covered most of the recommended configurations out of the box for us. But we can still make it better :heart_eyes_cat:!
   
   ### TSLint
-  Angular CLI generates a basic set of tslint rules for us for **static code analysis** and uses [codelyzer](https://github.com/mgechev/codelyzer) rules by [@mgechev](https://github.com/mgechev). Below is the recommended configuration:
+  Angular CLI generates a basic set of tslint rules for us for **static code analysis** using [codelyzer](https://github.com/mgechev/codelyzer) by [@mgechev](https://github.com/mgechev). Below is the recommended configuration:
   ```js
   {
   // The rules component-selector and directive-selector have the following arguments:
@@ -193,6 +193,24 @@ PR Close #11721
 <br />
 
 > :bulb: **_Tip_** : Want to add more rules on top of the Angular CLI configuration? It's highly recommended to use the [Angular TSLint Preset](https://github.com/mgechev/tslint-angular) by [@mgechev](https://github.com/mgechev).
+
+
+### Prettier
+The **opinionated code formatter**, prettifies our code to look even more beautiful. First step is to install the Prettier plugin in your favorite IDE (go to [Choosing IDE](#sunglasses-choosing-ide)) or `npm install prettier` to make your team members reference the same configuration file regardless of the IDE. Don't forget to set the _format on save_ option in your IDE.
+
+```js
+// For VS Code
+“editor.formatOnSave”: true
+```
+Great :clap:! But, how will the prettier and tslint work together? It’s simple, we can **leave the code-quality rules for TSLint** to handle, and we can have **Prettier take care of formatting rules** by removing formatting rules from tslint.json.
+
+<br />
+
+> :gift: **_Resources_** : Check out [Setting up Prettier in an Angular CLI Project](https://medium.com/@victormejia/setting-up-prettier-in-an-angular-cli-project-2f50c3b9a537) by [@victormejia](https://medium.com/@victormejia).
+
+<br />
+
+> :bulb: **_Tip_** : Use [tslint-config-prettier](https://github.com/prettier/tslint-config-prettier) to use TSLint and Prettier without conflicts.
   
  </details>
 
