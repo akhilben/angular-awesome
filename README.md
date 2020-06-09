@@ -195,9 +195,10 @@ PR Close #11721
 > :bulb: **_Tips_** : Want to add more rules on top of the Angular CLI configuration? It's highly recommended to use the [Angular TSLint Preset](https://github.com/mgechev/tslint-angular) by [@mgechev](https://github.com/mgechev).<br />
 It's highly recommended to use [Husky 🐶](https://github.com/typicode/husky) to check for lint issues on a git commit hook and avoid bad commit/push.
 
+<br />
 
 ### Prettier
-The **opinionated code formatter**, prettifies our code to look even more beautiful. First step is to install the Prettier plugin in your favorite IDE (go to [Choosing IDE](#sunglasses-choosing-ide)) or `npm install prettier` to make your team members reference the same configuration file regardless of the IDE. Don't forget to set the _format on save_ option in your IDE.
+The **opinionated code formatter**, prettifies our code to look even more beautiful :heart_eyes:. First step is to install the Prettier plugin in your favorite IDE (go to [Choosing IDE](#sunglasses-choosing-ide)) or `npm install prettier` to make your team members reference the same configuration file regardless of the IDE. Don't forget to set the _format on save_ option in your IDE.
 
 ```js
 // For VS Code
@@ -213,7 +214,24 @@ Great :clap:! But, how will the prettier and tslint work together? It’s simple
 
 > :bulb: **_Tip_** : Use [tslint-config-prettier](https://github.com/prettier/tslint-config-prettier) to use TSLint and Prettier without conflicts.
 
-  
+ <br />
+ 
+ ### Aliasing Folders
+ You might have come across some import statements in codes which is way too long and dirty, like this ```import { RandomService } from '../../../../core/services/random.service'``` :dizzy_face:. To avaoid such situations, we can use aliases for folder paths **making the imports cleaner, readable and consistent**. So, how will we do this? Head to the `tsconfig.json` in your project root and add aliases to the `paths` property:
+ 
+ ```json
+ "paths": {
+      "@app/*": ["./src/app/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@core/*": ["./src/app/core/*"],
+      "@env/*": ["environments/*"]
+    }
+```
+Awesome :sunglasses:! Now we can import with more cleaner statements like : 
+```js
+import { RandomService } from '@core/services/random.service'
+```
+ 
  </details>
 
 
