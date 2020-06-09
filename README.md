@@ -231,6 +231,7 @@ Awesome :sunglasses:! Now we can import with more cleaner statements like :
 ```js
 import { RandomService } from '@core/services/random.service'
 ```
+ <br />
  
  Ok, but hold on, what about imports for style processors like scss? Angular have a solution for that as well :beers:. Head on to `angular.json` and add a property to the `options` property (the property inside which you add additional scripts/styles).
  
@@ -242,11 +243,16 @@ import { RandomService } from '@core/services/random.service'
 	}
  ```
  
- (Note that we have included the path in assumption that scss files are inside `theme` folder) Cool :snowman:! Now we can import like :
+ (:page_with_curl: Note that we have included the path in assumption that scss files are inside `theme` folder) Cool :snowman:! Now we can import like :
  
  ```css
  @import "variables";
  ```
+ <br />
+ 
+ > :gift: **_Resources_** : <br />
+ 	1. Check out [6 Best Practices & Pro Tips when using Angular CLI](https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81) by [@tomastrajan](https://medium.com/@tomastrajan). <br />
+ 	2. Check out [Angular - Shortcut to Importing Styles Files in Components](https://scotch.io/tutorials/angular-shortcut-to-importing-styles-files-in-components) on [scotch.io](https://scotch.io/)
  
  </details>
 
