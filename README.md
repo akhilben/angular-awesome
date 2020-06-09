@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/akhilben/angular-best-practices">
-    <img src="images/logo.svg" alt="Logo" width="150" height="150">
+    <img src="images/logo.svg" alt="Logo" width="250" height="250">
   </a>
 
   <h3 align="center">:star: Angular Awesome :star:</h3>
@@ -19,12 +19,13 @@
 
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+## :bookmark_tabs: Table of Contents
 
 * [Purpose](#star2-purpose)
 * [Choosing IDE](#sunglasses-choosing-ide)
 * [Using Starter Kits](#tada-using-starter-kits)
 * [Commit Guidelines](#snowflake-commit-guidelines)
+* [Configuring Your Project](#construction_worker-configuring-your-project)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
@@ -148,13 +149,118 @@ PR Close #11721
 | :--- |
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+<!-- CONFIGURING -->
+## :construction_worker: Configuring Your Project
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<details>
+  <summary>Click to expand</summary>
+  
+  There is no doubt that Angular CLI has covered most of the recommended configurations out of the box for us. But we can still make it better :heart_eyes_cat:!
+  
+  ### TSLint
+  Angular CLI generates a basic set of tslint rules for us for **static code analysis** using [codelyzer](https://github.com/mgechev/codelyzer) by [@mgechev](https://github.com/mgechev). Below is the recommended configuration:
+  ```js
+  {
+  // The rules component-selector and directive-selector have the following arguments:
+  // [ENABLED, "attribute" | "element", "prefix" | ["listOfPrefixes"], "camelCase" | "kebab-case"]
+  "component-selector": [true, "element", ["cmp-prefix1", "cmp-prefix2"], "kebab-case"],
+  "directive-selector": [true, "attribute", ["dir-prefix1", "dir-prefix2"], "camelCase"],
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+  "component-max-inline-declarations": true,
+  "contextual-lifecycle": true,
+  "no-conflicting-lifecycle": true,
+  "no-host-metadata-property": true,
+  "no-input-rename": true,
+  "no-inputs-metadata-property": true,
+  "no-output-native": true,
+  "no-output-on-prefix": true,
+  "no-output-rename": true,
+  "no-outputs-metadata-property": true,
+  "no-queries-metadata-property": true,
+  "prefer-inline-decorator": true,
+  "template-banana-in-box": true,
+  "template-no-negated-async": true,
+  "use-lifecycle-interface": true,
+  "use-pipe-transform-interface": true,
 
+  // The rules component-class-suffix and directive-class-suffix have the following arguments:
+  // [ENABLED, "suffix" | ["listOfSuffixes"]]
+  // Where "suffix" is/are your custom(s) suffix(es), for instance "Page" for Ionic components.
+  "component-class-suffix": [true, "Component"],
+  "directive-class-suffix": [true, "Directive"]
+}
+```
+
+<br />
+
+> :bulb: **_Tips_** : Want to add more rules on top of the Angular CLI configuration? It's highly recommended to use the [Angular TSLint Preset](https://github.com/mgechev/tslint-angular) by [@mgechev](https://github.com/mgechev).<br />
+It's highly recommended to use [Husky 🐶](https://github.com/typicode/husky) to check for lint issues on a git commit hook and avoid bad commit/push.
+
+<br />
+
+### Prettier
+The **opinionated code formatter**, prettifies our code to look even more beautiful :heart_eyes:. First step is to install the Prettier plugin in your favorite IDE (go to [Choosing IDE](#sunglasses-choosing-ide)) or `npm install prettier` to make your team members reference the same configuration file regardless of the IDE. Don't forget to set the _format on save_ option in your IDE.
+
+```js
+// For VS Code
+“editor.formatOnSave”: true
+```
+Great :clap:! But, how will the prettier and tslint work together? It’s simple, we can **leave the code-quality rules for TSLint** to handle, and we can have **Prettier take care of formatting rules** by removing formatting rules from tslint.json.
+
+<br />
+
+> :gift: **_Resources_** : Check out [Setting up Prettier in an Angular CLI Project](https://medium.com/@victormejia/setting-up-prettier-in-an-angular-cli-project-2f50c3b9a537) by [@victormejia](https://medium.com/@victormejia).
+
+<br />
+
+> :bulb: **_Tip_** : Use [tslint-config-prettier](https://github.com/prettier/tslint-config-prettier) to use TSLint and Prettier without conflicts.
+
+ <br />
+ 
+ ### Aliasing Folders
+ You might have come across some import statements in codes which is way too long and dirty, like this ```import { RandomService } from '../../../../core/services/random.service'``` :dizzy_face:. To avaoid such situations, we can use aliases for folder paths **making the imports cleaner, readable and consistent**. So, how will we do this? Head to the `tsconfig.json` in your project root and add aliases to the `paths` property:
+ 
+ ```json
+ "paths": {
+      "@app/*": ["./src/app/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@core/*": ["./src/app/core/*"],
+      "@env/*": ["environments/*"]
+    }
+```
+Awesome :sunglasses:! Now we can import with more cleaner statements like : 
+```js
+import { RandomService } from '@core/services/random.service'
+```
+ <br />
+ 
+ Ok, but hold on, what about imports for style processors like scss? Angular have a solution for that as well :beers:. Head on to `angular.json` and add a property to the `options` property (the property inside which you add additional scripts/styles).
+ 
+ ```json
+ "stylePreprocessorOptions": {
+		"includePaths": [
+			"src/theme/"
+		]
+	}
+ ```
+ 
+ (:page_with_curl: Note that we have included the path in assumption that scss files are inside `theme` folder) Cool :snowman:! Now we can import like :
+ 
+ ```css
+ @import "variables";
+ ```
+ <br />
+ 
+ > :gift: **_Resources_** : <br />
+ 	1. Check out [6 Best Practices & Pro Tips when using Angular CLI](https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81) by [@tomastrajan](https://medium.com/@tomastrajan). <br />
+ 	2. Check out [Angular - Shortcut to Importing Styles Files in Components](https://scotch.io/tutorials/angular-shortcut-to-importing-styles-files-in-components) on [scotch.io](https://scotch.io/)
+ 
+ </details>
+
+<br />
+   
+| :heart: _Bottom Line_ : Setup tslint for code quality rules and Prettier for code formatting rules and use pre-commit hooks to check for lint issues. Add aliases for folders to remove relative paths in import statements. |
+| :--- |
 
 
 <!-- ROADMAP -->
