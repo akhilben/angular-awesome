@@ -148,12 +148,53 @@ PR Close #11721
 | :--- |
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+<!-- CONFIGURING -->
+## :construction_worker: Configuring Your Project
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<details>
+  <summary>Click to expand</summary>
+  
+  There is no doubt that Angular CLI has covered most of the recommended configurations out of the box for us. But we can still make it better :heart_eyes_cat:!
+  
+  ### TSLint
+  Angular CLI generates a basic set of tslint rules for us for **static code analysis** and uses [codelyzer](https://github.com/mgechev/codelyzer) rules by [@mgechev](https://github.com/mgechev). Below is the recommended configuration:
+  ```js
+  {
+  // The rules component-selector and directive-selector have the following arguments:
+  // [ENABLED, "attribute" | "element", "prefix" | ["listOfPrefixes"], "camelCase" | "kebab-case"]
+  "component-selector": [true, "element", ["cmp-prefix1", "cmp-prefix2"], "kebab-case"],
+  "directive-selector": [true, "attribute", ["dir-prefix1", "dir-prefix2"], "camelCase"],
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+  "component-max-inline-declarations": true,
+  "contextual-lifecycle": true,
+  "no-conflicting-lifecycle": true,
+  "no-host-metadata-property": true,
+  "no-input-rename": true,
+  "no-inputs-metadata-property": true,
+  "no-output-native": true,
+  "no-output-on-prefix": true,
+  "no-output-rename": true,
+  "no-outputs-metadata-property": true,
+  "no-queries-metadata-property": true,
+  "prefer-inline-decorator": true,
+  "template-banana-in-box": true,
+  "template-no-negated-async": true,
+  "use-lifecycle-interface": true,
+  "use-pipe-transform-interface": true,
+
+  // The rules component-class-suffix and directive-class-suffix have the following arguments:
+  // [ENABLED, "suffix" | ["listOfSuffixes"]]
+  // Where "suffix" is/are your custom(s) suffix(es), for instance "Page" for Ionic components.
+  "component-class-suffix": [true, "Component"],
+  "directive-class-suffix": [true, "Directive"]
+}
+```
+
+<br />
+
+> :bulb: **_Tip_** : Want to add more rules on top of the Angular CLI configuration? It's highly recommended to use the [Angular TSLint Preset](https://github.com/mgechev/tslint-angular) by [@mgechev](https://github.com/mgechev).
+  
+ </details>
 
 
 
