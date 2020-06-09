@@ -78,7 +78,7 @@ There are several powerful free and paid IDE's available in the market today. Ch
    
  <br />
    
-| :heart: _Bottom Line_ : It's recommended to use [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/) |
+| :heart: _Bottom Line_ : It's recommended to use [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/) along with recommended plugins. |
 | --- |
   
   
@@ -144,8 +144,8 @@ PR Close #11721
 
 <br />
    
-| :heart: _Bottom Line_ : Follow commit guidelines of the [official Angular repo](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) and use it for generating changelogs. |
-| --- |
+| :heart: _Bottom Line_ : It's recommended to follow the commit guidelines of the [official Angular repo](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines); consisting of a header, a body, and a footer (optional). Use these commits for generating changelogs. |
+| :--- |
 
 
 <!-- USAGE EXAMPLES -->
