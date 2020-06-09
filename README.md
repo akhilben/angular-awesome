@@ -232,6 +232,22 @@ Awesome :sunglasses:! Now we can import with more cleaner statements like :
 import { RandomService } from '@core/services/random.service'
 ```
  
+ Ok, but hold on, what about imports for style processors like scss? Angular have a solution for that as well :beers:. Head on to `angular.json` and add a property to the `options` property (the property inside which you add additional scripts/styles).
+ 
+ ```json
+ "stylePreprocessorOptions": {
+		"includePaths": [
+			"src/theme/"
+		]
+	}
+ ```
+ 
+ (Note that we have included the path in assumption that scss files are inside `theme` folder) Cool :snowman:! Now we can import like :
+ 
+ ```css
+ @import "variables";
+ ```
+ 
  </details>
 
 
