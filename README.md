@@ -26,6 +26,7 @@
 * [Using Starter Kits](#tada-using-starter-kits)
 * [Commit Guidelines](#snowflake-commit-guidelines)
 * [Configuring Your Project](#construction_worker-configuring-your-project)
+* [Folder Structure](#books-folder-structure)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
@@ -261,6 +262,152 @@ import { RandomService } from '@core/services/random.service'
    
 | :heart: _Bottom Line_ : Setup tslint for code quality rules and Prettier for code formatting rules and use pre-commit hooks to check for lint issues. Add aliases for folders to remove relative paths in import statements. |
 | :--- |
+
+
+<!-- FOLDER STRUCTURE -->
+## :books: Folder Structure
+
+<details>
+  <summary>Click to expand</summary>
+  
+  Finding a scalable and clean folder structure architecture is always hard. Without a proper architecture, you will end up having a really clumsy and hard to maintain piece of codes :worried:. There are several blogs/repos which specifies a proper architecture for Angular applications, and each one is a bit different. This section is just a suggestion for architecting a proper folder structure; so just take away the main points and choose a suitable one for yourself (blogs and repos attached in `resources` at the end of this section). **A good guideline to follow is to split our application into at least three different modules — Core, Shared and Feature.** Okay, let's dive into it one by one :dolphin:.
+	
+### Core Module
+Ideally, the `CoreModule` contains files that are singleton, that is, those files which we only need to load at run-time. The module can contain **singleton services, core components, guards, interceptors, constants, enums and core models**. The core module should be imported only once, which is inside `AppModule`.
+
+```
+|-- 📁 core
+|      |-- 📁 components
+|      |      |-- 📁 shells
+|      |      |-- 📁 header
+|      |      |-- 📁 page-not-found
+|      |      ...
+|      |-- 📁 guards
+|      |      |-- 📄 auth.guard.ts
+|      |      ...
+|      |-- 📁 interceptors
+|      |      |-- 📄 api-prefix.interceptor.ts
+|      |      |-- 📄 error-handler.interceptor.ts
+|      |      ...
+|      |-- 📁 services
+|      |      |-- 📄 utility.service.ts
+|      |      |-- 📄 authentication.service.ts
+|      |      ...
+|      |-- 📁 enums
+|      |-- 📁 models
+|      |-- 📁 constants
+|      |-- 📄 core.module.ts
+|      |-- 📄 ensureModuleLoadedOnceGuard.ts
+|      |-- 📄 logger.service.ts
+```
+<br />
+
+> :bulb: **_Tips_** : Add a check in the `CoreModule` constructor and throw an error if already loaded or add a guard for the same to avoid accidental imports (refer [here](https://github.com/ngx-rocket/starter-kit/blob/master/src/app/%40core/core.module.ts)) .<br />
+Add a logger system in `logger.service.ts` file (refer [here](https://github.com/ngx-rocket/starter-kit/blob/master/src/app/%40core/logger.service.ts)).
+
+<br />
+
+### Shared Module
+`SharedModule` is the module where all our **shared or _dumb components_, directives and pipes** go. We can also **add any third-party components/directives/pipes** (like [Angular Material](https://material.angular.io/) components) which will be needed throughout our application, to the `imports` and `exports` of the module. This module can be then imported to each _feature module_.
+
+```
+|-- 📁 shared
+|      |-- 📁 components
+|      |      |-- 📁 loader
+|      |      |-- 📁 confirmation-dialog
+|      |      ...
+|      |-- 📁 directives
+|      |      |-- 📄 drag-drop.directive.ts
+|      |      |-- 📄 scroll-spy.directive.ts
+|      |      ...
+|      |-- 📁 pipes
+|      |      |-- 📄 custom-date.pipe.ts
+|      |      |-- 📄 safe.pipe.ts
+|      |      ...
+|      |-- 📁 models
+|      |      |-- 📄 user.ts
+|      |      |-- 📄 api-response.ts
+|      |-- 📄 shared.module.ts
+```
+<br />
+
+> :page_with_curl: **_Note_** : Don't forget to add the components, directives and pipes to the `exports` inside `shared.module.ts`.
+
+<br />
+
+### Feature Modules
+It's recommended to create feature modules **for every independent feature** of our application. Ideally, **feature modules shouldn't be dependant on other modules other than the services provided by CoreModule and features exported by SharedModule**. A feature module directory can contain `components`, `pages`, `services` etc. that is specific to the corresponding feature.
+<br /><br />
+The `pages` folder contains higher level components or even lazy loaded modules. We can refer to a `page` as the parent component which contains several other child components which ultimately makes up a _page_. The `components` folder contains components which are consumed by various `pages` of the corresponding feature.
+
+```
+|-- 📁 modules
+|      |-- 📁 home
+|      |      |-- 📁 components
+|      |      |      |-- 📁 table
+|      |      |      ...
+|      |      |-- 📁 pages
+|      |      |      |-- 📁 home
+|      |      |      |-- 📁 details
+|      |      |      ...
+|      |      ...
+|      |      |-- 📄 home-routing.module.ts
+|      |      |-- 📄 home.module.ts
+|      |-- 📁 users
+|      |      |-- 📁 components
+|      |      |-- 📁 pages
+|      |      ...
+|      |      |-- 📄 users-routing.module.ts
+|      |      |-- 📄 users.module.ts
+```
+
+<br />
+
+### Styling
+It's preferred  to add a `theme` folder inside `src` to include custom themes and scss variables.
+
+```
+|-- 📁 theme
+|      |-- 📁 partials
+|      |-- 📄 variables.scss
+|      |      ...
+|      |-- 📄 theme.scss
+```
+Now we can import the `theme.scss` in our main `styles.scss` where we add global styles and import other style files.
+
+</details>
+
+<br />
+
+> :gift: **_Resources_** : <br />
+ 	1. Check out [Choosing The Right File Structure for Angular in 2020 and Beyond 📕!](https://itnext.io/choosing-the-right-file-structure-for-angular-in-2020-and-beyond-a53a71f7eb05) by [@mathis.garberg](https://itnext.io/@mathis.garberg). <br />
+ 	2. Check out [How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://medium.com/@tomastrajan/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [@tomastrajan](https://medium.com/@tomastrajan). <br />
+	3. Check out [Angular Folder Structure](https://medium.com/@motcowley/angular-folder-structure-d1809be95542) by [@motcowley](https://medium.com/@motcowley). <br />
+	4. Check out the excellent folder structure in these [starter kits](#tada-using-starter-kits).
+	
+<br />
+
+| :heart: _Bottom Line_ : Split our application into at least three different modules — Core, Shared and Feature; below is the bigger picture 🖼️ : |
+| :--- |
+
+```
+src/                         
+|-- 📁 app                   
+|      |-- 📁 core            	    core module (singleton services, single-use components, interceptors, guards etc.)
+|      |-- 📁 shared          	    shared module  (common components, directives and pipes)
+|      |-- 📁 modules         	    feature modules (each containing pages, components, services etc.)
+|      |-- 📄 app.component.*
+|      |-- 📄 app.module.ts          
+|      |-- 📄 app-routing.module.ts  
+|      +- ...
+|-- 📁 assets
+|-- 📁 environments
+|-- 📁 theme                  	    app global scss variables, partials and theme
+|-- 📁 translations/                translations files
+|-- 📄 index.html
++- ...
+|-- 📄 main.ts
+```
 
 
 <!-- ROADMAP -->
