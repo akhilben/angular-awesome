@@ -379,6 +379,14 @@ Now we can import the `theme.scss` in our main `styles.scss` where we add global
 
 <br />
 
+> :gift: **_Resources_** : <br />
+ 	1. Check out [Choosing The Right File Structure for Angular in 2020 and Beyond 📕!](https://itnext.io/choosing-the-right-file-structure-for-angular-in-2020-and-beyond-a53a71f7eb05) by [@mathis.garberg](https://itnext.io/@mathis.garberg). <br />
+ 	2. Check out [How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://medium.com/@tomastrajan/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [@tomastrajan](https://medium.com/@tomastrajan). <br />
+	3. Check out [Angular Folder Structure](https://medium.com/@motcowley/angular-folder-structure-d1809be95542) by [@motcowley](https://medium.com/@motcowley). <br />
+	4. Check out the excellent folder structure in these [starter kits](#tada-using-starter-kits).
+	
+<br />
+
 | :heart: _Bottom Line_ : Split our application into at least three different modules — Core, Shared and Feature; below is the bigger picture 🖼️ : |
 | :--- |
 
