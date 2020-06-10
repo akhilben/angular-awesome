@@ -361,7 +361,43 @@ The `pages` folder contains higher level components or even lazy loaded modules.
 |      |      |-- 📄 users.module.ts
 ```
 
+<br />
+
+### Styling
+It's preferred  to add a `theme` folder inside `src` to include custom themes and scss variables.
+
+```
+|-- 📁 theme
+|      |-- 📁 partials
+|      |-- 📄 variables.scss
+|      |      ...
+|      |-- 📄 theme.scss
+```
+Now we can import the `theme.scss` in our main `styles.scss` where we add global styles and import other style files.
+
 </details>
+
+Encapsulating all the points, below is the bigger picture 🖼️:
+
+```
+src/                         
+|-- 📁 app                   
+|      |-- 📁 core            	    core module (singleton services, single-use components, interceptors, guards etc.)
+|      |-- 📁 shared          	    shared module  (common components, directives and pipes)
+|      |-- 📁 modules         	    feature modules (each containing pages, components, services etc.)
+|      |-- 📄 app.component.*
+|      |-- 📄 app.module.ts          
+|      |-- 📄 app-routing.module.ts  
+|      +- ...
+|-- 📁 assets
+|-- 📁 environments
+|-- 📁 theme                  	    app global scss variables, partials and theme
+|-- 📁 translations/                translations files
+|-- 📄 index.html
++- ...
+|-- 📄 main.ts
+```
+
 
 <!-- ROADMAP -->
 ## Roadmap
