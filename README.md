@@ -2,13 +2,11 @@
 <br />
 <p align="center">
   <a href="https://github.com/akhilben/angular-best-practices">
-    <img src="images/logo.svg" alt="Logo" width="250" height="250">
+    <img src="images/logo.svg" alt="Logo" width="100%">
   </a>
 
-  <h3 align="center">:star: Angular Awesome :star:</h3>
-
-  <p align="center">
-    A curated list of Angular best practices and tips for building better, scalable and performant enterprise level applications.
+  <p align="center"> <b>
+    :star: A curated list of Angular best practices and tips for building scalable and performant enterprise level applications. :star: </b>
     <br />
     <a href="https://github.com/akhilben/angular-best-practices/issues">Report Bug</a>
     ·
