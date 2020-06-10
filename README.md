@@ -377,7 +377,10 @@ Now we can import the `theme.scss` in our main `styles.scss` where we add global
 
 </details>
 
-Encapsulating all the points, below is the bigger picture 🖼️:
+<br />
+
+| :heart: _Bottom Line_ : Split our application into at least three different modules — Core, Shared and Feature; below is the bigger picture 🖼️ : |
+| :--- |
 
 ```
 src/                         
