@@ -280,7 +280,7 @@ Ideally, the `CoreModule` contains files that are singleton, that is, those file
 |      |-- 📁 components
 |      |      |-- 📁 shells
 |      |      |-- 📁 header
-|      |      |-- 📁 footer
+|      |      |-- 📁 page-not-found
 |      |      ...
 |      |-- 📁 guards
 |      |      |-- 📄 auth.guard.ts
