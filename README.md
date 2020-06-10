@@ -302,7 +302,7 @@ Ideally, the core module contains files that are singleton, that is, those files
 ```
 <br />
 
-> :bulb: **_Tips_** : Add a check in the `CoreModule` constructor and throw an error if already loaded to avoid accidental imports (refer [here](https://github.com/ngx-rocket/starter-kit/blob/master/src/app/%40core/core.module.ts)) .<br />
+> :bulb: **_Tips_** : Add a check in the `CoreModule` constructor and throw an error if already loaded or add a guard for the same to avoid accidental imports (refer [here](https://github.com/ngx-rocket/starter-kit/blob/master/src/app/%40core/core.module.ts)) .<br />
 Add a logger system in `logger.service.ts` file (refer [here](https://github.com/ngx-rocket/starter-kit/blob/master/src/app/%40core/logger.service.ts)).
 
 </details>
