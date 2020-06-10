@@ -273,7 +273,7 @@ import { RandomService } from '@core/services/random.service'
   Finding a scalable and clean folder structure architecture is always hard. Without a proper architecture, you will end up having a really clumsy and hard to maintain piece of codes :worried:. There are several blogs/repos which specifies a proper architecture for Angular applications, and each one is a bit different. This section is just a suggestion for architecting a proper folder structure; so just take away the main points and choose a suitable one for yourself (blogs and repos attached in `resources` at the end of this section). **A good guideline to follow is to split our application into at least three different modules — Core, Shared and Feature.** Okay, let's dive into it one by one :dolphin:.
 	
 ### Core Module
-Ideally, the core module contains files that are singleton, that is, those files which we only need to load at run-time. The module can contain **singleton services, core components, guards, interceptors, constants, enums and core models**. The core module should be imported only once, which is inside `AppModule`.
+Ideally, the `CoreModule` contains files that are singleton, that is, those files which we only need to load at run-time. The module can contain **singleton services, core components, guards, interceptors, constants, enums and core models**. The core module should be imported only once, which is inside `AppModule`.
 
 ```
 |-- 📁 core
@@ -304,6 +304,32 @@ Ideally, the core module contains files that are singleton, that is, those files
 
 > :bulb: **_Tips_** : Add a check in the `CoreModule` constructor and throw an error if already loaded or add a guard for the same to avoid accidental imports (refer [here](https://github.com/ngx-rocket/starter-kit/blob/master/src/app/%40core/core.module.ts)) .<br />
 Add a logger system in `logger.service.ts` file (refer [here](https://github.com/ngx-rocket/starter-kit/blob/master/src/app/%40core/logger.service.ts)).
+
+<br />
+
+### Shared Module
+`SharedModule` is the module where all our **shared or _dumb components_, directives and pipes** go. We can also **add any third-party components/directives/pipes** (like [Angular Material](https://material.angular.io/) components) which will be needed throughout our application, to the `imports` and `exports` of the module. This module can be then imported to each _feature module_.
+
+```
+|-- 📁 shared
+|      |-- 📁 components
+|      |      |-- 📁 loader
+|      |      |-- 📁 confirmation-dialog
+|      |      ...
+|      |-- 📁 directives
+|      |      |-- 📄 drag-drop.directive.ts
+|      |      |-- 📄 scroll-spy.directive.ts
+|      |      ...
+|      |-- 📁 pipes
+|      |      |-- 📄 custom-date.pipe.ts
+|      |      |-- 📄 safe.pipe.ts
+|      |      ...
+|      |-- 📁 models
+|      |-- 📄 shared.module.ts
+```
+<br />
+
+> :page_with_curl: **_Note_** : Don't forget to add the components, directives and pipes to the `exports` inside `shared.module.ts`.
 
 </details>
 
