@@ -325,11 +325,41 @@ Add a logger system in `logger.service.ts` file (refer [here](https://github.com
 |      |      |-- 📄 safe.pipe.ts
 |      |      ...
 |      |-- 📁 models
+|      |      |-- 📄 user.ts
+|      |      |-- 📄 api-response.ts
 |      |-- 📄 shared.module.ts
 ```
 <br />
 
 > :page_with_curl: **_Note_** : Don't forget to add the components, directives and pipes to the `exports` inside `shared.module.ts`.
+
+<br />
+
+### Feature Modules
+It's recommended to create feature modules **for every independent feature** of our application. Ideally, **feature modules shouldn't be dependant on other modules other than the services provided by CoreModule and features exported by SharedModule**. A feature module directory can contain `components`, `pages`, `services` etc. that is specific to the corresponding feature.
+<br /><br />
+The `pages` folder contains higher level components or even lazy loaded modules. We can refer to a `page` as the parent component which contains several other child components which ultimately makes up a _page_. The `components` folder contains components which are consumed by various `pages` of the corresponding feature.
+
+```
+|-- 📁 modules
+|      |-- 📁 home
+|      |      |-- 📁 components
+|      |      |      |-- 📁 table
+|      |      |      ...
+|      |      |-- 📁 pages
+|      |      |      |-- 📁 home
+|      |      |      |-- 📁 details
+|      |      |      ...
+|      |      ...
+|      |      |-- 📄 home-routing.module.ts
+|      |      |-- 📄 home.module.ts
+|      |-- 📁 users
+|      |      |-- 📁 components
+|      |      |-- 📁 pages
+|      |      ...
+|      |      |-- 📄 users-routing.module.ts
+|      |      |-- 📄 users.module.ts
+```
 
 </details>
 
