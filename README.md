@@ -20,14 +20,23 @@
 ## :bookmark_tabs: Table of Contents
 
 * [Purpose](#star2-purpose)
+
 * [Choosing IDE](#sunglasses-choosing-ide)
+
 * [Using Starter Kits](#tada-using-starter-kits)
+
 * [Commit Guidelines](#snowflake-commit-guidelines)
+
 * [Configuring Your Project](#construction_worker-configuring-your-project)
+
 * [Folder Structure](#books-folder-structure)
+
 * [Contributing](#contributing)
+
 * [License](#license)
+
 * [Contact](#contact)
+
 * [Acknowledgements](#acknowledgements)
 
 
