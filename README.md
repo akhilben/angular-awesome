@@ -166,7 +166,7 @@ PR Close #11721
   There is no doubt that Angular CLI has covered most of the recommended configurations out of the box for us. But we can still make it better :heart_eyes_cat:!
   
   ### TSLint
-  Angular CLI generates a basic set of tslint rules for us for **static code analysis** using [codelyzer](https://github.com/mgechev/codelyzer) by [@mgechev](https://github.com/mgechev). Below is the recommended configuration:
+  Angular CLI generates a basic set of tslint rules for us for **static code analysis** using [codelyzer](https://github.com/mgechev/codelyzer) by [Minko Gechev](https://github.com/mgechev). Below is the recommended configuration:
   ```js
   {
   // The rules component-selector and directive-selector have the following arguments:
@@ -201,7 +201,7 @@ PR Close #11721
 
 <br />
 
-> :bulb: **_Tips_** : Want to add more rules on top of the Angular CLI configuration? It's highly recommended to use the [Angular TSLint Preset](https://github.com/mgechev/tslint-angular) by [@mgechev](https://github.com/mgechev).<br />
+> :bulb: **_Tips_** : Want to add more rules on top of the Angular CLI configuration? It's highly recommended to use the [Angular TSLint Preset](https://github.com/mgechev/tslint-angular) by [Minko Gechev](https://github.com/mgechev).<br />
 It's highly recommended to use [Husky 🐶](https://github.com/typicode/husky) to check for lint issues on a git commit hook and avoid bad commit/push.
 
 <br />
@@ -217,7 +217,7 @@ Great :clap:! But, how will the prettier and tslint work together? It’s simple
 
 <br />
 
-> :gift: **_Resources_** : Check out [Setting up Prettier in an Angular CLI Project](https://medium.com/@victormejia/setting-up-prettier-in-an-angular-cli-project-2f50c3b9a537) by [@victormejia](https://medium.com/@victormejia).
+> :gift: **_Resources_** : Check out [Setting up Prettier in an Angular CLI Project](https://medium.com/@victormejia/setting-up-prettier-in-an-angular-cli-project-2f50c3b9a537) by [Victor Mejia](https://medium.com/@victormejia).
 
 <br />
 
@@ -387,9 +387,9 @@ Now we can import the `theme.scss` in our main `styles.scss` where we add global
 <br />
 
 > :gift: **_Resources_** : <br />
- 	1. Check out [Choosing The Right File Structure for Angular in 2020 and Beyond 📕!](https://itnext.io/choosing-the-right-file-structure-for-angular-in-2020-and-beyond-a53a71f7eb05) by [@mathis.garberg](https://itnext.io/@mathis.garberg). <br />
- 	2. Check out [How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://medium.com/@tomastrajan/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [@tomastrajan](https://medium.com/@tomastrajan). <br />
-	3. Check out [Angular Folder Structure](https://medium.com/@motcowley/angular-folder-structure-d1809be95542) by [@motcowley](https://medium.com/@motcowley). <br />
+ 	1. Check out [Choosing The Right File Structure for Angular in 2020 and Beyond 📕!](https://itnext.io/choosing-the-right-file-structure-for-angular-in-2020-and-beyond-a53a71f7eb05) by [Mathis Garberg](https://itnext.io/@mathis.garberg). <br />
+ 	2. Check out [How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://medium.com/@tomastrajan/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [Tomas Trajan](https://medium.com/@tomastrajan). <br />
+	3. Check out [Angular Folder Structure](https://medium.com/@motcowley/angular-folder-structure-d1809be95542) by [Tom Cowley](https://medium.com/@motcowley). <br />
 	4. Check out the excellent folder structure in these [starter kits](#tada-using-starter-kits).
 	
 <br />
