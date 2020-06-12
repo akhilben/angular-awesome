@@ -556,7 +556,7 @@ There are various ways to unsubscribe observables:
 
 <br />
 
-### 4. Use aync pipe
+### 4. Use async pipe
 In the previous section, we learnt about unsubscribing observables. But there is a much more efficient way for the same problem, the magical `async` pipe :dizzy:. It's recommended to avoid subscribing to observables from components and instead subscribe to the observables from the template.
 
 #### Why?
