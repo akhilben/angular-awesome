@@ -36,6 +36,10 @@
 	* [Function calls in templates](#1-avoid-function-calls-in-templates)
 	
 	* [Using trackBy](#2-use-trackby-with-ngfor)
+	
+	* [Unsubscribing observables](#3-unsubscribe-observables)
+	
+	* [Async pipe](#4-use-async-pipe)
 
 * [Contributing](#contributing)
 
@@ -549,6 +553,23 @@ There are various ways to unsubscribe observables:
 <br />
 
 > :gift: **_Resources_** : Check out [6 Ways to Unsubscribe from Observables in Angular](https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f) by [Chidume Nnamdi](https://blog.bitsrc.io/@kurtwanger40)
+
+<br />
+
+### 4. Use aync pipe
+In the previous section, we learnt about unsubscribing observables. But there is a much more efficient way for the same problem, the magical `async` pipe :dizzy:. It's recommended to avoid subscribing to observables from components and instead subscribe to the observables from the template.
+
+#### Why?
+Because subscriptions can lead to memory leaks if not properly unsubscribed and it's an additional overhead to do so :weary:.
+
+#### Solution:
+Fear not! Angular have a magic potion up the sleeves just for **automatically managing subscriptions** - `async` pipe :crystal_ball:. Yes, it magically handles the subscriptions for us; no more memory leaks by forgetting to unsubscribe observables :smirk:. Use it whenever it's possible to.
+
+```html
+<p>{{ someObservable$ | async }}</p>
+
+<p>{{ (someOtherObservable$ | async).value }}</p>
+```
 
 <!-- ROADMAP -->
 ## Roadmap
