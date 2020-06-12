@@ -431,7 +431,7 @@ It is not a good practice to write function calls for computing values inside th
 <tr *ngFor="let book of books">{{calculatePrice(book)}}</tr> ❌
 ```
 
-##### Why?
+#### Why?
 Angular will run your function in each of it's change detection cycle (which is quite frequent) and if the function is a complex one, this will impose a serious effect on the performance.
 
 #### Solution:
