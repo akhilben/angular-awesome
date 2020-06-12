@@ -33,7 +33,7 @@
 
 * [Performance Cheatsheet](#zap-performance-cheatsheet)
 
-	* [Function calls in templates](#avoid-function-calls-in-templates)
+	* [Function calls in templates](#1-avoid-function-calls-in-templates)
 
 * [Contributing](#contributing)
 
