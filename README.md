@@ -34,7 +34,7 @@
 * [Performance Cheatsheet](#zap-performance-cheatsheet)
 
 	* [Function calls in templates](#1-avoid-function-calls-in-templates)
-	* [Using trackBy](#use-trackBy-with-ngFor)
+	* [Using trackBy](#use-trackby-with-ngfor)
 
 * [Contributing](#contributing)
 
