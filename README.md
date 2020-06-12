@@ -489,10 +489,10 @@ trackByFn(index: number, book: Book) {
 <br />
 
 ### 3. Unsubscribe observables
-When you subscribe to observables, make sure to unsubscribe them in the `ngOnDestroy` method.
+When you subscribe to observables, make sure to unsubscribe them in the `ngOnDestroy` method :eyes:.
 
 #### Why?
-If you fail to unsubscribe your observables, chances are there that **memory leaks** might happen since your observable stream is left open even after that component is destroyed. This will lead to uexpected behaviours and serious performance issues.
+If you fail to unsubscribe your observables, chances are there that **memory leaks** might happen since your observable stream is left open even after that component is destroyed. This will lead to uexpected behaviours and serious performance issues :scream:.
 
 #### Solution:
 There are various ways to unsubscribe observables:
@@ -514,7 +514,7 @@ There are various ways to unsubscribe observables:
 	  this._destroyed$.complete();
 	}
 	```
-2. If you need to subscribe to an observable only once, use `take(1)`. Note that you will need to use `takeUntil` to avoid any  memory leaks caused when the subscription hasn’t received a value before the component got destroyed.
+2. If you need to subscribe to an observable only once, use `take(1)`. 📄 Note that you will need to use `takeUntil` to avoid any  memory leaks caused when the subscription hasn’t received a value before the component got destroyed.
 	```js
 	sampleObservable$
 	.pipe(
@@ -524,7 +524,7 @@ There are various ways to unsubscribe observables:
 	.subscribe(item => // logic);
 	```
 
-3. Using `unsubscribe()` method of `Subscription`. Using this method, you have to `add()` your observables (if you have multiple) to the `Subscription` and destroy on `ngOnDestroy` with the `unsubscribe()` method.
+3. Using `unsubscribe()` method of `Subscription`. Using this method, you have to `add()` your observables (if you have multiple :train:) to the `Subscription` and destroy on `ngOnDestroy` with the `unsubscribe()` method.
 
 	```js
 	private _subscriptions$ = new Subscription();
