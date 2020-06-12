@@ -34,6 +34,7 @@
 * [Performance Cheatsheet](#zap-performance-cheatsheet)
 
 	* [Function calls in templates](#1-avoid-function-calls-in-templates)
+	* [Using trackBy](#use-trackBy-with-ngFor)
 
 * [Contributing](#contributing)
 
@@ -467,7 +468,7 @@ When using `*ngFor` to loop over an array which might change over time, it is re
 When an array changes (eg: when we push a new item to array), Angular will remove all the DOM elements associated with that array and create all of it again. This is because Angular has no knowledge of which items have been removed or added.
 
 #### Solution:
-Use `trackBy`. If we provide a `trackBy` function, Angular can track which items have been added or removed in the array according to the unique identifier. It then has to create or destroy the DOM elements for only those items that have changed.
+Use `trackBy`. If we provide a `trackBy` function, Angular can track which items have been added or removed in the array according to the unique identifier. It then has to create or destroy the DOM elements for only those items that have changed. Cool :gem:! Now, this is how we dot it:
 
 ```html
 <tr *ngFor="let book of books; trackBy: trackByFn"">{{book.name}}</tr>
