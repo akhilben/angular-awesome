@@ -33,6 +33,8 @@
 
 * [Performance Cheatsheet](#zap-performance-cheatsheet)
 
+	* [Function calls in templates](#avoid-function-calls-in-templates)
+
 * [Contributing](#contributing)
 
 * [License](#license)
@@ -422,7 +424,7 @@ src/
 ## :zap: Performance Cheatsheet
 It's a known fact that Angular is a highly performant framework. But we can make it better by following some best practices. Let's jump in to the list of such best practices :nerd_face: :
 
-### 1. Avoid function calls in templates
+### 1. Avoid function calls in templates.
 It is not a good practice to write function calls for computing values inside the templates. And if it's a complex function, a big NO :skull:.
 
 ```html
