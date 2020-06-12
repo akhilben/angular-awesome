@@ -31,6 +31,8 @@
 
 * [Folder Structure](#books-folder-structure)
 
+* [Performance Cheatsheet](#zap-performance-cheatsheet)
+
 * [Contributing](#contributing)
 
 * [License](#license)
@@ -415,7 +417,46 @@ src/
 +- ...
 |-- 📄 main.ts
 ```
+<br />
 
+## :zap: Performance Cheatsheet
+It's a known fact that Angular is a highly performant framework. But we can make it better by following some best practices. Let's jump in to the list of such best practices :nerd_face: :
+
+<br />
+
+### Avoid function calls in templates
+It is not a good practice to write function calls for computing values inside the templates. And if it's a complex function, a big NO :skull:.
+
+```html
+<tr *ngFor="let book of books">{{calculatePrice(book)}}</tr> ❌
+```
+
+##### Why?
+Angular will run your function in each of it's change detection cycle (which is quite frequent) and if the function is a complex one, this will impose a serious effect on the performance.
+
+#### Solution:
+There may be some cases where this is unavoidable, but for most cases this can be avoided by:
+1. **Creating a property in the ts file and setting the value to it once.**
+
+	```js
+	this.books = this.books.map(book => ( { ...books, price: calculatePrice(book)  } );
+	```
+2. **Using pure pipes** : A pure pipe is a pipe that will always always return the same output for an input. Angular executes a pure pipe only when it detects a pure change to the input value because it already knows that the pipe will return the same value for the same input.
+
+	```js
+	@Pipe({
+		name: 'dummy',
+		pure: true
+	})
+	export class somePipe implements PipeTransform {
+		transform(value: any, args?: any): any {
+			 // logic
+		}
+	}
+	```
+	
+	> :gift: **_Resources_** : Check out [The essential difference between pure and impure pipes in Angular and why that matters](https://indepth.dev/the-essential-difference-between-pure-and-impure-pipes-in-angular-and-why-that-matters/) by [Max Koretskyi
+](https://indepth.dev/author/maxkoretskyi/)
 
 <!-- ROADMAP -->
 ## Roadmap
