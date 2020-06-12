@@ -488,6 +488,68 @@ trackByFn(index: number, book: Book) {
 
 <br />
 
+### 3. Unsubscribe observables
+When you subscribe to observables, make sure to unsubscribe them in the `ngOnDestroy` method.
+
+#### Why?
+If you fail to unsubscribe your observables, chances are there that **memory leaks** might happen since your observable stream is left open even after that component is destroyed. This will lead to uexpected behaviours and serious performance issues.
+
+#### Solution:
+There are various ways to unsubscribe observables:
+1. We can make use of `takeUntil` to listen to the changes until another observable emits a value.
+	```js
+	private _destroy$ = new Subject();
+
+	public ngOnInit(): void {
+	  sampleObservable$
+	  .pipe(
+	    // listen to the observable until this._destroy$ emits a value
+	    takeUntil(this._destroy$)
+	  )
+	  .subscribe(item => // logic);
+	}
+
+	public ngOnDestroy(): void {
+	  this._destroyed$.next();
+	  this._destroyed$.complete();
+	}
+	```
+2. If you need to subscribe to an observable only once, use `take(1)`. Note that you will need to use `takeUntil` to avoid any  memory leaks caused when the subscription hasn’t received a value before the component got destroyed.
+	```js
+	sampleObservable$
+	.pipe(
+	  take(1),
+	  takeUntil(this._destroy$)
+	)
+	.subscribe(item => // logic);
+	```
+
+3. Using `unsubscribe()` method of `Subscription`. Using this method, you have to `add()` your observables (if you have multiple) to the `Subscription` and destroy on `ngOnDestroy` with the `unsubscribe()` method.
+
+	```js
+	private _subscriptions$ = new Subscription();
+
+	public ngOnInit (): void {
+	  // we can add multiple observables to _subscriptions$ with add()
+	  this._subscriptions$.add(
+	    sampleObservable1$
+	    .subscribe(item => // logic)
+	  );
+	}
+
+	public ngOnDestroy (): void {
+	  this._subscriptions$.unsubscribe();
+	}
+	```
+	
+<br />
+
+> :bulb: **_Tip_** : Make use of lint rules to detect any unsubscribed observables. Check out [rxjs-tslint](https://github.com/ReactiveX/rxjs-tslint) for TSLint rules targeting RxJS.
+
+<br />
+
+> :gift: **_Resources_** : Check out [6 Ways to Unsubscribe from Observables in Angular](https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f) by [Chidume Nnamdi](https://blog.bitsrc.io/@kurtwanger40)
+
 <!-- ROADMAP -->
 ## Roadmap
 
