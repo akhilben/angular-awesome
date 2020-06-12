@@ -458,6 +458,34 @@ There may be some cases where this is unavoidable, but for most cases this can b
 	> :gift: **_Resources_** : Check out [The essential difference between pure and impure pipes in Angular and why that matters](https://indepth.dev/the-essential-difference-between-pure-and-impure-pipes-in-angular-and-why-that-matters/) by [Max Koretskyi
 ](https://indepth.dev/author/maxkoretskyi/)
 
+<br />
+
+### 2. Use trackBy with ngFor
+When using `*ngFor` to loop over an array which might change over time, it is recommended to use `trackBy` **to track array items whith unique identifier**.
+
+#### Why?
+When an array changes (eg: when we push a new item to array), Angular will remove all the DOM elements associated with that array and create all of it again. This is because Angular has no knowledge of which items have been removed or added.
+
+#### Solution:
+Use `trackBy`. If we provide a `trackBy` function, Angular can track which items have been added or removed in the array according to the unique identifier. It then has to create or destroy the DOM elements for only those items that have changed.
+
+```html
+<tr *ngFor="let book of books; trackBy: trackByFn"">{{book.name}}</tr>
+```
+
+and then in your `component.ts`:
+
+```js
+trackByFn(index: number, book: Book) {
+    return item.id;
+}
+```
+<br />
+
+> :gift: **_Resources_** : Check out [Angular — Improve Performance with trackBy](https://netbasal.com/angular-2-improve-performance-with-trackby-cc147b5104e5) by [Netanel Basal](https://netbasal.com/@NetanelBasal)
+
+<br />
+
 <!-- ROADMAP -->
 ## Roadmap
 
