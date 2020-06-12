@@ -35,7 +35,7 @@
 
 	* [Function calls in templates](#1-avoid-function-calls-in-templates)
 	
-	* [Using trackBy](#use-trackby-with-ngfor)
+	* [Using trackBy](#2-use-trackby-with-ngfor)
 
 * [Contributing](#contributing)
 
