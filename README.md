@@ -463,7 +463,7 @@ There may be some cases where this is unavoidable, but for most cases this can b
 <br />
 
 ### 2. Use trackBy with ngFor
-When using `*ngFor` to loop over an array which might change over time, it is recommended to use `trackBy` **to track array items whith unique identifier**.
+When using `*ngFor` to loop over an array which might change over time, it is recommended to use `trackBy` **to track array items with unique identifier**.
 
 #### Why?
 When an array changes (eg: when we push a new item to array), Angular will remove all the DOM elements associated with that array and create all of it again. This is because Angular has no knowledge of which items have been removed or added.
