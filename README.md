@@ -591,7 +591,7 @@ Angular offers a powefull solution to that problem. **Split your code to separat
 
 <br />
 
-### Use preloading strategy
+### 6. Use preloading strategy
 Preloading strategy is a concept which can be used along with lazy loading to make our application much more faster. You can use Angular's default `PreloadAllModules` strategy, or you can even write your own cutom strategies depending upon the requirements :truck:.
 
 #### Why
