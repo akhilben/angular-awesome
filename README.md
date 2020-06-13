@@ -642,6 +642,77 @@ Or, make use of machine learning by predictively preloading modules with [Guess.
 > :gift: **_Resources_** : <br />
  	1. Check out [Preloading in Angular](https://alligator.io/angular/preloading/) on [alligator.io](https://alligator.io/). <br />
  	2. Check out [Route preloading strategies in Angular](https://web.dev/route-preloading-in-angular/) by [Minko Gechev](https://web.dev/authors/mgechev/).
+	
+<br />
+
+### 7. Lazy load components
+
+> :page_facing_up: **_Note_** : This feature is only supported in Angular 9+.
+
+Yes, it's also possible to lazy load components or modules without a route with Angular's Ivy engine :fire:. We can use this awesome feature to reduce the load/rendering time again!
+
+#### Why?
+Sometimes, you might have some components that are rarely used, say, an info popup that the users use very rarely. Pre loading the code for such components doesn't make any sense. If we can remove such components and load only those components that are necessary for the initial rendering, there will be a considerable gain in the rendering speed :zap:.
+
+#### Solution:
+Let's check out how to lazy load components through the below steps :
+
+1. First step is to create a container element for the component to be rendered in and get hold of that container in component using `@ViewChild`.
+
+	```html
+	<ng-container #someContainer></ng-container>
+	```
+	In your component:
+	
+	```js
+	@ViewChild('someContainer', {read: ViewContainerRef}) someContainer: ViewContainerRef;
+	```
+	
+2. Use `ComponentFactoryResolver` and `Injector` to create an instance of the component.
+
+	```js
+	constructor(
+	  private injector: Injector,
+	  private cfr: ComponentFactoryResolver
+	) {}
+	```
+	
+3. Use async-await to lazy load the component.
+
+	```js
+	async lazyLoadComponent() {
+	  const { LazyComponent } = await import('./lazy.component');
+	  const componentFactory = this.cfr.resolveComponentFactory(LazyComponent);
+	  const { instance } = this.someContainer.createComponent(componentFactory, null, this.injector);
+		
+	  // Use the instance to pass down values to LazyComponent like this:
+	  instance.someProperty = 'dummy property';
+		
+	  // Get hold of emitted values from LazyComponent:
+	  instance.someEmitter.pipe(
+	    takeUntil(instance.destroy$)
+	  ).subscribe(() => // Do something);
+	}
+	```
+	
+4. Sometimes you will need to import other modules (like `SharedModule`) to include some features in your component. We can create a dedicated module for the lazy loaded component and add it to the `lazy.component.ts` file.
+
+	```js
+	@NgModule({
+	  declarations: [ LazyComponent ],
+	  imports: [ CommonModule, SharedModule ]
+	})
+	
+	// Remove export statement to avoid accidental imports in other files.
+	class LazyCompModule {
+	}
+	```
+	
+<br />
+
+> :gift: **_Resources_** : <br />
+ 	1. Check out [Angular 9: Lazy Loading Components](https://johnpapa.net/angular-9-lazy-loading-components/) by [John Papa](https://github.com/johnpapa). <br />
+ 	2. Check out [Lazy load Angular components](https://medium.com/angular-in-depth/lazy-load-components-in-angular-596357ab05d8) by [Kevin Kreuzer](https://medium.com/@kevinkreuzer).
 
 <!-- ROADMAP -->
 ## Roadmap
