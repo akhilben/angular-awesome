@@ -571,6 +571,24 @@ Fear not! Angular have a magic potion up the sleeves just for **automatically ma
 <p>{{ (someOtherObservable$ | async).value }}</p>
 ```
 
+<br />
+
+### 5. Lazy load modules
+Lazy loading is said to be one of the most powerfull feature of Angular. It's recommended to **lazy load your feature modules whenever it's possible to.**
+
+#### Why?
+By default, webpack (the default bundler of Angular), bundles all your code into one large bundle. This will largely increase the initial rendering time since the browser has to downlaod that one single large file initially itself, leading to a bad user experience :rage:.
+
+#### Solution:
+Angular offers a powefull solution to that problem. **Split your code to separate bundles and load them on demand :muscle:.** And we do that via 'lazy loading'. This will **reduce the initial rendering time** since the browser has to download only a small file that contains the code for just your initial page. The browser will be fed the other files on-demand, i.e, when the user needs it (by navigating to a certain page).
+
+```js
+// Note that the below syntax is valid for Angular 8 and above. 
+{ path: 'home',  loadChildren: () => import('./home.module').then(module => module.HomeModule) }
+```
+
+> :page_facing_up: **_Note_** : **Do not lazy load the default route**, as the browser will have to download an extra lazy loaded chunk after downloading the main chunk and parse it. This will slow down the initial rendering time.
+
 <!-- ROADMAP -->
 ## Roadmap
 
