@@ -609,6 +609,39 @@ Use preloading strategy to **load lazy loaded modules in the background after al
 	```
 	
 2. **Custom strategy** : We may not always want to preload all the modules. Some modules might be a less used module which we don't wan't to preload. Or you may want to preload the modules based on some conditions, say, by checking user's bandwidth. We can write a custom preloading strategy for that :heart_eyes_cat:.
+	```js
+	import { Observable } from 'rxjs/Observable';
+	import { PreloadingStrategy, Route } from '@angular/router';
+
+	export class CustomPreloadStrategy implements PreloadingStrategy {
+	  preload(route: Route, preload: Function): Observable<any> {
+	    if (someCondition) {
+	      return preload();
+	    }	
+	    return Observable.of(null);
+	  }
+	}
+	```
+	
+	And in the `AppModule`:
+	
+	```js
+	imports: [
+	  ...
+	  RouterModule.forRoot(routes, { preloadingStrategy: CustomPreloadStrategy })
+	],
+	```
+	
+<br />
+
+> :bulb: **_Tips_** : It's highly recommended to use [ngx-quicklink](https://github.com/mgechev/ngx-quicklink) by [Minko Gechev](https://github.com/mgechev) which automatically downloads the lazy-loaded modules associated with all the visible links on the screen using [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). It also checks if the user isn't on a slow connection before preloading :fire:. <br />
+Or, make use of machine learning by predictively preloading modules with [Guess.js](https://github.com/guess-js/guess) :crystal_ball:.
+
+<br />
+
+> :gift: **_Resources_** : <br />
+ 	1. Check out [Preloading in Angular](https://alligator.io/angular/preloading/) on [alligator.io](https://alligator.io/). <br />
+ 	2. Check out [Route preloading strategies in Angular](https://web.dev/route-preloading-in-angular/) by [Minko Gechev](https://web.dev/authors/mgechev/).
 
 <!-- ROADMAP -->
 ## Roadmap
