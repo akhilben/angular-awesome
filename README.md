@@ -589,6 +589,27 @@ Angular offers a powefull solution to that problem. **Split your code to separat
 
 > :page_facing_up: **_Note_** : **Do not lazy load the default route**, as the browser will have to download an extra lazy loaded chunk after downloading the main chunk and parse it. This will slow down the initial rendering time.
 
+<br />
+
+### Use preloading strategy
+Preloading strategy is a concept which can be used along with lazy loading to make our application much more faster. You can use Angular's default `PreloadAllModules` strategy, or you can even write your own cutom strategies depending upon the requirements :truck:.
+
+#### Why
+When we lazy load a module, there is a possible latency since the browser loads the lazy loaded chunk and parse it only when we navigate to that module. This will lead to a bad user experience since the user might be required to wait for sometime until the page gets loaded :construction:.
+
+#### Solution:
+Use preloading strategy to **load lazy loaded modules in the background after all the eager loaded modules are ready**. This eliminates the possible latency when navigating to a lazy loaded module, but still has the benefit of faster initial loading of the app because the initial module(s) get loaded first. Such a cool feature :snowflake:! We can do that in various ways:
+
+1. **PreloadAllModules** : This is the default preloading strategy of Angular. This will load all the lazy loaded modules in the background once all the eager loaded modules are ready.
+	```js
+	imports: [
+	  ...
+	  RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+	],
+	```
+	
+2. **Custom strategy** : We may not always want to preload all the modules. Some modules might be a less used module which we don't wan't to preload. Or you may want to preload the modules based on some conditions, say, by checking user's bandwidth. We can write a custom preloading strategy for that :heart_eyes_cat:.
+
 <!-- ROADMAP -->
 ## Roadmap
 
