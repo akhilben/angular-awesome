@@ -770,6 +770,36 @@ constructor(private cdRef: ChangeDetectorRef) {
 
 > :gift: **_Resources_** : Check out [Everything you need to know about change detection in Angular](https://indepth.dev/everything-you-need-to-know-about-change-detection-in-angular/) by [Max Koretskyi](https://indepth.dev/author/maxkoretskyi/).
 
+<br />
+
+### 10. Run outside angular
+Angular make use of `NgZone`, which is a wrapper for `Zone` APIs, to detect when to run change detection cycle. Zones wrap asynchronous browser APIs, and notifies when an asynchronous task has started or ended. Angular takes advantage of these APIs to get notified when any asynchronous task like xhr calls or any user events is done to run it's change detection mechanism :angel:. So it is recommended to use the `runOutsideAngular` method of the `NgZone` instance to minimize running change detection cycles.
+
+#### Why?
+For the same reason in the above section - running change detection cycle frequently when data changes occur constantly is very costly and can lead to performance issues :small_red_triangle_down:.
+
+#### Solution:
+We can run complex functions that don't necessarily require a change detection cycle to run (inorder to reflect something in the view) inside the callback of `runOutsideAngular()`.
+
+```js
+constructor(private zone: NgZone) {
+}
+
+someComplexFunction() {
+  this.zone.runOutsideAngular(() => {
+    // your complex logic
+  });
+}
+```
+<br />
+
+> :page_facing_up: **_Note_** : Make use of `run()` method to explicitely run the change detection cycle if required.
+
+<br />
+
+> :gift: **_Resources_** : Check out [Using Zones in Angular for better performance](https://blog.thoughtram.io/angular/2017/02/21/using-zones-in-angular-for-better-performance.html) by [Pascal Precht](https://twitter.com/PascalPrecht).
+
+
 <!-- ROADMAP -->
 ## Roadmap
 
