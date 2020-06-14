@@ -713,6 +713,36 @@ Let's check out how to lazy load components through the below steps :
 > :gift: **_Resources_** : <br />
  	1. Check out [Angular 9: Lazy Loading Components](https://johnpapa.net/angular-9-lazy-loading-components/) by [John Papa](https://github.com/johnpapa). <br />
  	2. Check out [Lazy load Angular components](https://medium.com/angular-in-depth/lazy-load-components-in-angular-596357ab05d8) by [Kevin Kreuzer](https://medium.com/@kevinkreuzer).
+	
+<br />
+
+### 8. Use ChangeDetectionStrategy.OnPush
+Angular gives us an option to choose the `ChangeDetectionStrategy` of a component. By default, the value is `Default`. It's recommended to change that to `OnPush` strategy to maximise the performance :ok_hand:.
+
+#### Why?
+By default, Angular run its change detection cycle on all the components whenever there occurs some changes, like a simple click event or when we recieve data from ajax calls. Running change detection cycle on every such events are costly and may affect the performance when the app grows.
+
+#### Solution:
+We can minimize these checks by setting our component's `changeDetection` to `ChangeDetectionStrategy.OnPush`. This will tell Angular to run change detection cycle only when:
+
+1. The `Input` reference changes.
+2. Some event occurs in the component or any of the children.
+
+```js
+@Component({
+  selector: 'app-selector',
+  ...
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+```
+<br />
+
+> :page_facing_up: **_Note_** : Make use of `detectChanges()` or `markForCheck()` functions of `ChangeDetectorRef` to explicitely run the change detection cycle if required.
+
+<br />
+
+> :gift: **_Resources_** : Check out [🚀 A Comprehensive Guide to Angular onPush Change Detection Strategy](https://netbasal.com/a-comprehensive-guide-to-angular-onpush-change-detection-strategy-5bac493074a4) by [Netanel Basal](https://netbasal.com/@NetanelBasal).
+
 
 <!-- ROADMAP -->
 ## Roadmap
