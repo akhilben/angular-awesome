@@ -743,6 +743,32 @@ We can minimize these checks by setting our component's `changeDetection` to `Ch
 
 > :gift: **_Resources_** : Check out [🚀 A Comprehensive Guide to Angular onPush Change Detection Strategy](https://netbasal.com/a-comprehensive-guide-to-angular-onpush-change-detection-strategy-5bac493074a4) by [Netanel Basal](https://netbasal.com/@NetanelBasal).
 
+<br />
+
+### 9. Disable Change Detection
+It is recommended to detach and reattach the change detector whenever required, for components where data changes happen frequently :wrench:.
+
+#### Why?
+Running change detection cycle frequently when data changes occur constantly is very costly and can lead to performance issues.
+
+#### Solution:
+Use the `detach()` method of `ChangeDetectorRef` to detach the change detector so that Angular won't run any change detection cycle unless you explicitely says to, by calling `reattach()` or `detectChanges()`. The `reattach()` method can be used to re attacch the change detector when some frequent complex calculations have been finished. The `detectChanges()` can be used to detect the changes once, whenever required.
+
+```js
+constructor(private cdRef: ChangeDetectorRef) {
+  cdRef.detach();
+  
+  // to check and update view every 5sec for a frequently changing component
+  // or use this.cdRef.reattach() when frequent complex calculations have been finished
+  setInterval(() => {
+    this.cdRef.detectChanges();
+  }, 5000);
+}
+```
+
+<br />
+
+> :gift: **_Resources_** : Check out [Everything you need to know about change detection in Angular](https://indepth.dev/everything-you-need-to-know-about-change-detection-in-angular/) by [Max Koretskyi](https://indepth.dev/author/maxkoretskyi/).
 
 <!-- ROADMAP -->
 ## Roadmap
