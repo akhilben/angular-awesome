@@ -745,11 +745,11 @@ We can minimize these checks by setting our component's `changeDetection` to `Ch
 
 <br />
 
-### 9. Disable Change Detection
+### 9. Disable change detection
 It is recommended to detach and reattach the change detector whenever required, for components where data changes happen frequently :wrench:.
 
 #### Why?
-Running change detection cycle frequently when data changes occur constantly is very costly and can lead to performance issues.
+Running change detection cycle frequently when data changes occur constantly is very costly and can lead to performance issues :small_red_triangle_down:.
 
 #### Solution:
 Use the `detach()` method of `ChangeDetectorRef` to detach the change detector so that Angular won't run any change detection cycle unless you explicitely says to, by calling `reattach()` or `detectChanges()`. The `reattach()` method can be used to re attacch the change detector when some frequent complex calculations have been finished. The `detectChanges()` can be used to detect the changes once, whenever required.
