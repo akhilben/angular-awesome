@@ -518,8 +518,9 @@ export class SomeService {
 
 > :gift: **_Resources_** : Check out [Dependency injection with Angular 9](https://blog.angulartraining.com/dependency-injection-with-angular-9-63ce524496d9) by [Alain Chautard](https://blog.angulartraining.com/@angulartraining)
 
+<br />
 
-### 3. Unsubscribe observables
+### 4. Unsubscribe observables
 When you subscribe to observables, make sure to unsubscribe them in the `ngOnDestroy` method :eyes:.
 
 #### Why?
@@ -583,7 +584,7 @@ There are various ways to unsubscribe observables:
 
 <br />
 
-### 4. Use async pipe
+### 5. Use async pipe
 In the previous section, we learnt about unsubscribing observables. But there is a much more efficient way for the same problem, the magical `async` pipe :dizzy:. It's recommended to avoid subscribing to observables from components and instead subscribe to the observables from the template.
 
 #### Why?
@@ -600,7 +601,7 @@ Fear not! Angular have a magic potion up the sleeves just for **automatically ma
 
 <br />
 
-### 5. Lazy load modules
+### 6. Lazy load modules
 Lazy loading is said to be one of the most powerfull feature of Angular. It's recommended to **lazy load your feature modules whenever it's possible to.**
 
 #### Why?
@@ -618,7 +619,7 @@ Angular offers a powefull solution to that problem. **Split your code to separat
 
 <br />
 
-### 6. Use preloading strategy
+### 7. Use preloading strategy
 Preloading strategy is a concept which can be used along with lazy loading to make our application much more faster. You can use Angular's default `PreloadAllModules` strategy, or you can even write your own cutom strategies depending upon the requirements :truck:.
 
 #### Why
@@ -672,7 +673,7 @@ Or, make use of machine learning by predictively preloading modules with [Guess.
 	
 <br />
 
-### 7. Lazy load components
+### 8. Lazy load components
 
 > :page_facing_up: **_Note_** : This feature is only supported in Angular 9+.
 
@@ -743,7 +744,7 @@ Let's check out how to lazy load components through the below steps :
 	
 <br />
 
-### 8. Use ChangeDetectionStrategy.OnPush
+### 9. Use ChangeDetectionStrategy.OnPush
 Angular gives us an option to choose the `ChangeDetectionStrategy` of a component. By default, the value is `Default`. It's recommended to change that to `OnPush` strategy to maximise the performance :ok_hand:.
 
 #### Why?
@@ -772,7 +773,7 @@ We can minimize these checks by setting our component's `changeDetection` to `Ch
 
 <br />
 
-### 9. Disable change detection
+### 10. Disable change detection
 It is recommended to detach and reattach the change detector whenever required, for components where data changes happen frequently :wrench:.
 
 #### Why?
@@ -799,7 +800,7 @@ constructor(private cdRef: ChangeDetectorRef) {
 
 <br />
 
-### 10. Run outside angular
+### 11. Run outside angular
 Angular make use of `NgZone`, which is a wrapper for `Zone` APIs, to detect when to run change detection cycle. Zones wrap asynchronous browser APIs, and notifies when an asynchronous task has started or ended. Angular takes advantage of these APIs to get notified when any asynchronous task like xhr calls or any user events is done to run it's change detection mechanism :angel:. So it is recommended to use the `runOutsideAngular` method of the `NgZone` instance to minimize running change detection cycles.
 
 #### Why?
