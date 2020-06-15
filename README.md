@@ -492,6 +492,33 @@ trackByFn(index: number, book: Book) {
 
 <br />
 
+### 3. Use tree-shakable providers
+Make your services **tree-shakable by using the `providedIn` attribute** of the `@Injectable()` decorator instead of explicitely specifying in the `providers` attribute of a module/component :palm_tree:.
+
+#### Why?
+If your service is tree-shakable, Angular can exclude the code in the final build bundle provided that it's not used anywhere. This can help reduce the overall bundle size :tada:.
+
+#### Solution:
+By default, value for `providedIn` is `root`. This will provide your service at the root injector level and can be injected anywhere in your application. Angular 9+ comes with a couple of other options as well:
+
+1. `platform` - The use case comes when you are running multiple [angular elements (web components)](https://angular.io/guide/elements) in a single page. Your service will now become a global singleton at the platform-level, and is shared between all of the Angular applications on your page.
+2. `any` - Angular will provide a unique instance of your service for every module that injects it.
+
+```js
+import { Injectable } from '@angular/core';
+
+@Injectable({  
+   providedIn: 'root' // or 'any' or 'platform'
+})
+export class SomeService { 
+}
+```
+
+<br />
+
+> :gift: **_Resources_** : Check out [Dependency injection with Angular 9](https://blog.angulartraining.com/dependency-injection-with-angular-9-63ce524496d9) by [Alain Chautard](https://blog.angulartraining.com/@angulartraining)
+
+
 ### 3. Unsubscribe observables
 When you subscribe to observables, make sure to unsubscribe them in the `ngOnDestroy` method :eyes:.
 
