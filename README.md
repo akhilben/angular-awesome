@@ -827,6 +827,32 @@ someComplexFunction() {
 
 > :gift: **_Resources_** : Check out [Using Zones in Angular for better performance](https://blog.thoughtram.io/angular/2017/02/21/using-zones-in-angular-for-better-performance.html) by [Pascal Precht](https://twitter.com/PascalPrecht).
 
+<br />
+
+### Other performance optimisation techniques:
+
+#### 1. Add API caching mechanisms
+While most of the time it is, not all the API responses are dynamic. Sometimes some of the responses do not change often. We can store those values from the API by adding a caching mechanism and return that when subsequent calls to that APIs are made. In this way we can reduce the ajax calls and significantly improve the speed of our application as we don't have to wait for the network.
+
+<br />
+
+> :bulb: **_Tip_** : Use [cashew](https://github.com/ngneat/cashew) 🐿, an awesome, flexible library that caches HTTP requests in Angular. Caching is nut a problem anymore :wink:!
+
+<br />
+
+#### 2. Use service workers
+Make use of service workers to cache our static assets(images, icons and fonts) and build artifacts(JS and CSS bundles). This can significantly improve the rendering time and make our application lightning fast :zap: by reducing the number of network requests needed. You can even make your application work when offline serving from the saved cache :beers:!
+
+<br /> 
+
+We can make our application a Progressive Web App (PWA), by adding `@angular/pwa` package. Play with the generated `ngsw-config.json` to to define what and how to cache. With this feature, we can add our web application to our mobile phone's home screen and make our web app to look and feel like a native mobile application by adding application icons, splash screens etc. We can even release the application in Google Playstore just like any mobile application with [Trusted Web Activity](https://developers.google.com/web/android/trusted-web-activity) :scream: :scream:!.
+
+<br />
+
+> :gift: **_Resources_** : <br />
+1. Check out [Getting started with service workers](https://angular.io/guide/service-worker-getting-started) in the official Angular docs.
+2. Check out [Angular Service Worker - Step-By-Step Guide for turning your Application into a PWA](https://blog.angular-university.io/angular-service-worker/) on [Angular University](https://blog.angular-university.io/).
+3. Check out [How to build Progressive Web Apps with Angular.](https://scotch.io/tutorials/how-to-build-progressive-web-apps-with-angular) by [Eniola Lucas](https://scotch.io/@enirate).
 
 <!-- ROADMAP -->
 ## Roadmap
