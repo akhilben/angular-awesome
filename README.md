@@ -850,9 +850,9 @@ We can make our application a Progressive Web App (PWA), by adding `@angular/pwa
 <br />
 
 > :gift: **_Resources_** : <br />
-1. Check out [Getting started with service workers](https://angular.io/guide/service-worker-getting-started) in the official Angular docs.
-2. Check out [Angular Service Worker - Step-By-Step Guide for turning your Application into a PWA](https://blog.angular-university.io/angular-service-worker/) on [Angular University](https://blog.angular-university.io/).
-3. Check out [How to build Progressive Web Apps with Angular.](https://scotch.io/tutorials/how-to-build-progressive-web-apps-with-angular) by [Eniola Lucas](https://scotch.io/@enirate).
+	1. Check out [Getting started with service workers](https://angular.io/guide/service-worker-getting-started) in the official Angular docs. <br />
+	2. Check out [Angular Service Worker - Step-By-Step Guide for turning your Application into a PWA](https://blog.angular-university.io/angular-service-worker/) on [Angular University](https://blog.angular-university.io/). <br />
+	3. Check out [How to build Progressive Web Apps with Angular.](https://scotch.io/tutorials/how-to-build-progressive-web-apps-with-angular) by [Eniola Lucas](https://scotch.io/@enirate).
 
 <!-- ROADMAP -->
 ## Roadmap
