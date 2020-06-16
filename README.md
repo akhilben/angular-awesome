@@ -951,6 +951,9 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 
 </details>
 
+<!-- Main details tag close -->
+</details>
+
 <br />
 
 > :gift: **_Resources_** : <br />
@@ -971,9 +974,6 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 |	6. Use a combination of `ChangeDetectionStrategy.OnPush`, `ChangeDetectorRef` and `NgZone` methods to minimize the number of change detection cycles. |
 |	7. Use service workers, app shell and api caching to further improve the performance. |
 
-
-<!-- Main details tag close -->
-</details>
 
 <!-- ROADMAP -->
 ## Roadmap
