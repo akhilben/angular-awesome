@@ -35,11 +35,27 @@
 
 	* [Function calls in templates](#1-avoid-function-calls-in-templates)
 	
-	* [Using trackBy](#2-use-trackby-with-ngfor)
+	* [Use trackBy](#2-use-trackby-with-ngfor)
 	
-	* [Unsubscribing observables](#3-unsubscribe-observables)
+	* [Tree-shakable providers](#3-use tree-shakable-providers)
 	
-	* [Async pipe](#4-use-async-pipe)
+	* [Unsubscribe observables](#4-unsubscribe-observables)
+	
+	* [Async pipe](#5-use-async-pipe)
+	
+	* [Lazy load modules](#6-lazy-load-modules)
+	
+	* [Preloading strategy](#7-use-preloading-strategy)
+	
+	* [Lazy load components](#8-lazy-load-components)
+	
+	* [ChangeDetectionStrategy.OnPush](#9-use-changedetectionstrategy.onPush)
+	
+	* [Disable change detection](#10-disable-change-detection)
+	
+	* [Run outside angular](#11-run-outside-angular)
+	
+	* [Other techniques](#other-performance-optimisation-techniques)
 
 * [Contributing](#contributing)
 
@@ -865,7 +881,7 @@ someComplexFunction() {
 
 </details>
 
-### Other performance optimisation techniques:
+### Other performance optimisation techniques
 <details>
   <summary>Click to expand</summary>
 
