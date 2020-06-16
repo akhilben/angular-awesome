@@ -871,7 +871,7 @@ We can make use of the Angular CLI to automatically generate an app shell for us
 	
 <br />
 
-#### Web Workers
+#### 4. Web Workers
 By default, our code usually runs in a single thread. This leaves behind a problem of unresponsive ui if some computationally intensive tasks are being performed. But thanks to Angular's support for web workers, we can run such tasks in another thread in the background without blocking our main execution thread :sun_with_face:. In huge and complex applications, we can even go to an extend where we run our entire application (including change detection) in a Web Worker and leave the main UI thread responsible only for rendering.
 
 <br />
