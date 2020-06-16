@@ -428,12 +428,15 @@ src/
 <br />
 
 ## :zap: Performance Cheatsheet
-<details>
+<details open>
   <summary>Click to expand</summary>
 
 It's a known fact that Angular is a highly performant framework. But we can make it better by following some best practices. Let's jump in to the list of such best practices :nerd_face: :
 
 ### 1. Avoid function calls in templates.
+<details>
+  <summary>Click to expand</summary>
+
 It is not a good practice to write function calls for computing values inside the templates. And if it's a complex function, a big NO :skull:.
 
 ```html
@@ -467,9 +470,12 @@ There may be some cases where this is unavoidable, but for most cases this can b
 	> :gift: **_Resources_** : Check out [The essential difference between pure and impure pipes in Angular and why that matters](https://indepth.dev/the-essential-difference-between-pure-and-impure-pipes-in-angular-and-why-that-matters/) by [Max Koretskyi
 ](https://indepth.dev/author/maxkoretskyi/)
 
-<br />
+</details>
 
 ### 2. Use trackBy with ngFor
+<details>
+  <summary>Click to expand</summary>
+
 When using `*ngFor` to loop over an array which might change over time, it is recommended to use `trackBy` **to track array items with unique identifier**.
 
 #### Why?
@@ -493,9 +499,12 @@ trackByFn(index: number, book: Book) {
 
 > :gift: **_Resources_** : Check out [Angular — Improve Performance with trackBy](https://netbasal.com/angular-2-improve-performance-with-trackby-cc147b5104e5) by [Netanel Basal](https://netbasal.com/@NetanelBasal)
 
-<br />
+</details>
 
 ### 3. Use tree-shakable providers
+<details>
+  <summary>Click to expand</summary>
+
 Make your services **tree-shakable by using the `providedIn` attribute** of the `@Injectable()` decorator instead of explicitely specifying in the `providers` attribute of a module/component :palm_tree:.
 
 #### Why?
@@ -521,9 +530,12 @@ export class SomeService {
 
 > :gift: **_Resources_** : Check out [Dependency injection with Angular 9](https://blog.angulartraining.com/dependency-injection-with-angular-9-63ce524496d9) by [Alain Chautard](https://blog.angulartraining.com/@angulartraining)
 
-<br />
+</details>
 
 ### 4. Unsubscribe observables
+<details>
+  <summary>Click to expand</summary>
+
 When you subscribe to observables, make sure to unsubscribe them in the `ngOnDestroy` method :eyes:.
 
 #### Why?
@@ -585,9 +597,12 @@ There are various ways to unsubscribe observables:
 
 > :gift: **_Resources_** : Check out [6 Ways to Unsubscribe from Observables in Angular](https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f) by [Chidume Nnamdi](https://blog.bitsrc.io/@kurtwanger40)
 
-<br />
+</details>
 
 ### 5. Use async pipe
+<details>
+  <summary>Click to expand</summary>
+
 In the previous section, we learnt about unsubscribing observables. But there is a much more efficient way for the same problem, the magical `async` pipe :dizzy:. It's recommended to avoid subscribing to observables from components and instead subscribe to the observables from the template.
 
 #### Why?
@@ -602,9 +617,12 @@ Fear not! Angular have a magic potion up the sleeves just for **automatically ma
 <p>{{ (someOtherObservable$ | async).value }}</p>
 ```
 
-<br />
+</details>
 
 ### 6. Lazy load modules
+<details>
+  <summary>Click to expand</summary>
+
 Lazy loading is said to be one of the most powerfull feature of Angular. It's recommended to **lazy load your feature modules whenever it's possible to.**
 
 #### Why?
@@ -620,9 +638,12 @@ Angular offers a powefull solution to that problem. **Split your code to separat
 
 > :page_facing_up: **_Note_** : **Do not lazy load the default route**, as the browser will have to download an extra lazy loaded chunk after downloading the main chunk and parse it. This will slow down the initial rendering time.
 
-<br />
+</details>
 
 ### 7. Use preloading strategy
+<details>
+  <summary>Click to expand</summary>
+
 Preloading strategy is a concept which can be used along with lazy loading to make our application much more faster. You can use Angular's default `PreloadAllModules` strategy, or you can even write your own cutom strategies depending upon the requirements :truck:.
 
 #### Why
@@ -674,11 +695,14 @@ Or, make use of machine learning by predictively preloading modules with [Guess.
  	1. Check out [Preloading in Angular](https://alligator.io/angular/preloading/) on [alligator.io](https://alligator.io/). <br />
  	2. Check out [Route preloading strategies in Angular](https://web.dev/route-preloading-in-angular/) by [Minko Gechev](https://web.dev/authors/mgechev/).
 	
-<br />
+</details>
 
 ### 8. Lazy load components
 
 > :page_facing_up: **_Note_** : This feature is only supported in Angular 9+.
+
+<details>
+  <summary>Click to expand</summary>
 
 Yes, it's also possible to lazy load components or modules without a route with Angular's Ivy engine :fire:. We can use this awesome feature to reduce the load/rendering time again!
 
@@ -745,9 +769,12 @@ Let's check out how to lazy load components through the below steps :
  	1. Check out [Angular 9: Lazy Loading Components](https://johnpapa.net/angular-9-lazy-loading-components/) by [John Papa](https://github.com/johnpapa). <br />
  	2. Check out [Lazy load Angular components](https://medium.com/angular-in-depth/lazy-load-components-in-angular-596357ab05d8) by [Kevin Kreuzer](https://medium.com/@kevinkreuzer).
 	
-<br />
+</details>
 
 ### 9. Use ChangeDetectionStrategy.OnPush
+<details>
+  <summary>Click to expand</summary>
+
 Angular gives us an option to choose the `ChangeDetectionStrategy` of a component. By default, the value is `Default`. It's recommended to change that to `OnPush` strategy to maximise the performance :ok_hand:.
 
 #### Why?
@@ -774,9 +801,12 @@ We can minimize these checks by setting our component's `changeDetection` to `Ch
 
 > :gift: **_Resources_** : Check out [🚀 A Comprehensive Guide to Angular onPush Change Detection Strategy](https://netbasal.com/a-comprehensive-guide-to-angular-onpush-change-detection-strategy-5bac493074a4) by [Netanel Basal](https://netbasal.com/@NetanelBasal).
 
-<br />
+</details>
 
 ### 10. Disable change detection
+<details>
+  <summary>Click to expand</summary>
+
 It is recommended to detach and reattach the change detector whenever required, for components where data changes happen frequently :wrench:.
 
 #### Why?
@@ -801,9 +831,12 @@ constructor(private cdRef: ChangeDetectorRef) {
 
 > :gift: **_Resources_** : Check out [Everything you need to know about change detection in Angular](https://indepth.dev/everything-you-need-to-know-about-change-detection-in-angular/) by [Max Koretskyi](https://indepth.dev/author/maxkoretskyi/).
 
-<br />
+</details>
 
 ### 11. Run outside angular
+<details>
+  <summary>Click to expand</summary>
+
 Angular make use of `NgZone`, which is a wrapper for `Zone` APIs, to detect when to run change detection cycle. Zones wrap asynchronous browser APIs, and notifies when an asynchronous task has started or ended. Angular takes advantage of these APIs to get notified when any asynchronous task like xhr calls or any user events is done to run it's change detection mechanism :angel:. So it is recommended to use the `runOutsideAngular` method of the `NgZone` instance to minimize running change detection cycles.
 
 #### Why?
@@ -830,9 +863,11 @@ someComplexFunction() {
 
 > :gift: **_Resources_** : Check out [Using Zones in Angular for better performance](https://blog.thoughtram.io/angular/2017/02/21/using-zones-in-angular-for-better-performance.html) by [Pascal Precht](https://twitter.com/PascalPrecht).
 
-<br />
+</details>
 
 ### Other performance optimisation techniques:
+<details>
+  <summary>Click to expand</summary>
 
 #### 1. Add API caching mechanisms
 While most of the time it is, not all the API responses are dynamic. Sometimes some of the responses do not change often. We can store those values from the API by adding a caching mechanism and return that when subsequent calls to that APIs are made. In this way we can reduce the ajax calls and significantly improve the speed of our application as we don't have to wait for the network.
@@ -898,8 +933,9 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 	2. Check out [Examples of how to use WebAssembly within Angular](https://github.com/boyanio/angular-wasm) by [Boyan Mihaylov](https://github.com/boyanio). <br />
 	3. Check out [Using Web Assembly to speed up your Angular Application](https://malcoded.com/posts/web-assembly-angular/) by [Lukas Marx](https://twitter.com/malcoded).
 
-<br />
+</details>
 
+<!-- Main details tag close -->
 </details>
 
 <!-- ROADMAP -->
