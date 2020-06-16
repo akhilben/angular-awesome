@@ -37,7 +37,7 @@
 	
 	* [Use trackBy](#2-use-trackby-with-ngfor)
 	
-	* [Tree shakable providers](#3-use tree-shakable-providers)
+	* [Tree shakable providers](#3-use-tree-shakable-providers)
 	
 	* [Unsubscribe observables](#4-unsubscribe-observables)
 	
