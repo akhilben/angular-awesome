@@ -37,7 +37,7 @@
 	
 	* [Use trackBy](#2-use-trackby-with-ngfor)
 	
-	* [Tree-shakable providers](#3-use tree-shakable-providers)
+	* [Tree shakable providers](#3-use tree-shakable-providers)
 	
 	* [Unsubscribe observables](#4-unsubscribe-observables)
 	
@@ -49,7 +49,7 @@
 	
 	* [Lazy load components](#8-lazy-load-components)
 	
-	* [ChangeDetectionStrategy.OnPush](#9-use-changedetectionstrategy.onPush)
+	* [ChangeDetectionStrategy.OnPush](#9-use-changedetectionstrategyonPush)
 	
 	* [Disable change detection](#10-disable-change-detection)
 	
