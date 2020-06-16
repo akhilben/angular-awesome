@@ -880,7 +880,7 @@ By default, our code usually runs in a single thread. This leaves behind a probl
 
 <br />
 
-#### Web Assembly
+#### 5. Web Assembly
 
 > :warning: **_Warning_** : Although most of the modern browsers support web assembly, it's still in a premature state and might be unstable. So use at your own risk :grin:!
 
