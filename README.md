@@ -845,7 +845,7 @@ Make use of service workers to cache our static assets(images, icons and fonts) 
 
 <br /> 
 
-We can make our application a Progressive Web App (PWA), by adding `@angular/pwa` package. Play with the generated `ngsw-config.json` to to define what and how to cache. With this feature, we can add our web application to our mobile phone's home screen and make our web app to look and feel like a native mobile application by adding application icons, splash screens etc. We can even release the application in Google Playstore just like any mobile application with [Trusted Web Activity](https://developers.google.com/web/android/trusted-web-activity) :scream: :scream:!.
+We can make our application a Progressive Web App (PWA), by adding `@angular/pwa` package. Play with the generated `ngsw-config.json` to to define what and how to cache. With this feature, we can add our web application to our mobile phone's home screen and make our web app to look and feel like a native mobile application by adding application icons, splash screens etc. We can even release the application in Google Playstore just like any mobile application with [Trusted Web Activity](https://developers.google.com/web/android/trusted-web-activity) :scream: :scream:!
 
 <br />
 
@@ -853,6 +853,23 @@ We can make our application a Progressive Web App (PWA), by adding `@angular/pwa
 	1. Check out [Getting started with service workers](https://angular.io/guide/service-worker-getting-started) in the official Angular docs. <br />
 	2. Check out [Angular Service Worker - Step-By-Step Guide for turning your Application into a PWA](https://blog.angular-university.io/angular-service-worker/) on [Angular University](https://blog.angular-university.io/). <br />
 	3. Check out [How to build Progressive Web Apps with Angular.](https://scotch.io/tutorials/how-to-build-progressive-web-apps-with-angular) by [Eniola Lucas](https://scotch.io/@enirate).
+	
+<br />
+
+#### 3. App Shell
+We can improve the user experience by quickly launching a static rendered page (a skeleton common to all pages) while the browser downloads the full client version and switches to it automatically after the code loads. This will significantly reduce the time for the first paint since the browser just need to render HTML and CSS witgout the need for initialize any Javascript. Such a cool feature :hushed:!
+
+<br />
+
+We can make use of the Angular CLI to automatically generate an app shell for us with the command `ng generate app-shell`. Or thinking ahead, we can make use of Angular Universal to pre-render a static app shell :milky_way:. Do check out the resources to know more about it.
+
+<br />
+
+> :gift: **_Resources_** : <br />
+	1. Check out [App shell](https://angular.io/guide/app-shell) in the official Angular docs. <br />
+	2. Check out [Angular App Shell - Boosting Application Startup Performance](https://blog.angular-university.io/angular-app-shell/) on [Angular University](https://blog.angular-university.io/). 
+	
+<br />
 
 <!-- ROADMAP -->
 ## Roadmap
