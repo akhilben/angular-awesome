@@ -951,6 +951,27 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 
 </details>
 
+<br />
+
+> :gift: **_Resources_** : <br />
+	1. Do check out this awesome repo : [angular-performance-checklist](https://github.com/mgechev/angular-performance-checklist) by [Minko Gechev](https://github.com/mgechev) and find out more pro performance tips :heart_eyes:. <br />
+	2. Check out [Best practices for a clean and performant Angular application](https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/) by [Vamsi Vempati](https://twitter.com/_VamsiVempati_). <br />
+	3. Check out [Optimizing the Performance of Your Angular Application](https://netbasal.com/optimizing-the-performance-of-your-angular-application-f222f1c16354) by [Netanel Basal](https://netbasal.com/@NetanelBasal).
+	4. Check out [15 Angular Performance Tips & Tricks](https://angular-guru.com/blog/angular-performance-tips) on [The Angular Guru](https://angular-guru.com/).
+	
+<br />
+
+| :heart: _Takeaway_ : |
+| :--- |
+|	1. Make use of pure pipes to avoid function calls in templates |
+|	2. Use `trackBy` with `*ngFor` to minimize DOM manipulations by tracking array items with a unique identifier. |
+|	3. Use `providedIn` attribute to make your services tree shakable. |
+|	4. Unsubscribe your observables to avoid memory leaks and use async pipe whenever possible to make Angular handle the subscriptions. |
+|	5. Lazy load modules and components to separate build bundles and load them on demand. Make use of preloading strategies to avoid possible latency while loading the lazy loaded chunk. |
+|	6. Use a combination of `ChangeDetectionStrategy.OnPush`, `ChangeDetectorRef` and `NgZone` methods to minimize the number of change detection cycles. |
+|	7. Use service workers, app shell and api caching to further improve the performance. |
+
+
 <!-- Main details tag close -->
 </details>
 
