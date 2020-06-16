@@ -857,7 +857,7 @@ We can make our application a Progressive Web App (PWA), by adding `@angular/pwa
 <br />
 
 #### 3. App Shell
-We can improve the user experience by quickly launching a static rendered page (a skeleton common to all pages) while the browser downloads the full client version and switches to it automatically after the code loads. This will significantly reduce the time for the first paint since the browser just need to render HTML and CSS witgout the need for initialize any Javascript. Such a cool feature :hushed:!
+We can improve the user experience by quickly launching a static rendered page (a skeleton common to all pages) while the browser downloads the full client version and switches to it automatically after the code loads. This will significantly reduce the time for the first paint since the browser just need to render HTML and CSS without the need for initialize any Javascript. Such a cool feature :hushed:!
 
 <br />
 
@@ -870,6 +870,14 @@ We can make use of the Angular CLI to automatically generate an app shell for us
 	2. Check out [Angular App Shell - Boosting Application Startup Performance](https://blog.angular-university.io/angular-app-shell/) on [Angular University](https://blog.angular-university.io/). 
 	
 <br />
+
+#### Web Workers
+By default, our code usually runs in a single thread. This leaves behind a problem of unresponsive ui if some computationally intensive tasks are being performed. But thanks to Angular's support for web workers, we can run such tasks in another thread in the background without blocking our main execution thread :sun_with_face:. In huge and complex applications, we can even go to an extend where we run our entire application (including change detection) in a Web Worker and leave the main UI thread responsible only for rendering.
+
+<br />
+
+> :gift: **_Resources_** : Check out [Web Workers in Angular](https://angular.io/guide/web-worker) in the official Angular docs. 
+
 
 <!-- ROADMAP -->
 ## Roadmap
