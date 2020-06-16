@@ -428,6 +428,9 @@ src/
 <br />
 
 ## :zap: Performance Cheatsheet
+<details>
+  <summary>Click to expand</summary>
+
 It's a known fact that Angular is a highly performant framework. But we can make it better by following some best practices. Let's jump in to the list of such best practices :nerd_face: :
 
 ### 1. Avoid function calls in templates.
@@ -896,6 +899,8 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 	3. Check out [Using Web Assembly to speed up your Angular Application](https://malcoded.com/posts/web-assembly-angular/) by [Lukas Marx](https://twitter.com/malcoded).
 
 <br />
+
+</details>
 
 <!-- ROADMAP -->
 ## Roadmap
