@@ -876,8 +876,26 @@ By default, our code usually runs in a single thread. This leaves behind a probl
 
 <br />
 
-> :gift: **_Resources_** : Check out [Web Workers in Angular](https://angular.io/guide/web-worker) in the official Angular docs. 
+> :gift: **_Resources_** : Check out [Web Workers in Angular](https://angular.io/guide/web-worker) in the official Angular docs.
 
+<br />
+
+#### Web Assembly
+
+> :warning: **_Warning_** : Although most of the modern browsers support web assembly, it's still in a premature state and might be unstable. So use at your own risk :grin:!
+
+If someone wants to go the extra mile for performance, web assembly is for you! So what exactly is web assembly :confused:? In a nutshell, it is a low-level assembly-like language with a size- and load-time-efficient binary format which can run in near native speed. Okay, so what has it got to do with Javascript :no_mouth:? 
+
+WebAssembly is designed to run alongside JavaScript — using the WebAssembly JavaScript APIs, you can load WebAssembly modules into a JavaScript app and share functionality between the two. Meaning, we can write our code in C/C++, Rust etc., compile it into a web assembly module and use it with our Angular application :boom:. In short, we can run our computationally intensive tasks in web assembly and make full use of it's lightning speed :sparkles:!
+
+<br />
+
+> :gift: **_Resources_** : <br />
+	1. Check out [Web Assembly](https://developer.mozilla.org/en-US/docs/WebAssembly) in MDN. <br />
+	2. Check out [Examples of how to use WebAssembly within Angular](https://github.com/boyanio/angular-wasm) by [Boyan Mihaylov](https://github.com/boyanio). <br />
+	3. Check out [Using Web Assembly to speed up your Angular Application](https://malcoded.com/posts/web-assembly-angular/) by [Lukas Marx](https://twitter.com/malcoded).
+
+<br />
 
 <!-- ROADMAP -->
 ## Roadmap
