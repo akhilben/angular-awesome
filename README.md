@@ -139,6 +139,11 @@ There is no doubt that the Angular CLI's `ng new` command generates a decent bas
 | :heart: _Takeaway_ : Use starters/boilerplates to save initial setup time and for a smooth start. |
 | --- |
 
+<br />
+
+🔝 [Back to contents](#bookmark-tabs-table-of-contents)
+
+<br />
 
 ## :snowflake: Commit Guidelines
  <details>
