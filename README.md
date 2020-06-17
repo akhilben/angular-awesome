@@ -21,7 +21,7 @@
 
 * [Purpose](#star2-purpose)
 
-* [Choosing IDE](#sunglasses-choosing-ide)
+* [IDE and Plugins](#sunglasses-ide-and-plugins)
 
 * [Using Starter Kits](#tada-using-starter-kits)
 
@@ -75,10 +75,10 @@ Angular is a great and leading framework for developing various web applications
 
 
 <!-- CHOOSING IDE -->
-## :sunglasses: Choosing IDE
+## :sunglasses: IDE and Plugins
 <details>
   <summary>Click to expand</summary>
-There are several powerful free and paid IDE's available in the market today. Choosing the right IDE is very important for development since not all IDE's are great for every language/framework/library. Below is a list of recommended IDE's to choose from:
+There are several powerful free and paid IDE's available in the market today. Choosing the right IDE is very important for development since not all IDE's are great for every language/framework/library. Have added a list of awesome plugins/extensions for IDE's below for a smooth development.
 
 1. <img src="images/code.svg" alt="VS Code" width="30" height="30" vertical-align="middle"> &nbsp; <b>[Visual Studio Code](https://code.visualstudio.com/)</b><br />
    VS Code is a very powerful code editor from Microsoft which is highly recommended for working with Angular. Why? It has a great <b>support for TypeScript</b> out of the box. Moreover, it has <b>syntax highlighting</b> and autocomplete with <b>IntelliSense</b>, which provides smart completions based on variable types, function definitions, and imported modules. Adding up to many other powerfull features, it is <b>highly customizable with tons of extensions</b>, especially for Angular. Below is a list of few vs code extensions that are useful while developing Angular applications. <br />
@@ -107,14 +107,14 @@ There are several powerful free and paid IDE's available in the market today. Ch
  
  <br />
    
- >Although, the above two are the most recommended IDE's for developing Angular applications, there are few more IDE's worth checking out and are great for developing such as Github's [Atom](https://atom.io/) and [Sublime Text](https://www.sublimetext.com/). Another IDE that's worth checking out is the [Angular IDE](https://www.genuitec.com/products/angular-ide/) by Codemix, which is a dedicated, powerful IDE for Angular.
+ >Do check out the [Angular IDE](https://www.genuitec.com/products/angular-ide/) by Codemix, which is a dedicated, powerful IDE for Angular.
  
  </details>  
    
  <br />
    
-| :heart: _Takeaway_ : It's recommended to use [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/) along with recommended plugins. |
-| --- |
+| :heart: _Takeaway_ : Use your favorite IDE ([Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/) recommended) along with awesome plugins for a smooth development experience. |
+| :--- |
   
   
 <!-- STARTER KITS -->
