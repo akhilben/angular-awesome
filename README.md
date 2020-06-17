@@ -38,7 +38,7 @@ Now, step in to find some of the recommended good practices and tips for buildin
 
 * [Using Starter Kits](#-using-starter-kits)
 
-* [Commit Guidelines](#-commit-guidelines)
+* [Commit Guidelines](#%EF%B8%8F-commit-guidelines)
 
 * [Configuring Your Project](#-configuring-your-project)
 
