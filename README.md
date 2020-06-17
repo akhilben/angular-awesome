@@ -34,17 +34,17 @@ Now, step in to find some of the recommended good practices and tips for buildin
 
 * [Preface](#-preface)
 
-* [IDE and Plugins](#sunglasses-ide-and-plugins)
+* [IDE and Plugins](#-ide-and-plugins)
 
-* [Using Starter Kits](#tada-using-starter-kits)
+* [Using Starter Kits](#-using-starter-kits)
 
-* [Commit Guidelines](#snowflake-commit-guidelines)
+* [Commit Guidelines](#-commit-guidelines)
 
-* [Configuring Your Project](#construction_worker-configuring-your-project)
+* [Configuring Your Project](#-configuring-your-project)
 
-* [Folder Structure](#books-folder-structure)
+* [Folder Structure](#-folder-structure)
 
-* [Performance Cheatsheet](#zap-performance-cheatsheet)
+* [Performance Cheatsheet](#-performance-cheatsheet)
 
 	* [Function calls in templates](#1-avoid-function-calls-in-templates)
 	
@@ -73,8 +73,6 @@ Now, step in to find some of the recommended good practices and tips for buildin
 * [Contributing](#contributing)
 
 * [License](#license)
-
-* [Acknowledgements](#acknowledgements)
 
 <br />
 
