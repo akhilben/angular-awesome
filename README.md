@@ -14,6 +14,7 @@
   </p>
 </p>
 
+<br />
 
 <!-- ABOUT THE PROJECT -->
 ## :star2: Preface
@@ -26,6 +27,7 @@ Do lookout (and don't ignore :eyes:) for the **_Tips_** section to find out how 
 
 Now, step in to find some of the recommended good practices and tips for building awesome Angular applications :confetti_ball: :tada:.
 
+<br />
 
 <!-- TABLE OF CONTENTS -->
 ## :bookmark_tabs: Table of Contents
@@ -74,7 +76,7 @@ Now, step in to find some of the recommended good practices and tips for buildin
 
 * [Acknowledgements](#acknowledgements)
 
-
+<br />
 
 <!-- CHOOSING IDE -->
 ## :sunglasses: IDE and Plugins
@@ -117,7 +119,12 @@ There are several powerful free and paid IDE's available in the market today. Ch
    
 | :heart: _Takeaway_ : Use your favorite IDE ([Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/) recommended) along with awesome plugins for a smooth development experience. |
 | :--- |
-  
+
+<br />
+
+🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+
+<br />
   
 <!-- STARTER KITS -->
 ## :tada: Using Starter Kits
@@ -141,7 +148,7 @@ There is no doubt that the Angular CLI's `ng new` command generates a decent bas
 
 <br />
 
-🔝 [Back to contents](#bookmark-tabs-table-of-contents)
+🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
 
 <br />
 
@@ -189,6 +196,11 @@ PR Close #11721
 | :heart: _Takeaway_ : It's recommended to follow the commit guidelines of the [official Angular repo](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines); consisting of a header, a body, and a footer (optional). Use these commits for generating changelogs. |
 | :--- |
 
+<br />
+
+🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+
+<br />
 
 <!-- CONFIGURING -->
 ## :construction_worker: Configuring Your Project
@@ -303,6 +315,11 @@ import { RandomService } from '@core/services/random.service'
 | :heart: _Takeaway_ : Setup tslint for code quality rules and Prettier for code formatting rules and use pre-commit hooks to check for lint issues. Add aliases for folders to remove relative paths in import statements. |
 | :--- |
 
+<br />
+
+🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+
+<br />
 
 <!-- FOLDER STRUCTURE -->
 ## :books: Folder Structure
@@ -448,6 +465,11 @@ src/
 +- ...
 |-- 📄 main.ts
 ```
+
+<br />
+
+🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+
 <br />
 
 ## :zap: Performance Cheatsheet
@@ -981,6 +1003,11 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 |	6. Use a combination of `ChangeDetectionStrategy.OnPush`, `ChangeDetectorRef` and `NgZone` methods to minimize the number of change detection cycles. |
 |	7. Use service workers, app shell and api caching to further improve the performance. |
 
+<br />
+
+🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+
+<br />
 
 <!-- ROADMAP -->
 ## Roadmap
