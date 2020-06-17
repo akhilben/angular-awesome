@@ -120,7 +120,7 @@ There are several powerful free and paid IDE's available in the market today. Ch
 
 <br />
 
-🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+🔝 [Back to Contents](#-table-of-contents)
 
 <br />
   
@@ -146,7 +146,7 @@ There is no doubt that the Angular CLI's `ng new` command generates a decent bas
 
 <br />
 
-🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+🔝 [Back to Contents](#-table-of-contents)
 
 <br />
 
@@ -196,7 +196,7 @@ PR Close #11721
 
 <br />
 
-🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+🔝 [Back to Contents](#-table-of-contents)
 
 <br />
 
@@ -315,7 +315,7 @@ import { RandomService } from '@core/services/random.service'
 
 <br />
 
-🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+🔝 [Back to Contents](#-table-of-contents)
 
 <br />
 
@@ -438,7 +438,7 @@ Now we can import the `theme.scss` in our main `styles.scss` where we add global
  	1. Check out [Choosing The Right File Structure for Angular in 2020 and Beyond 📕!](https://itnext.io/choosing-the-right-file-structure-for-angular-in-2020-and-beyond-a53a71f7eb05) by [Mathis Garberg](https://itnext.io/@mathis.garberg). <br />
  	2. Check out [How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://medium.com/@tomastrajan/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [Tomas Trajan](https://medium.com/@tomastrajan). <br />
 	3. Check out [Angular Folder Structure](https://medium.com/@motcowley/angular-folder-structure-d1809be95542) by [Tom Cowley](https://medium.com/@motcowley). <br />
-	4. Check out the excellent folder structure in these [starter kits](#tada-using-starter-kits).
+	4. Check out the excellent folder structure in these [starter kits](#-using-starter-kits).
 	
 <br />
 
@@ -466,7 +466,7 @@ src/
 
 <br />
 
-🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+🔝 [Back to Contents](#-table-of-contents)
 
 <br />
 
@@ -1003,7 +1003,7 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 
 <br />
 
-🔝 [Back to Contents](#bookmark_tabs-table-of-contents)
+🔝 [Back to Contents](#-table-of-contents)
 
 <br />
 
