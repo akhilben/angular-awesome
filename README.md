@@ -30,9 +30,9 @@ Now, step in to find some of the recommended good practices and tips for buildin
 <br />
 
 <!-- TABLE OF CONTENTS -->
-## :bookmark_tabs: Table of Contents
+## `📑 Table of Contents`
 
-* [Preface](#star2-preface)
+* [Preface](#-preface)
 
 * [IDE and Plugins](#sunglasses-ide-and-plugins)
 
@@ -79,7 +79,7 @@ Now, step in to find some of the recommended good practices and tips for buildin
 <br />
 
 <!-- CHOOSING IDE -->
-## :sunglasses: IDE and Plugins
+## `😎 IDE and Plugins`
 <details>
   <summary>Click to expand</summary>
 There are several powerful free and paid IDE's available in the market today. Choosing the right IDE is very important for development since not all IDE's are great for every language/framework/library. Have added a list of awesome plugins/extensions for IDE's below for a smooth development.
@@ -127,7 +127,7 @@ There are several powerful free and paid IDE's available in the market today. Ch
 <br />
   
 <!-- STARTER KITS -->
-## :tada: Using Starter Kits
+## `🎉 Using Starter Kits`
 <details>
   <summary>Click to expand</summary>
   
@@ -152,7 +152,7 @@ There is no doubt that the Angular CLI's `ng new` command generates a decent bas
 
 <br />
 
-## :snowflake: Commit Guidelines
+## `❄️ Commit Guidelines`
  <details>
   <summary>Click to expand</summary>
 
@@ -203,7 +203,7 @@ PR Close #11721
 <br />
 
 <!-- CONFIGURING -->
-## :construction_worker: Configuring Your Project
+## `👷 Configuring Your Project`
 
 <details>
   <summary>Click to expand</summary>
@@ -322,7 +322,7 @@ import { RandomService } from '@core/services/random.service'
 <br />
 
 <!-- FOLDER STRUCTURE -->
-## :books: Folder Structure
+## `📚 Folder Structure`
 
 <details>
   <summary>Click to expand</summary>
@@ -472,7 +472,7 @@ src/
 
 <br />
 
-## :zap: Performance Cheatsheet
+## `⚡ Performance Cheatsheet`
 <details open>
   <summary>Click to expand</summary>
 
@@ -1010,14 +1010,14 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 <br />
 
 <!-- ROADMAP -->
-## Roadmap
+## `Roadmap`
 
 See the [open issues](https://github.com/github_username/repo/issues) for a list of proposed features (and known issues).
 
-
+<br />
 
 <!-- CONTRIBUTING -->
-## Contributing
+## `Contributing`
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -1027,10 +1027,10 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin docs/AmazingDoc`)
 5. Open a Pull Request
 
-
+<br />
 
 <!-- LICENSE -->
-## License
+## `License`
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
@@ -1040,9 +1040,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
+<!-- ACKNOWLEDGEMENTS : TODO -->
