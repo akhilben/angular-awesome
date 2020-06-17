@@ -22,7 +22,7 @@ This repo serves as a reference handbook for both starters and experienced devel
 
 > :warning: **_Warning_** : The contents in this document are just general suggestions taken from the Angular community on how to do stuff. As there can be many solutions to a problem, just take the contents as mere suggestions for developing a good application, make use of it if you think it suits your application.
 
-Do lookout (and don't ignore :eyes:) for the **_Tips_** section to find out how to do things more better. Make sure to expand the collapse of a section; it's there just for a better user experience. Get the summarized points labelled as **_Takeaway_** at the end of each section if you don't want to spend your time to read the whole.
+Do lookout (and don't ignore :eyes:) for the **_Tips_** section to find out how to do things more better. Make sure to **expand the collapse** of a section; it's there just for a better user experience. Get the summarized points labelled as **_Takeaway_** at the end of each section if you don't want to spend your time to read the whole.
 
 Now, step in to find some of the recommended good practices and tips for building awesome Angular applications :confetti_ball: :tada:.
 
