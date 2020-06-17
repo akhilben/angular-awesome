@@ -17,7 +17,7 @@
 <br />
 
 <!-- ABOUT THE PROJECT -->
-## :star2: Preface
+## `🌟 Preface`
 
 This repo serves as a reference handbook for both starters and experienced developers to look at from time to time to refresh memory and to develop better :notebook:.
 
