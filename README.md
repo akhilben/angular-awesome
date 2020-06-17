@@ -72,8 +72,6 @@ Now, step in to find some of the recommended good practices and tips for buildin
 
 * [License](#license)
 
-* [Contact](#contact)
-
 * [Acknowledgements](#acknowledgements)
 
 
