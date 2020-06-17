@@ -1002,12 +1002,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/akhilben/angular-best-practices](https://github.com/akhilben/angular-best-practices)
+<!-- CONTACT : TODO-->
 
 
 
