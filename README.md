@@ -14,7 +14,7 @@
   </p>
 </p>
 
-[![GitHub contributors](https://img.shields.io/github/contributors/akhilben/angular-awesome?color=blue&style=for-the-badge)](https://github.com/akhilben/angular-awesome/graphs/contributors) &emsp; [![GitHub](https://img.shields.io/github/license/akhilben/angular-awesome?style=for-the-badge&color=green)](https://github.com/akhilben/angular-awesome/blob/master/LICENSE) &emsp; [![Maintenance](https://img.shields.io/maintenance/yes/2021?color=brightgreen&style=for-the-badge)](https://github.com/akhilben/angular-awesome/graphs/commit-activity) &emsp; [![For](https://img.shields.io/badge/For-Angular-red?style=for-the-badge&logo=angular&color=DD0031)](https://github.com/angular/angular) &emsp; [![Help](https://img.shields.io/badge/-need--help-blueviolet?style=for-the-badge)](<(#contributing)>)
+[![GitHub contributors](https://img.shields.io/github/contributors/akhilben/angular-awesome?color=blue&style=for-the-badge)](https://github.com/akhilben/angular-awesome/graphs/contributors) &emsp; [![GitHub](https://img.shields.io/github/license/akhilben/angular-awesome?style=for-the-badge&color=green)](https://github.com/akhilben/angular-awesome/blob/master/LICENSE) &emsp; [![Maintenance](https://img.shields.io/maintenance/yes/2021?color=brightgreen&style=for-the-badge)](https://github.com/akhilben/angular-awesome/graphs/commit-activity) &emsp; [![For](https://img.shields.io/badge/For-Angular-red?style=for-the-badge&logo=angular&color=DD0031)](https://github.com/angular/angular) &emsp; [![Help](https://img.shields.io/badge/-need--help-blueviolet?style=for-the-badge)](#contributing)
 
 <br />
 
