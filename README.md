@@ -6,7 +6,7 @@
   </a>
 
   <p align="center"> <b>
-    :star: A curated list of Angular best practices and tips for building scalable and performant enterprise level applications. :star: </b>
+    :star: A collection of Angular best practices and tips for building scalable and performant enterprise level applications. :star: </b>
     <br />
     <a href="https://github.com/akhilben/angular-best-practices/issues">Report Bug</a>
     ·
