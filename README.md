@@ -50,29 +50,29 @@ Now, step in to find some of the recommended good practices and tips for buildin
 
 - [Performance Cheatsheet](#-performance-cheatsheet)
 
-      	* [Function calls in templates](#1-avoid-function-calls-in-templates)
+	* [Function calls in templates](#1-avoid-function-calls-in-templates)
 
-      	* [Use trackBy](#2-use-trackby-with-ngfor)
+  	* [Use trackBy](#2-use-trackby-with-ngfor)
 
-      	* [Tree shakable providers](#3-use-tree-shakable-providers)
+  	* [Tree shakable providers](#3-use-tree-shakable-providers)
 
-      	* [Unsubscribe observables](#4-unsubscribe-observables)
+    * [Unsubscribe observables](#4-unsubscribe-observables)
 
-      	* [Async pipe](#5-use-async-pipe)
+	* [Async pipe](#5-use-async-pipe)
 
-      	* [Lazy load modules](#6-lazy-load-modules)
+    * [Lazy load modules](#6-lazy-load-modules)
 
-      	* [Preloading strategy](#7-use-preloading-strategy)
+    * [Preloading strategy](#7-use-preloading-strategy)
 
-      	* [Lazy load components](#8-lazy-load-components)
+    * [Lazy load components](#8-lazy-load-components)
 
-      	* [ChangeDetectionStrategy.OnPush](#9-use-changedetectionstrategyonPush)
+    * [ChangeDetectionStrategy.OnPush](#9-use-changedetectionstrategyonPush)
 
-      	* [Disable change detection](#10-disable-change-detection)
+    * [Disable change detection](#10-disable-change-detection)
 
-      	* [Run outside angular](#11-run-outside-angular)
+    * [Run outside angular](#11-run-outside-angular)
 
-      	* [Other techniques](#other-performance-optimisation-techniques)
+    * [Other techniques](#other-performance-optimisation-techniques)
 
 - [Contributing](#contributing)
 
