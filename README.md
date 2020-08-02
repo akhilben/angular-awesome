@@ -404,7 +404,7 @@ Ideally, the `CoreModule` contains files that are singleton, that is, those file
 
 <br />
 
-> :page*with_curl: \*\*\_Note*\*\* : Don't forget to add the components, directives and pipes to the `exports` inside `shared.module.ts`.
+> :page_with_curl: **_Note_** : Don't forget to add the components, directives and pipes to the `exports` inside `shared.module.ts`.
 
 <br />
 
@@ -455,10 +455,7 @@ Now we can import the `theme.scss` in our main `styles.scss` where we add global
 
 <br />
 
-> :gift: **_Resources_** : <br /> 1. Check out [Choosing The Right File Structure for Angular in 2020 and Beyond 📕!](https://itnext.io/choosing-the-right-file-structure-for-angular-in-2020-and-beyond-a53a71f7eb05) by [Mathis Garberg](https://itnext.io/@mathis.garberg). <br /> 2. Check out [How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://medium.com/@tomastrajan/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [Tomas Trajan](https://medium.com/@tomastrajan). <br />
-
-    3. Check out [Angular Folder Structure](https://medium.com/@motcowley/angular-folder-structure-d1809be95542) by [Tom Cowley](https://medium.com/@motcowley). <br />
-    4. Check out the excellent folder structure in these [starter kits](#-using-starter-kits).
+> :gift: **_Resources_** : <br /> 1. Check out [Choosing The Right File Structure for Angular in 2020 and Beyond 📕!](https://itnext.io/choosing-the-right-file-structure-for-angular-in-2020-and-beyond-a53a71f7eb05) by [Mathis Garberg](https://itnext.io/@mathis.garberg). <br /> 2. Check out [How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://medium.com/@tomastrajan/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [Tomas Trajan](https://medium.com/@tomastrajan). <br /> 3. Check out [Angular Folder Structure](https://medium.com/@motcowley/angular-folder-structure-d1809be95542) by [Tom Cowley](https://medium.com/@motcowley). <br /> 4. Check out the excellent folder structure in these [starter kits](#-using-starter-kits).
 
 <br />
 
@@ -540,9 +537,7 @@ There may be some cases where this is unavoidable, but for most cases this can b
         }
         ```
 
-        > :gift: **_Resources_** : Check out [The essential difference between pure and impure pipes in Angular and why that matters](https://indepth.dev/the-essential-difference-between-pure-and-impure-pipes-in-angular-and-why-that-matters/) by [Max Koretskyi
-
-    ](https://indepth.dev/author/maxkoretskyi/)
+    > :gift: **_Resources_** : Check out [The essential difference between pure and impure pipes in Angular and why that matters](https://indepth.dev/the-essential-difference-between-pure-and-impure-pipes-in-angular-and-why-that-matters/) by [Max Koretskyi](https://indepth.dev/author/maxkoretskyi/)
 
 </details>
 
@@ -729,7 +724,7 @@ Angular offers a powefull solution to that problem. **Split your code to separat
 { path: 'home',  loadChildren: () => import('./home.module').then(module => module.HomeModule) }
 ```
 
-> :page\*facing_up: \*\*\_Note**\* : **Do not lazy load the default route\*\*, as the browser will have to download an extra lazy loaded chunk after downloading the main chunk and parse it. This will slow down the initial rendering time.
+> :page_facing_up: **_Note_** : Do not lazy load the default route, as the browser will have to download an extra lazy loaded chunk after downloading the main chunk and parse it. This will slow down the initial rendering time.
 
 </details>
 
@@ -795,7 +790,7 @@ Use preloading strategy to **load lazy loaded modules in the background after al
 
 ### 8. Lazy load components
 
-> :page*facing_up: \*\*\_Note*\*\* : This feature is only supported in Angular 9+.
+> :page_facing_up: **_Note_** : This feature is only supported in Angular 9+.
 
 <details>
   <summary>Click to expand</summary>
@@ -895,7 +890,7 @@ We can minimize these checks by setting our component's `changeDetection` to `Ch
 
 <br />
 
-> :page*facing_up: \*\*\_Note*\*\* : Make use of `detectChanges()` or `markForCheck()` functions of `ChangeDetectorRef` to explicitely run the change detection cycle if required.
+> :page_facing_up: **_Note_** : Make use of `detectChanges()` or `markForCheck()` functions of `ChangeDetectorRef` to explicitely run the change detection cycle if required.
 
 <br />
 
@@ -964,7 +959,7 @@ someComplexFunction() {
 
 <br />
 
-> :page*facing_up: \*\*\_Note*\*\* : Make use of `run()` method to explicitely run the change detection cycle if required.
+> :page_facing_up: **_Note_** : Make use of `run()` method to explicitely run the change detection cycle if required.
 
 <br />
 
@@ -997,11 +992,7 @@ We can make our application a Progressive Web App (PWA), by adding `@angular/pwa
 
 <br />
 
-> :gift: **_Resources_** : <br />
-
-    1. Check out [Getting started with service workers](https://angular.io/guide/service-worker-getting-started) in the official Angular docs. <br />
-    2. Check out [Angular Service Worker - Step-By-Step Guide for turning your Application into a PWA](https://blog.angular-university.io/angular-service-worker/) on [Angular University](https://blog.angular-university.io/). <br />
-    3. Check out [How to build Progressive Web Apps with Angular.](https://scotch.io/tutorials/how-to-build-progressive-web-apps-with-angular) by [Eniola Lucas](https://scotch.io/@enirate).
+> :gift: **_Resources_** : <br /> 1. Check out [Getting started with service workers](https://angular.io/guide/service-worker-getting-started) in the official Angular docs. <br /> 2. Check out [Angular Service Worker - Step-By-Step Guide for turning your Application into a PWA](https://blog.angular-university.io/angular-service-worker/) on [Angular University](https://blog.angular-university.io/). <br /> 3. Check out [How to build Progressive Web Apps with Angular.](https://scotch.io/tutorials/how-to-build-progressive-web-apps-with-angular) by [Eniola Lucas](https://scotch.io/@enirate).
 
 <br />
 
@@ -1015,10 +1006,7 @@ We can make use of the Angular CLI to automatically generate an app shell for us
 
 <br />
 
-> :gift: **_Resources_** : <br />
-
-    1. Check out [App shell](https://angular.io/guide/app-shell) in the official Angular docs. <br />
-    2. Check out [Angular App Shell - Boosting Application Startup Performance](https://blog.angular-university.io/angular-app-shell/) on [Angular University](https://blog.angular-university.io/).
+> :gift: **_Resources_** : <br /> 1. Check out [App shell](https://angular.io/guide/app-shell) in the official Angular docs. <br /> 2. Check out [Angular App Shell - Boosting Application Startup Performance](https://blog.angular-university.io/angular-app-shell/) on [Angular University](https://blog.angular-university.io/).
 
 <br />
 
@@ -1042,11 +1030,7 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 
 <br />
 
-> :gift: **_Resources_** : <br />
-
-    1. Check out [Web Assembly](https://developer.mozilla.org/en-US/docs/WebAssembly) in MDN. <br />
-    2. Check out [Examples of how to use WebAssembly within Angular](https://github.com/boyanio/angular-wasm) by [Boyan Mihaylov](https://github.com/boyanio). <br />
-    3. Check out [Using Web Assembly to speed up your Angular Application](https://malcoded.com/posts/web-assembly-angular/) by [Lukas Marx](https://twitter.com/malcoded).
+> :gift: **_Resources_** : <br /> 1. Check out [Web Assembly](https://developer.mozilla.org/en-US/docs/WebAssembly) in MDN. <br /> 2. Check out [Examples of how to use WebAssembly within Angular](https://github.com/boyanio/angular-wasm) by [Boyan Mihaylov](https://github.com/boyanio). <br /> 3. Check out [Using Web Assembly to speed up your Angular Application](https://malcoded.com/posts/web-assembly-angular/) by [Lukas Marx](https://twitter.com/malcoded).
 
 </details>
 
@@ -1055,12 +1039,7 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 
 <br />
 
-> :gift: **_Resources_** : <br />
-
-    1. Do check out this awesome repo : [angular-performance-checklist](https://github.com/mgechev/angular-performance-checklist) by [Minko Gechev](https://github.com/mgechev) and find out more pro performance tips :heart_eyes:. <br />
-    2. Check out [Best practices for a clean and performant Angular application](https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/) by [Vamsi Vempati](https://twitter.com/_VamsiVempati_). <br />
-    3. Check out [Optimizing the Performance of Your Angular Application](https://netbasal.com/optimizing-the-performance-of-your-angular-application-f222f1c16354) by [Netanel Basal](https://netbasal.com/@NetanelBasal).
-    4. Check out [15 Angular Performance Tips & Tricks](https://angular-guru.com/blog/angular-performance-tips) on [The Angular Guru](https://angular-guru.com/).
+> :gift: **_Resources_** : <br /> 1. Do check out this awesome repo : [angular-performance-checklist](https://github.com/mgechev/angular-performance-checklist) by [Minko Gechev](https://github.com/mgechev) and find out more pro performance tips :heart_eyes:. <br /> 2. Check out [Best practices for a clean and performant Angular application](https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/) by [Vamsi Vempati](https://twitter.com/_VamsiVempati_). <br /> 3. Check out [Optimizing the Performance of Your Angular Application](https://netbasal.com/optimizing-the-performance-of-your-angular-application-f222f1c16354) by [Netanel Basal](https://netbasal.com/@NetanelBasal). 4. Check out [15 Angular Performance Tips & Tricks](https://angular-guru.com/blog/angular-performance-tips) on [The Angular Guru](https://angular-guru.com/).
 
 <br />
 
