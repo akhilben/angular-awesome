@@ -220,7 +220,7 @@ PR Close #11721
   
   There is no doubt that Angular CLI has covered most of the recommended configurations out of the box for us. But we can still make it better :heart_eyes_cat:!
   
-  ### TSLint
+  ### TSLint (⚠️ Deprecated from Angular 11)
   Angular CLI generates a basic set of tslint rules for us for **static code analysis** using [codelyzer](https://github.com/mgechev/codelyzer) by [Minko Gechev](https://github.com/mgechev). Below is the recommended configuration:
   ```js
   {
