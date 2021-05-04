@@ -24,7 +24,7 @@
 
 This repo serves as a reference handbook for both starters and experienced developers to look at from time to time to refresh memory and to develop better :notebook:.
 
-> :warning: **_Warning_** : The contents in this document are just general suggestions taken from the Angular community on how to do stuff. As there can be many solutions to a problem, just take the contents as mere suggestions for developing a good application, make use of it if you think it suits your application.
+> :warning: **_Warning_** : The contents in this document are just general suggestions taken from the Angular community on how to do stuff. As there can be many solutions to a problem, just take the contents as mere suggestions and make use of it if you think it suits your application.
 
 Do lookout (and don't ignore :eyes:) for the **_Tips_** section to find out how to do things more better. Make sure to **expand the collapse** of a section; it's there just for a better user experience. Get the summarized points labelled as **_Takeaway_** at the end of each section if you don't want to spend your time to read the whole.
 
@@ -91,7 +91,7 @@ There are several powerful free and paid IDE's available in the market today. Ch
 1. <img src="images/code.svg" alt="VS Code" width="30" height="30" vertical-align="middle"> &nbsp; <b>[Visual Studio Code](https://code.visualstudio.com/)</b><br />
    VS Code is a very powerful code editor from Microsoft which is highly recommended for working with Angular. Why? It has a great <b>support for TypeScript</b> out of the box. Moreover, it has <b>syntax highlighting</b> and autocomplete with <b>IntelliSense</b>, which provides smart completions based on variable types, function definitions, and imported modules. Adding up to many other powerfull features, it is <b>highly customizable with tons of extensions</b>, especially for Angular. Below is a list of few vs code extensions that are useful while developing Angular applications. <br />
 
-   - [TS Lint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin):<br />
+   - [ES Lint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint):<br />
      A must have extension which marks the code where you have a problem and display a <b>list of warnings & errors</b> on hovering it. It even have an <b>autofix problems</b> functionality. This will help you to adhere to the recommented styleguides and conventions for Angular.<br />
    - [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template):<br />
      This extension provides a rich editing experience <b>for Angular templates</b>, both inline and external templates including <b>completions lists, AOT diagnostic messages, quick info and go to definition</b><br />
