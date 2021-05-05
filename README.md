@@ -524,18 +524,20 @@ There may be some cases where this is unavoidable, but for most cases this can b
     ```
 
 2.  **Using pure pipes** : A pure pipe is a pipe that will always always return the same output for an input. Angular executes a pure pipe only when it detects a pure change to the input value because it already knows that the pipe will return the same value for the same input.
+	
 
-        ```js
-        @Pipe({
-        	name: 'dummy',
-        	pure: true
-        })
-        export class somePipe implements PipeTransform {
-        	transform(value: any, args?: any): any {
-        		 // logic
-        	}
-        }
-        ```
+    ```js
+    @Pipe({
+		name: 'dummy',
+		pure: true
+	})
+	export class somePipe implements PipeTransform {
+		transform(value: any, args?: any): any {
+			 // logic
+		}
+	}
+    ```
+	
 
     > :gift: **_Resources_** : Check out [The essential difference between pure and impure pipes in Angular and why that matters](https://indepth.dev/the-essential-difference-between-pure-and-impure-pipes-in-angular-and-why-that-matters/) by [Max Koretskyi](https://indepth.dev/author/maxkoretskyi/)
 
