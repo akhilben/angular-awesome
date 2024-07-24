@@ -6,7 +6,7 @@
   </a>
 
   <p align="center"> <b>
-    :star: Collection of best practices and tips for building scalable and performant Angular applications. :star: </b>
+    :star: A curated collection of best practices and valuable tips for building scalable and performant Angular v18+ applications. :star: </b>
     <br />
     <a href="https://github.com/akhilben/angular-awesome/issues">Report Bug</a>
     ·
@@ -22,13 +22,11 @@
 
 ## `🌟 Preface`
 
-This repo serves as a reference handbook for both starters and experienced developers to look at from time to time to refresh memory and to develop better :notebook:.
+This document serves as a reference handbook for developers of all levels, providing a valuable resource for refreshing memory and improving development skills.
 
-> :warning: **_Warning_** : The contents in this document are just general suggestions taken from the Angular community on how to do stuff. As there can be many solutions to a problem, just take the contents as mere suggestions and make use of it if you think it suits your application.
+> **_Note_** : The contents of this document are general suggestions sourced from the Angular community on various approaches to problem-solving. It is important to note that there can be multiple solutions to a problem. Consider these suggestions as recommendations and adapt them to suit your specific application.
 
-Do lookout (and don't ignore :eyes:) for the **_Tips_** section to find out how to do things more better. Make sure to **expand the collapse** of a section; it's there just for a better user experience. Get the summarized points labelled as **_Takeaway_** at the end of each section if you don't want to spend your time to read the whole.
-
-Now, step in to find some of the recommended good practices and tips for building awesome Angular applications :confetti_ball: :tada:.
+Now, let's dive in and discover some recommended best practices and tips for building awesome Angular applications 🥳.
 
 <br />
 
@@ -42,7 +40,7 @@ Now, step in to find some of the recommended good practices and tips for buildin
 
 - [Using Starter Kits](#-using-starter-kits)
 
-- [Commit Guidelines](#%EF%B8%8F-commit-guidelines)
+- [Git Guidelines](#%EF%B8%8F-commit-guidelines)
 
 - [Configuring Your Project](#-configuring-your-project)
 
@@ -50,29 +48,29 @@ Now, step in to find some of the recommended good practices and tips for buildin
 
 - [Performance Cheatsheet](#-performance-cheatsheet)
 
-	* [Function calls in templates](#1-avoid-function-calls-in-templates)
+  - [Function calls in templates](#1-avoid-function-calls-in-templates)
 
-  	* [Use trackBy](#2-use-trackby-with-ngfor)
+    - [Use trackBy](#2-use-trackby-with-ngfor)
 
-  	* [Tree shakable providers](#3-use-tree-shakable-providers)
+    - [Tree shakable providers](#3-use-tree-shakable-providers)
 
-    * [Unsubscribe observables](#4-unsubscribe-observables)
+    - [Unsubscribe observables](#4-unsubscribe-observables)
 
-	* [Async pipe](#5-use-async-pipe)
+  - [Async pipe](#5-use-async-pipe)
 
-    * [Lazy load modules](#6-lazy-load-modules)
+    - [Lazy load modules](#6-lazy-load-modules)
 
-    * [Preloading strategy](#7-use-preloading-strategy)
+    - [Preloading strategy](#7-use-preloading-strategy)
 
-    * [Lazy load components](#8-lazy-load-components)
+    - [Lazy load components](#8-lazy-load-components)
 
-    * [ChangeDetectionStrategy.OnPush](#9-use-changedetectionstrategyonPush)
+    - [ChangeDetectionStrategy.OnPush](#9-use-changedetectionstrategyonPush)
 
-    * [Disable change detection](#10-disable-change-detection)
+    - [Disable change detection](#10-disable-change-detection)
 
-    * [Run outside angular](#11-run-outside-angular)
+    - [Run outside angular](#11-run-outside-angular)
 
-    * [Other techniques](#other-performance-optimisation-techniques)
+    - [Other techniques](#other-performance-optimisation-techniques)
 
 - [Contributing](#contributing)
 
@@ -86,32 +84,63 @@ Now, step in to find some of the recommended good practices and tips for buildin
 
 <details>
   <summary>Click to expand</summary>
-There are several powerful free and paid IDE's available in the market today. Choosing the right IDE is very important for development since not all IDE's are great for every language/framework/library. Have added a list of awesome plugins/extensions for IDE's below for a smooth development.
+  <br />
+In today's market, there are numerous powerful IDEs available, both free and paid. Selecting the right IDE is crucial for efficient development, as not all IDEs excel in every language, framework, or library. This chapter is a curated list of awesome plugins/extensions for various IDEs, aimed at enhancing your development experience.
 
 1. <img src="images/code.svg" alt="VS Code" width="30" height="30" vertical-align="middle"> &nbsp; <b>[Visual Studio Code](https://code.visualstudio.com/)</b><br />
-   VS Code is a very powerful code editor from Microsoft which is highly recommended for working with Angular. Why? It has a great <b>support for TypeScript</b> out of the box. Moreover, it has <b>syntax highlighting</b> and autocomplete with <b>IntelliSense</b>, which provides smart completions based on variable types, function definitions, and imported modules. Adding up to many other powerfull features, it is <b>highly customizable with tons of extensions</b>, especially for Angular. Below is a list of few vs code extensions that are useful while developing Angular applications. <br />
+   VS Code is a powerful code editor from <b>Microsoft</b> that comes highly recommended for working with Angular. It provides excellent support for <b>TypeScript</b> out of the box, including <b>syntax highlighting</b> and autocomplete with <b>IntelliSense</b>. IntelliSense offers intelligent completions based on variable types, function definitions, and imported modules. Additionally, VS Code is highly customizable with a wide range of extensions, many of which are specifically tailored for Angular development. Below is a list of a few VS Code extensions that are useful for developing Angular applications. <br />
 
    - [ES Lint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint):<br />
-     A must have extension which marks the code where you have a problem and display a <b>list of warnings & errors</b> on hovering it. It even have an <b>autofix problems</b> functionality. This will help you to adhere to the recommented styleguides and conventions for Angular.<br />
+     ESLint is a popular linter tool for JavaScript and TypeScript that helps <b>catch and fix code errors, enforce coding standards, and improve code quality</b>. The ESLint plugin for VS Code integrates seamlessly with the editor, providing real-time linting feedback as you type. It highlights code issues, offers suggestions for improvements, and supports quick fixes to automatically resolve problems. With the ESLint plugin, you can ensure your code follows best practices and maintain a clean and error-free codebase.
+
    - [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template):<br />
-     This extension provides a rich editing experience <b>for Angular templates</b>, both inline and external templates including <b>completions lists, AOT diagnostic messages, quick info and go to definition</b><br />
+     The Angular Language Service plugin for VS Code is a powerful tool that enhances your Angular development experience. It provides intelligent code editing features specific to Angular, such as <b>auto-completion for Angular templates, navigation to component definitions, and error checking in templates</b>. The plugin also offers advanced refactoring capabilities, making it easier to rename components, extract templates, and more. With the Angular Language Service plugin, you can boost your productivity and write cleaner, more maintainable Angular code.
    - [Angular Snippets](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2):<br />
-     This extension adds <b>snippets for Angular for TypeScript, HTML and NgRx</b>. This will help you save a lot of time while developing applications. Just type part of a snippet, press enter, and the snippet unfolds! [Angular 8 Snippets](https://marketplace.visualstudio.com/items?itemName=Mikael.Angular-BeastCode) is also another similar, honorable mention.
+     The Angular Snippets plugin for VS Code is a handy tool that accelerates your Angular development process. It provides a <b>collection of code snippets</b> that you can quickly insert into your codebase, saving you time and reducing the chances of errors. These snippets cover common Angular patterns and syntaxes, and you can easily access and utilize these code shortcuts, boosting your productivity and ensuring consistent code structure across your Angular projects in VS Code.
+
    - [Angular Schematics](https://marketplace.visualstudio.com/items?itemName=cyrilletuzi.angular-schematics):<br />
-     This extension allows you to <b>generate Angular schematics with a Graphical User Interface</b>. This extension promote Angular good practices, by improving component generation with the suggestion of different component types. Use this extension to <b>quickly generate component, module, service</b> etc. [Angular Files](https://marketplace.visualstudio.com/items?itemName=alexiv.vscode-angular2-files) is also another similar, honorable mention.
+     The Angular Schematics plugin for VS Code is a valuable tool for streamlining your Angular development workflow. Schematics are code generators that automate repetitive tasks, such as creating components, services, pipes etc. With the Angular Schematics plugin, you can easily <b>generate code snippets and scaffolding</b> for Angular projects directly from the editor. It provides a convenient user interface for selecting options and configuring generated code. By leveraging the power of Angular Schematics, you can save time and effort when building Angular applications in VS Code.
+
    - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode):<br />
-     Prettier is an opinionated <b>code formatter</b>. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.<br />
+     The Prettier plugin for VS Code is an essential tool for <b>code formatting</b> and consistency. Prettier automatically analyzes and formats your code to ensure a consistent and professional style, saving you time and effort. The Prettier plugin seamlessly integrates with VS Code, providing real-time formatting as you type, or you can format the entire file with a single command. With the Prettier plugin, you can easily maintain a clean and standardized codebase, enhancing readability and collaboration in your projects.
+
+     > 💡 **_Tip_** : Set Prettier as your default formatter by navigating to Settings of VS Code and type `Default Formatter` and set `Prettier - Code Formatter` as the value of `Editor: Default Formatter` from the search results.
+
    - [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens):<br />
-     GitLens supercharges the Git capabilities built into Visual Studio Code. It helps you to <b>visualize code authorship</b> at a glance via Git blame annotations and code lens, seamlessly <b>navigate and explore Git repositories</b>, gain valuable <b>insights via powerful comparison commands</b>, and so much more.
+     The GitLens plugin for VS Code is a powerful tool that enhances your Git workflow within the editor. It provides detailed and interactive <b>Git annotations</b> directly inline with your code, such as blame annotations to see who last modified a specific line of code, commit details, and more. GitLens also offers rich navigation capabilities, allowing you to easily <b>jump to specific commits, branches, or repositories</b>. With GitLens, you can gain valuable insights into your code's history, understand changes, and collaborate more effectively with others in your team.
+
+   - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker):<br />
+     The Code Spell Checker plugin for VS Code is a helpful tool for maintaining code quality by catching <b>spelling mistakes and typos</b> in your code and comments. It performs a comprehensive spell check on your codebase, highlighting any misspelled words and suggesting possible corrections. This plugin supports multiple programming languages and provides customizable dictionaries, allowing you to add or remove words specific to your project or industry. With the Code Spell Checker plugin, you can improve the readability and professionalism of your code by eliminating spelling errors, ensuring better communication and understanding among developers.
+
+   - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint):<br />
+     The Stylelint plugin for VS Code is a valuable tool for maintaining consistent and error-free styles in your CSS, SCSS, and other style sheet files. Stylelint analyzes your stylesheets based on a set of defined rules, helping you <b>catch and fix common styling errors, enforce coding conventions, and improve code quality</b>. The plugin seamlessly integrates with VS Code, providing real-time linting feedback as you write your styles. It highlights style issues and offers suggestions for improvements, allowing you to adhere to best practices and maintain a clean and consistent codebase. With the Stylelint plugin, you can ensure your styles are well-structured, readable, and maintainable, resulting in a more professional and polished appearance for your web projects.
+
+   - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss):<br />
+     The Tailwind CSS IntelliSense plugin for VS Code is a valuable tool for enhancing your development workflow with the <b>Tailwind CSS framework</b>. It provides intelligent code completion, allowing you to quickly and accurately write Tailwind CSS class names in your HTML and CSS files. The plugin understands the structure of the Tailwind CSS utility classes and offers suggestions based on your project's configuration. It also provides documentation on hover, giving you instant access to class descriptions and examples. With Tailwind CSS IntelliSense, you can improve productivity, reduce errors, and easily leverage the power of Tailwind CSS in your projects within the VS Code editor.
+
+     > **_Note_** : Use this plugin only if you are using [TailwindCss](https://tailwindcss.com/) in your application.
+
+     <br />
 
 2. <img src="images/webstorm.svg" alt="WebStorm" width="30" height="30" vertical-align="middle"> &nbsp; <b>[WebStorm](https://www.jetbrains.com/webstorm/)</b><br />
-   One of the smartest and most powerful IDE's for developing Javascript applications available out there. WebStorm by IntelliJ is a highly recommended pick for developing Angular applications with built-in <b>support for TypeScript</b> out of the box. WebStorm comes with <b>intelligent code completion, on-the-fly error detection, powerful navigation and refactoring for Typescript and stylesheet languages</b>. WebStorm is fully packed with a variety of <b>built-in developer tools</b> and various other features and thus saves your time juggling multiple plugins for seamless development. Below is a list of few WebStorm plugins that are useful while developing Angular applications. <br />
+   WebStorm, developed by IntelliJ, is widely regarded as one of the most intelligent and powerful IDEs for JavaScript application development. It is highly recommended for building Angular applications, as it offers built-in support for <b>TypeScript</b> right out of the box. With WebStorm, you benefit from <b>intelligent code completion, real-time error detection, and robust navigation and refactoring capabilities for TypeScript and stylesheet languages</b>. The IDE is equipped with a comprehensive set of built-in developer tools, eliminating the need to install multiple plugins and ensuring a seamless development experience. Below is a curated list of WebStorm plugins that can further enhance your productivity when working on Angular projects. <br />
+
    - [Angular and AngularJS](https://plugins.jetbrains.com/plugin/6971-angular-and-angularjs):<br />
-     This all-in-one framework integration plugin packs tons of features such as: <b>code completion</b> for components, built-in and custom directives, and methods in both templates and ts files; <b>navigation</b> from the component, custom directives and event handlers to their definition; <b>code snippets</b> and <b>Angular CLI integration</b>.<br />
+     This plugin provides comprehensive support for Angular projects, including <b>code completion, error detection, and advanced navigation and refactoring capabilities</b>. It offers intelligent completion for Angular-specific syntax, such as directives, components, and services. The plugin also includes integration with Angular CLI, allowing you to generate code snippets and perform common Angular commands directly within the IDE. With this plugin, you can streamline your development workflow and leverage the full power of Angular in WebStorm.
+
+   - [ESLint](https://plugins.jetbrains.com/plugin/7494-eslint):<br />
+     ESLint is a popular linter tool for JavaScript and TypeScript that helps <b>catch and fix code errors, enforce coding standards, and improve code quality</b>. The ESLint plugin for Webstorm integrates seamlessly with the editor, providing real-time linting feedback as you type. It highlights code issues, offers suggestions for improvements, and supports quick fixes to automatically resolve problems. With the ESLint plugin, you can ensure your code follows best practices and maintain a clean and error-free codebase.
+
    - [Prettier](https://plugins.jetbrains.com/plugin/10456-prettier):<br />
-     This plugin adds support for Prettier, an opinionated <b>code formatter</b>. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.<br />
-   - [GitToolBox](https://plugins.jetbrains.com/plugin/7499-gittoolbox):<br />
-     This plugin <b>extends Git Integration</b> with additional features such as <b>status display, auto fetch, inline blame annotation, commit dialog completion, behind notifications</b> and more.
+     The Prettier plugin for Webstorm is an essential tool <b>for code formatting and consistency</b>. Prettier automatically analyzes and formats your code to ensure a consistent and professional style, saving you time and effort. The Prettier plugin seamlessly integrates with VS Code, providing real-time formatting as you type, or you can format the entire file with a single command. With the Prettier plugin, you can easily maintain a clean and standardized codebase, enhancing readability and collaboration in your projects.
+
+     > 💡 **_Tip_** : To run Prettier on save, tick the `Run on save for files` option in `Preferences/Settings | Languages \& Frameworks | JavaScript | Prettier`.
+
+   - [IntelliJ Stylelint Plugin](https://plugins.jetbrains.com/plugin/9276-intellij-stylelint-plugin):<br />
+     The Stylelint plugin for Webstorm is a valuable tool for maintaining consistent and error-free styles in your CSS, SCSS, and other style sheet files. Stylelint analyzes your stylesheets based on a set of defined rules, helping you <b>catch and fix common styling errors, enforce coding conventions, and improve code quality</b>. The plugin seamlessly integrates with Webstorm, providing real-time linting feedback as you write your styles. It highlights style issues and offers suggestions for improvements, allowing you to adhere to best practices and maintain a clean and consistent codebase. With the Stylelint plugin, you can ensure your styles are well-structured, readable, and maintainable, resulting in a more professional and polished appearance for your web projects.
+
+   - [Tailwind CSS](https://plugins.jetbrains.com/plugin/15321-tailwind-css):<br />
+     The Tailwind CSS plugin for WebStorm is a valuable tool for developers working with the <b>Tailwind CSS framework</b>. This plugin enhances your development experience by providing code completion, syntax highlighting, and documentation for Tailwind CSS classes directly within the WebStorm editor. It understands the structure of the Tailwind CSS utility classes and offers intelligent suggestions as you write your code, helping you write styles faster and with fewer errors. With the Tailwind CSS plugin, you can maximize your productivity and leverage the power of Tailwind CSS in your WebStorm projects.
 
  <br />
    
@@ -121,7 +150,7 @@ There are several powerful free and paid IDE's available in the market today. Ch
    
  <br />
    
-| :heart: _Takeaway_ : Use your favorite IDE ([Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/) recommended) along with awesome plugins for a smooth development experience. |
+| ❤️ _Takeaway_ : Use your favorite IDE ([Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/) recommended) along with awesome plugins for a smooth development experience. |
 | :--- |
 
 <br />
@@ -134,12 +163,12 @@ There are several powerful free and paid IDE's available in the market today. Ch
 ## `🎉 Using Starter Kits`
 <details>
   <summary>Click to expand</summary>
-  
-There is no doubt that the Angular CLI's `ng new` command generates a decent base app to kick-start your project. But sometimes, we want more. Angular starter kits/boilerplates will heavily **reduce the development time for initial setups** - from basic recommended folder structure to interceptors and guards, these seeds have many features readily available. Below are some of the most used and well maintained Angular starter kits:
+  <br />
+While the Angular CLI's ng new command provides a solid foundation for starting an Angular project, there are times when developers seek more advanced features and a streamlined setup process. Angular starter kits and boilerplates are designed to significantly reduce the initial development time. These seeds offer a range of features, including recommended folder structures, interceptors, guards, and other commonly used functionalities. Below are some such Angular starter kits:
 
-1. [Angular, NgRx and Angular Material Starter](https://github.com/tomastrajan/angular-ngrx-material-starter) : As the name suggests, the stack includes **Angular, NgRx, Angular Material and Bootstrap 4**. This starter has a **strong application structure** that is easily scalable and suitable for big projects. It also packs **basic interceptors, error-handlers, auth-guards, ngrx files, Travis CLI etc.** used along with a TODO application example.
+1. [EasyAngular](https://github.com/NicolasRoehm/angular-boilerplate/tree/master) : This project is designed to help you quickly start a new Angular 18 project with Bootstrap 5 and various useful libraries. It comes with pre-coded elements to streamline your development process.
 
-2. [ngX Starter Kit](https://github.com/ngx-rocket/starter-kit) : Generated using [ngx-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket), this starter kit includes **modern tools** and workflow based on angular-cli, **best practices** from the community, a **scalable base template** and a good learning base. This starter kit comes pre-equipped with **Bootstrat 4, Font Awesome, RxJS, ng-bootstrap, ngx-translate and Lodash**. The starter also includes a basic \*\*login screen, interceptors, guards etc.
+2. [Angular Boilerplate](https://github.com/jm2097/angular-boilerplate) : This opinionated Angular starter focuses on the latest Angular features and best practices. It offers essential features for flexibility and scalability, minimizing unnecessary overhead. The codebase is lightweight yet robust, allowing developers to choose their preferred technologies like UI component libraries, state management, server-side rendering, etc. Its flexible boilerplate enables easy customization and adaptation to unique project requirements.
 
 3. [ngx-admin](https://akveo.github.io/ngx-admin/) : One of the most widely used Angular **admin dashboard template** based on **Angular 9+, Bootstrap 4+ and Nebular**. This template packs all the features and more that you will need for an admin dashboard template.
 
@@ -147,7 +176,7 @@ There is no doubt that the Angular CLI's `ng new` command generates a decent bas
 
 <br />
    
-| :heart: _Takeaway_ : Use starters/boilerplates to save initial setup time and for a smooth start. |
+| ❤️ _Takeaway_ : Use starters/boilerplates to save initial setup time and for a smooth start. |
 | --- |
 
 <br />
@@ -156,54 +185,142 @@ There is no doubt that the Angular CLI's `ng new` command generates a decent bas
 
 <br />
 
-## `❄️ Commit Guidelines`
+## `❄️ Git Guidelines`
 
  <details>
   <summary>Click to expand</summary>
+  <br />
+  While this chapter is not directly related to Angular and it's best practices, it will serve as a resource for maintaining a consistent and efficient Git workflow within your development team. These guidelines outline best practices for branching, committing, and collaborating on Git repositories. The guidelines cover various aspects, including branching strategies, commit message conventions. By adhering to these Git Guidelines, you can enhance code quality, streamline teamwork, and effectively manage your Git repositories.
 
-Usually developers tend to add some random commit messages which doesn't actually add any value to the project. By using some precise rules over how the commit messages are formatted can lead to more readable messages that are easy to follow when looking through the project history. We can even generate changelogs from such commit messages :astonished:! It's recommended to follow the commit guidelines from the [official Angular repo](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).<br />
+### 1. Git Workflow
 
-- Each commit message consists of a **header**, a **body**, and a **footer (optional)**. The header has a special format that includes a type, and a subject: <br />
-  ```
-  <type>: <subject>
-  <BLANK LINE>
-  <body>
-  <BLANK LINE>
-  <footer>
-  ```
-- The `type` can be any of the following:<br />
+  <details open>
+  <summary>Click to expand</summary>
+  <br />
+    Selecting a suitable Git workflow is crucial as it sets the foundation for effective collaboration and version control in your project. The right Git workflow can streamline development processes, ensure smooth integration of code changes, and promote seamless collaboration among team members. By carefully evaluating your project's requirements and considering factors such as team size, release cycles, and code review processes, you can make an informed decision and select a Git workflow that aligns with your project's needs, fostering efficient and collaborative development.
+    <br />
+    <br />
+    If your project involves complex versioning and the need to support different release versions, GitFlow or GitLab Flow may be suitable options. On the other hand, if your project is internal and does not have multiple environments, GitHub Flow might be a better fit. For a continuous deployment model with multiple environments, GitLab Flow could be a good choice. Ultimately, the key is to select a workflow that best suits the unique characteristics and goals of your project.
+    <br />
+    <br />
 
-  - **docs**: Documentation only changes
-  - **feat**: A new feature
-  - **fix**: A bug fix
-  - **perf**: A code change that improves performance
-  - **refactor**: A code change that neither fixes a bug nor adds a feature
-  - **test**: Adding missing tests or correcting existing tests
+> 🗒️ **_References_** : <br /> https://www.atlassian.com/git/tutorials/comparing-workflows <br /> https://about.gitlab.com/topics/version-control/what-is-gitlab-flow <br /> https://docs.github.com/en/get-started/quickstart/github-flow
 
-- The `footer` should contain a closing reference issue if any.
+  </details>
 
-<br />
+### 2. Branching Guidelines
 
-Eg:
+  <details open>
+  <summary>Click to expand</summary>
+  <br />
+    To ensure a consistent and organized approach to branching in your Git workflow, we recommend following the guidelines outlined below:
+    <br />
+    <br />
 
-```
-fix: no password validations
+#### 1. One Branch per Ticket/Feature/Bug
 
-length and pattern validations for password
+Create a separate branch for each ticket, feature, or bug that you are working on. This practice isolates changes related to a specific task, making it easier to track, review, and manage code changes. It helps prevent conflicts between different sets of changes and allows for easier rollbacks if needed.
 
-PR Close #11721
-```
+#### 2. Naming Conventions
 
-<br />
+- The branch name may follow the format: `<user>/<type>/<ticket-id>-<title>` or `<type>/<ticket-id>-<title>`
+- `<user>` (optional) represents the name or identifier of the developer creating the branch.
+- `<type>` represents the purpose or nature of the changes in the branch (e.g., `feat` for new features, `fix` for bug fixes, `refactor` for code refactoring, `docs` for documentation changes, `perf` for performance improvements, etc.).
+- `<ticket-id>` refers to the associated ticket or issue ID from your project management system.
+- `<title>` provides a concise and descriptive title for the changes being made in the branch.
 
-> :bulb: **_Tip_** : Use [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog) or it’s [standard version](https://github.com/conventional-changelog/standard-version) to generate changelogs and release notes from project's commit messages and metadata with this commit guideline.
+  Example : `john/feat/123-add-login-page`
 
 </details>
 
+### 3. Commit Guidelines
+
+<details open>
+<summary>Click to expand</summary>
+
+Developers often have a tendency to include random commit messages that lack value in the project. However, by adhering to precise rules for formatting commit messages, we can create more readable messages that are easily comprehensible when reviewing the project history. To ensure consistent commit message formatting, it is highly recommended to follow the [commit guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) provided by the official Angular repository. These guidelines, available in the official Angular repo, outline best practices for structuring commit messages. By following these guidelines, you can enhance the clarity and coherence of your commit messages, facilitating efficient collaboration and enabling the generation of informative changelogs.
+
+Each commit message consists of a header, a body, and a footer (optional). The header is mandatory and the scope of the header is optional. The header has a special format that includes a type, a scope and a subject :
+
+```
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+
+#### Type
+
+The type can be any of the following:
+
+- `fix`: A bug fix
+- `feat` : A new feature
+- `docs`: Documentation only changes
+- `refactor`: A code change that neither fixes a bug nor adds a feature
+- `perf`: A code change that improves performance
+- `test`: Adding missing tests or correcting existing tests
+- `build`: Changes that affect the build system or external dependencies
+- `ci`: Changes to our CI configuration files and scripts
+- `chore`: Other changes that do not modify src or test files
+
+#### Scope
+
+The scope can be : `app`, `core`, `server`, `shared` or `tools`
+
+#### Subject
+
+The subject contains succinct description of the change
+
+- use the imperative, present tense: "change" not "changed" nor "changes"
+- be concise and direct
+- no dot (.) at the end
+
+#### Body
+
+Just as in the subject, use the imperative, present tense: "change" not "changed" nor "changes". The body should include the motivation for the change and contrast this with previous behavior.
+
+#### Footer
+
+The footer can contain information about breaking changes and deprecations. It is also the place to reference Gitlab issues, Open Project tickets, and other PRs that are related to this commit or that this commit will close. For example:
+
+```
+BREAKING CHANGE: <breaking change summary>
+<BLANK LINE>
+<breaking change description + migration instructions>
+<BLANK LINE>
+<BLANK LINE>
+Fixes #<issue number>
+```
+
+#### Example
+
+```
+feat(app): add user authentication functionality
+
+This commit adds the user authentication feature, allowing users to sign up and log in to the application. It includes the following changes:
+
+- Implement user registration API endpoint
+- Create login form component
+- Add authentication service for handling user login
+
+Closes #123
+```
+
 <br />
-   
-| :heart: _Takeaway_ : It's recommended to follow the commit guidelines of the [official Angular repo](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines); consisting of a header, a body, and a footer (optional). Use these commits for generating changelogs. |
-| :--- |
+
+> 💡 **_Tip_** : To help with following the above commit message standard, you can make use of [better-commits](https://github.com/Everduin94/better-commits) CLI tool. Also, as mentioned above, you can make use of automatic CHANGELOG generation based on the commit messages with the help of [release-please](https://github.com/googleapis/release-please) or [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version).
+
+<br />
+
+> 🗒️ **_References_** : <br /> https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format <br /> https://www.conventionalcommits.org/en/v1.0.0
+
+</details>
+
+| ❤️ _Takeaway_ : It's recommended to follow the commit guidelines of the [official Angular repo](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines); consisting of a header, a body, and a footer (optional). Use these commits for generating changelogs. Additionally follow one branch per ticket pattern while creating branches. |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
+</details>
 
 <br />
 
@@ -404,7 +521,7 @@ Ideally, the `CoreModule` contains files that are singleton, that is, those file
 
 <br />
 
-> :page_with_curl: **_Note_** : Don't forget to add the components, directives and pipes to the `exports` inside `shared.module.ts`.
+> :page*with_curl: \*\*\_Note*\*\* : Don't forget to add the components, directives and pipes to the `exports` inside `shared.module.ts`.
 
 <br />
 
@@ -461,7 +578,6 @@ Now we can import the `theme.scss` in our main `styles.scss` where we add global
 
 | :heart: _Takeaway_ : Split our application into at least three different modules — Core, Shared and Feature; below is the bigger picture 🖼️ : |
 | :-------------------------------------------------------------------------------------------------------------------------------------------- |
-
 
 ```
 src/
@@ -524,20 +640,18 @@ There may be some cases where this is unavoidable, but for most cases this can b
     ```
 
 2.  **Using pure pipes** : A pure pipe is a pipe that will always always return the same output for an input. Angular executes a pure pipe only when it detects a pure change to the input value because it already knows that the pipe will return the same value for the same input.
-	
 
     ```js
     @Pipe({
-		name: 'dummy',
-		pure: true
-	})
-	export class somePipe implements PipeTransform {
-		transform(value: any, args?: any): any {
-			 // logic
-		}
-	}
+      name: "dummy",
+      pure: true,
+    })
+    export class somePipe implements PipeTransform {
+      transform(value: any, args?: any): any {
+        // logic
+      }
+    }
     ```
-	
 
     > :gift: **_Resources_** : Check out [The essential difference between pure and impure pipes in Angular and why that matters](https://indepth.dev/the-essential-difference-between-pure-and-impure-pipes-in-angular-and-why-that-matters/) by [Max Koretskyi](https://indepth.dev/author/maxkoretskyi/)
 
@@ -726,7 +840,7 @@ Angular offers a powefull solution to that problem. **Split your code to separat
 { path: 'home',  loadChildren: () => import('./home.module').then(module => module.HomeModule) }
 ```
 
-> :page_facing_up: **_Note_** : Do not lazy load the default route, as the browser will have to download an extra lazy loaded chunk after downloading the main chunk and parse it. This will slow down the initial rendering time.
+> :page*facing_up: \*\*\_Note*\*\* : Do not lazy load the default route, as the browser will have to download an extra lazy loaded chunk after downloading the main chunk and parse it. This will slow down the initial rendering time.
 
 </details>
 
@@ -792,7 +906,7 @@ Use preloading strategy to **load lazy loaded modules in the background after al
 
 ### 8. Lazy load components
 
-> :page_facing_up: **_Note_** : This feature is only supported in Angular 9+.
+> :page*facing_up: \*\*\_Note*\*\* : This feature is only supported in Angular 9+.
 
 <details>
   <summary>Click to expand</summary>
@@ -892,7 +1006,7 @@ We can minimize these checks by setting our component's `changeDetection` to `Ch
 
 <br />
 
-> :page_facing_up: **_Note_** : Make use of `detectChanges()` or `markForCheck()` functions of `ChangeDetectorRef` to explicitely run the change detection cycle if required.
+> :page*facing_up: \*\*\_Note*\*\* : Make use of `detectChanges()` or `markForCheck()` functions of `ChangeDetectorRef` to explicitely run the change detection cycle if required.
 
 <br />
 
@@ -961,7 +1075,7 @@ someComplexFunction() {
 
 <br />
 
-> :page_facing_up: **_Note_** : Make use of `run()` method to explicitely run the change detection cycle if required.
+> :page*facing_up: \*\*\_Note*\*\* : Make use of `run()` method to explicitely run the change detection cycle if required.
 
 <br />
 
@@ -1041,7 +1155,7 @@ WebAssembly is designed to run alongside JavaScript — using the WebAssembly Ja
 
 <br />
 
-> :gift: **_Resources_** : <br /> 1. Do check out this awesome repo : [angular-performance-checklist](https://github.com/mgechev/angular-performance-checklist) by [Minko Gechev](https://github.com/mgechev) and find out more pro performance tips :heart_eyes:. <br /> 2. Check out [Best practices for a clean and performant Angular application](https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/) by [Vamsi Vempati](https://twitter.com/_VamsiVempati_). <br /> 3. Check out [Optimizing the Performance of Your Angular Application](https://netbasal.com/optimizing-the-performance-of-your-angular-application-f222f1c16354) by [Netanel Basal](https://netbasal.com/@NetanelBasal). 4. Check out [15 Angular Performance Tips & Tricks](https://angular-guru.com/blog/angular-performance-tips) on [The Angular Guru](https://angular-guru.com/).
+> :gift: **_Resources_** : <br /> 1. Do check out this awesome repo : [angular-performance-checklist](https://github.com/mgechev/angular-performance-checklist) by [Minko Gechev](https://github.com/mgechev) and find out more pro performance tips :heart*eyes:. <br /> 2. Check out [Best practices for a clean and performant Angular application](https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/) by [Vamsi Vempati](https://twitter.com/_VamsiVempati*). <br /> 3. Check out [Optimizing the Performance of Your Angular Application](https://netbasal.com/optimizing-the-performance-of-your-angular-application-f222f1c16354) by [Netanel Basal](https://netbasal.com/@NetanelBasal). 4. Check out [15 Angular Performance Tips & Tricks](https://angular-guru.com/blog/angular-performance-tips) on [The Angular Guru](https://angular-guru.com/).
 
 <br />
 
