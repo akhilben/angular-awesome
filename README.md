@@ -633,6 +633,111 @@ In this example, the `ContainerComponent` fetches the data from a data service a
 
 </details>
 
+### Folder Structure
+
+<details>
+  <summary>Click to expand</summary>
+
+When it comes to finding a scalable and clean folder structure architecture, it can be challenging. Without a proper architecture, your code can become messy and difficult to maintain. There are various blogs and repositories that provide guidelines for a proper architecture for Angular applications, each with slight differences. In this section, we will go through an approach for architecting a proper folder structure. You can take away the main points and choose the one that suits your needs. One good guideline is to divide your application into at least three main folders: core, shared, and features. Below shows the bigger picture:
+
+    📁 dist/                        compiled version
+    📁 docs/                        project docs and coding guides
+    📁 scripts/                     custom scripts (optional)
+    📁 mocks/                       mock API files (optional)
+    📁 src/                         project source code
+    |- 📁 app/                      app components
+    |  |- 📁 app-shell/             application shell architecture component (optional)
+    |  |- 📁 authentication/        authentication related pages, guards and services.
+    |  |- 📁 core/                  core components, interceptors, services, contexts etc.
+    |  |- 📁 features/              application features
+    |  |- 📁 shared/                shared items (common services, components, directives and pipes)
+    |  |- 📄 app.component.*        app root component
+    |  |- 📄 app-config.ts          app provider configurations
+    |  |- 📄 app-config.server.ts   server provider configurations for app shell
+    |  |- 📄 app-routes.ts          app routes
+    |  +- 📄 ...                    additional components/files
+    |- 📁 assets/                   app assets (images, fonts, sounds...)
+    |- 📁 environments/             values for various build environments
+    |- 📁 theme/                    app global scss variables and theme
+    |- 📁 translations/             translations files (optional)
+    |- 📄 index.html                html entry point
+    |- 📄 styles.scss               global style entry point
+    |- 📄 main.ts                   app entry point
+    |- 📄 main.server.ts            server entry point (optional)
+    +- 📄 ...                       additional files/folders
+    |- 📄 manifest.webmanifest      web manifest file for PWA (optional)
+
+#### Core
+
+The _core_ contains core components, services, guards, interceptors, contexts, constants and models. These are files which are _"core"_ to your application.
+
+    |-- 📁 core
+    |   |-- 📁 components
+    |   |   |-- 📁 shells
+    |   |   |-- 📁 header
+    |   |   |-- 📁 sidebar
+    |   |   |-- 📁 footer
+    |   |   ...
+    |   |-- 📁 pages
+    |   |   |-- 📁 page-not-found
+    |   |   |-- 📁 forbidden-access
+    |   |   ...
+    |   |-- 📁 interceptors
+    |   |   |-- 📄 api-prefix.interceptor.ts
+    |   |   |-- 📄 error-handler.interceptor.ts
+    |   |   ...
+    |   |-- 📁 services
+    |   |   |-- 📄 logger.service.ts
+    |   |   |-- 📄 shell.service.ts
+    |   |   ...
+    +-  ...
+    |   |-- 📁 constants
+    |   |   |-- 📄 formats.ts
+    |   |   |-- 📄 toasts.ts
+    |   |   |-- 📄 validations.ts
+    |   |   ...
+    |   |-- 📁 contexts
+    |   |   |-- 📄 http-contexts.ts
+
+#### Shared
+
+The _shared_ contains core components, pipes, directives etc that can be imported and used in other components. By placing commonly used code in the _shared_ folder, developers can easily access and import these shared resources wherever they are needed in the application. This promotes code consistency and reduces duplication, making it easier to manage and update shared functionality across the project. While creating a resource in _shared_ folder, code in such a way that the resource is _'stateless'_ or _'dumb'_ so that it can be integrated with other components easily.
+
+    |-- 📁 shared
+    |   |-- 📁 components
+    |   |   |-- 📁 breadcrumb
+    |   |   |-- 📁 loader
+    |   |   |-- 📁 toaster
+    |   |   ...
+    |   |-- 📁 directives
+    |   |   |-- 📁 trim-input
+    |   |   |-- 📁 scroll-to-error
+    |   |   ...
+    |   |-- 📁 pipes
+    |   |   |-- 📁 truncate
+    |   |   ...
+    |   +-
+
+#### Features
+
+The _features_ contains all the distinct features of the application. Each feature typically has its own folder within the _features_ directory. This folder structure helps to organize and encapsulate related functionality, making it easier to navigate and maintain the codebase. Split each _feature_ directory to _pages_ and _components_. The _pages_ contains all the pages (routes) for that feature, where each page can contain multiple components.
+
+    |-- 📁 features
+    |   |-- 📁 home
+    |   |   |-- 📁 components
+    |   |   |-- 📁 pages
+    |   |   |-- 📁 services
+    |   |   |-- 📁 utils
+    |   |   |   |-- 📄 home.interface.ts
+    |   |   |   |-- 📄 home.enum.ts
+    |   |   ...
+
+<br/>
+
+> 🗒️ **_References_** : <br /> https://angular.dev/style-guide#application-structure-and-ngmodules
+
+</details>
+
 ### Prettier
 
 The **opinionated code formatter**, prettifies our code to look even more beautiful :heart*eyes:. First step is to install the Prettier plugin in your favorite IDE (go to [Choosing IDE](#sunglasses-choosing-ide)) or `npm install prettier` to make your team members reference the same configuration file regardless of the IDE. Don't forget to set the \_format on save* option in your IDE.
