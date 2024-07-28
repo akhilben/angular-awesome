@@ -517,6 +517,35 @@ Head to the official [Angular Style Guide](https://angular.dev/style-guide), to 
 
 </details>
 
+### Typescript Best Practices
+
+<details>
+  <summary>Click to expand</summary>
+
+- Use strong typing: Take advantage of TypeScript's static types to catch errors during development and improve code readability.
+
+- Enable strict mode: Set `"strict": true` in your `tsconfig.json` file to enable all strict type checking options.
+
+- Use interfaces and types: Define interfaces and types to describe the shape of your data and promote code reuse.
+
+- Avoid using the `any` type: Instead, use explicit types or utilize TypeScript's type inference.
+
+- Use explicit access modifiers: Specify `public`, `private`, or `protected` for class members to control their accessibility.
+
+- Enable strict null checks: Set `"strictNullChecks": true` in your tsconfig.json file to catch potential null or undefined references.
+
+- Prefer `const` over `let`: Use `const` for variables that won't be reassigned to ensure immutability.
+
+- Utilize TypeScript's advanced features: Take advantage of features such as union types, intersection types, and type guards to write more expressive and safer code.
+
+- Write clear and concise comments: Use comments to explain the intent, purpose, and logic behind your code.
+
+<br/>
+
+> 💡 **_Tip_** : Check out a [sample `tsconfig.json` file](./samples/tsconfig.json)
+
+> 🗒️ **_References_** : <br /> https://ts.dev/style/
+
 ### Prettier
 
 The **opinionated code formatter**, prettifies our code to look even more beautiful :heart*eyes:. First step is to install the Prettier plugin in your favorite IDE (go to [Choosing IDE](#sunglasses-choosing-ide)) or `npm install prettier` to make your team members reference the same configuration file regardless of the IDE. Don't forget to set the \_format on save* option in your IDE.
