@@ -563,6 +563,74 @@ Apply the [single responsibility principle (SRP)](https://en.wikipedia.org/wiki/
 
 </details>
 
+### Design Patterns
+
+<details>
+  <summary>Click to expand</summary>
+
+#### Container-Presentation Pattern
+
+The container-presentation pattern, also known as the _smart-dumb component pattern_ or the _container-component pattern_, is a software design pattern commonly used in Angular applications.
+
+In this pattern, the container component is responsible for managing the data and the state of the application. It fetches the data from services or APIs, performs any necessary transformations or calculations, and passes the data down to the presentation component.
+
+The presentation component, also known as the _dumb component_, is responsible for rendering the data and handling user interactions. It receives the data from the container component as input properties and emits events to notify the container component about user actions.
+
+By separating the responsibilities of data management and rendering, the container-presentation pattern promotes a more modular and reusable codebase. It also makes it easier to test the components independently.
+
+Here is an example of how the container-presentation pattern can be implemented in Angular:
+
+```ts
+// Container Component
+@Component({
+  selector: "app-container",
+  template: `
+    <app-presentation
+      [data]="data"
+      (action)="handleAction($event)"
+    ></app-presentation>
+  `,
+})
+export class ContainerComponent implements OnInit {
+  data: PresentationData;
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.dataService.getData(pipe(take(1))).subscribe((data) => {
+      this.data = data;
+    });
+  }
+
+  handleAction(): void {
+    // Handle user action
+  }
+}
+
+// Presentation Component
+@Component({
+  selector: "app-presentation",
+  template: `
+    <div>{{ data }}</div>
+    <button (click)="handleClick()">Action</button>
+  `,
+})
+export class PresentationComponent {
+  @Input() data: PresentationData;
+
+  @Output() action = new EventEmitter<void>();
+
+  handleClick() {
+    // Emit action event
+    this.action.emit();
+  }
+}
+```
+
+In this example, the `ContainerComponent` fetches the data from a data service and passes it down to the `PresentationComponent` as an input property. The `PresentationComponent` renders the data and emits an action event when the button is clicked. The `ContainerComponent` handles the action event and performs the necessary logic.
+
+</details>
+
 ### Prettier
 
 The **opinionated code formatter**, prettifies our code to look even more beautiful :heart*eyes:. First step is to install the Prettier plugin in your favorite IDE (go to [Choosing IDE](#sunglasses-choosing-ide)) or `npm install prettier` to make your team members reference the same configuration file regardless of the IDE. Don't forget to set the \_format on save* option in your IDE.
