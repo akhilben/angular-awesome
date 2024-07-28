@@ -757,20 +757,22 @@ The _features_ contains all the distinct features of the application. Each featu
 <details open>
   <summary>Click to expand</summary>
 
-It's a known fact that Angular is a highly performant framework. But we can make it better by following some best practices. Let's jump in to the list of such best practices :nerd_face: :
+As an Angular developer, you understand the importance of building fast and efficient applications. This cheatsheet aims to provide you with practical tips, best practices, and optimizations that can greatly enhance the performance of your Angular applications. Whether you are a beginner or an experienced Angular developer, this chapter will serve as a valuable resource to help you improve the speed and responsiveness of your Angular projects. Let's embark on this performance optimization journey and unlock the full potential of Angular!
 
 ### 1. Avoid function calls in templates.
 
 <details>
   <summary>Click to expand</summary>
 
-It is not a good practice to write function calls for computing values inside the templates. And if it's a complex function, a big NO :skull:.
+While it's completely ok to call getter functions like signals inside templates, it is not a good practice to write function calls for computing values inside the templates. And if it's a complex function, a big NO.
 
 ```html
-<tr *ngFor="let book of books">
+<!-- ❌ Do not do this -->
+@for(book of books) {
+<tr>
   {{calculatePrice(book)}}
 </tr>
-❌
+}
 ```
 
 #### Why?
@@ -787,7 +789,7 @@ There may be some cases where this is unavoidable, but for most cases this can b
     this.books = this.books.map(book => ( { ...books, price: calculatePrice(book)  } );
     ```
 
-2.  **Using pure pipes** : A pure pipe is a pipe that will always always return the same output for an input. Angular executes a pure pipe only when it detects a pure change to the input value because it already knows that the pipe will return the same value for the same input.
+2.  **Using pure pipes** : A pure pipe is a pipe that will always always return the same output for an input. Angular executes a pure pipe only when it detects a pure change to the input value because it already knows that the pipe will return the same value for the same input. A pipe is pure by default, unless you set it otherwise explicitly.
 
     ```js
     @Pipe({
@@ -801,147 +803,85 @@ There may be some cases where this is unavoidable, but for most cases this can b
     }
     ```
 
-    > :gift: **_Resources_** : Check out [The essential difference between pure and impure pipes in Angular and why that matters](https://indepth.dev/the-essential-difference-between-pure-and-impure-pipes-in-angular-and-why-that-matters/) by [Max Koretskyi](https://indepth.dev/author/maxkoretskyi/)
+    > 🗒️ **_References_** : <br/> - https://angular.dev/guide/pipes/change-detection#detecting-pure-changes-to-primitives-and-object-references <br/> - https://angular.dev/best-practices/slow-computations#identifying-slow-computations
 
 </details>
 
-### 2. Use trackBy with ngFor
+### 2. Use track with @for loop
 
 <details>
   <summary>Click to expand</summary>
 
-When using `*ngFor` to loop over an array which might change over time, it is recommended to use `trackBy` **to track array items with unique identifier**.
+Loops over immutable data without `track` as one of the most common causes for performance issues across Angular applications. Because of the potential for poor performance, the `track` expression is required for the `@for` loops. When in doubt, using `track $index` is a good default.
 
 #### Why?
 
-When an array changes (eg: when we push a new item to array), Angular will remove all the DOM elements associated with that array and create all of it again. This is because Angular has no knowledge of which items have been removed or added.
+When items are added, removed or moved, Angular will remove all the DOM elements associated with it and create all of it again. This is because Angular has no knowledge of which items have been removed or added.
 
 #### Solution:
 
-Use `trackBy`. If we provide a `trackBy` function, Angular can track which items have been added or removed in the array according to the unique identifier. It then has to create or destroy the DOM elements for only those items that have changed. Cool :gem:! Now, this is how we dot it:
+The value of the `track` expression determines a key used to associate array items with the views in the DOM. Having clear indication of the item identity allows Angular to execute a minimal set of DOM operations as items are added, removed or moved in a collection. Cool! Now, this is how we dot it:
 
-```html
-<tr *ngFor="let book of books; trackBy: trackByFn"">{{book.name}}</tr>
-```
-
-and then in your `component.ts`:
-
-```js
-trackByFn(index: number, book: Book) {
-    return item.id;
-}
+```ts
+@for (item of items; track item.id) { {{ item.name }} }
 ```
 
 <br />
 
-> :gift: **_Resources_** : Check out [Angular — Improve Performance with trackBy](https://netbasal.com/angular-2-improve-performance-with-trackby-cc147b5104e5) by [Netanel Basal](https://netbasal.com/@NetanelBasal)
+> 🗒️ **_References_** : https://angular.dev/guide/templates/control-flow#for-block---repeaters
 
 </details>
 
-### 3. Use tree-shakable providers
+### 3. Unsubscribe observables
 
 <details>
   <summary>Click to expand</summary>
 
-Make your services **tree-shakable by using the `providedIn` attribute** of the `@Injectable()` decorator instead of explicitely specifying in the `providers` attribute of a module/component :palm_tree:.
+When you subscribe to observables, make sure to unsubscribe them.
 
 #### Why?
 
-If your service is tree-shakable, Angular can exclude the code in the final build bundle provided that it's not used anywhere. This can help reduce the overall bundle size :tada:.
-
-#### Solution:
-
-By default, value for `providedIn` is `root`. This will provide your service at the root injector level and can be injected anywhere in your application. Angular 9+ comes with a couple of other options as well:
-
-1. `platform` - The use case comes when you are running multiple [angular elements (web components)](https://angular.io/guide/elements) in a single page. Your service will now become a global singleton at the platform-level, and is shared between all of the Angular applications on your page.
-2. `any` - Angular will provide a unique instance of your service for every module that injects it.
-
-```js
-import { Injectable } from "@angular/core";
-
-@Injectable({
-  providedIn: "root", // or 'any' or 'platform'
-})
-export class SomeService {}
-```
-
-<br />
-
-> :gift: **_Resources_** : Check out [Dependency injection with Angular 9](https://blog.angulartraining.com/dependency-injection-with-angular-9-63ce524496d9) by [Alain Chautard](https://blog.angulartraining.com/@angulartraining)
-
-</details>
-
-### 4. Unsubscribe observables
-
-<details>
-  <summary>Click to expand</summary>
-
-When you subscribe to observables, make sure to unsubscribe them in the `ngOnDestroy` method :eyes:.
-
-#### Why?
-
-If you fail to unsubscribe your observables, chances are there that **memory leaks** might happen since your observable stream is left open even after that component is destroyed. This will lead to uexpected behaviours and serious performance issues :scream:.
+If you fail to unsubscribe your observables, chances are there that memory leaks might happen since your observable stream is left open even after that component is destroyed. This will lead to unexpected behaviours and serious performance issues.
 
 #### Solution:
 
 There are various ways to unsubscribe observables:
 
-1. We can make use of `takeUntil` to listen to the changes until another observable emits a value.
+1. Make use of `takeUntilDestroyed`, an operator which completes the observable when the calling context (component, directive, service, etc) is destroyed.
 
-   ```js
-   private _destroy$ = new Subject();
+```ts
+private readonly _destroyRef = inject(DestroyRef);
+...
 
-   public ngOnInit(): void {
-     sampleObservable$
-     .pipe(
-       // listen to the observable until this._destroy$ emits a value
-       takeUntil(this._destroy$)
-     )
-     .subscribe(item => // logic);
-   }
+merge(fromEvent(window, 'online'), fromEvent(window, 'offline'))
+  .pipe(
+    map(() => navigator.onLine),
+      // add the below line
+    takeUntilDestroyed(this._destroyRef),
+  )
+  .subscribe((online) => {
+    if (online) {
+      this._offlineSnackbar?.dismiss();
+      return;
+    }
 
-   public ngOnDestroy(): void {
-     this._destroyed$.next();
-     this._destroyed$.complete();
-   }
-   ```
+    this.openOfflineAlert();
+});
+```
 
-2. If you need to subscribe to an observable only once, use `take(1)`. 📄 Note that you will need to use `takeUntil` to avoid any memory leaks caused when the subscription hasn’t received a value before the component got destroyed.
+2. If you need to subscribe to an observable only once, use `take(1)`.
 
-   ```js
-   sampleObservable$
-   .pipe(
-     take(1),
-     takeUntil(this._destroy$)
-   )
-   .subscribe(item => // logic);
-   ```
-
-3. Using `unsubscribe()` method of `Subscription`. Using this method, you have to `add()` your observables (if you have multiple :train:) to the `Subscription` and destroy on `ngOnDestroy` with the `unsubscribe()` method.
-
-   ```js
-   private _subscriptions$ = new Subscription();
-
-   public ngOnInit (): void {
-     // we can add multiple observables to _subscriptions$ with add()
-     this._subscriptions$.add(
-       sampleObservable1$
-       .subscribe(item => // logic)
-     );
-   }
-
-   public ngOnDestroy (): void {
-     this._subscriptions$.unsubscribe();
-   }
-   ```
+```ts
+sampleObservable$
+.pipe(
+  take(1)
+)
+.subscribe(item => // logic);
+```
 
 <br />
 
-> :bulb: **_Tip_** : Make use of lint rules to detect any unsubscribed observables. Check out [rxjs-tslint](https://github.com/ReactiveX/rxjs-tslint) for TSLint rules targeting RxJS.
-
-<br />
-
-> :gift: **_Resources_** : Check out [6 Ways to Unsubscribe from Observables in Angular](https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f) by [Chidume Nnamdi](https://blog.bitsrc.io/@kurtwanger40)
+> 🗒️ **_References_** : <br/>- https://angular.dev/api/core/rxjs-interop/takeUntilDestroyed <br/> - https://www.learnrxjs.io/learn-rxjs/operators/filtering/take
 
 </details>
 
