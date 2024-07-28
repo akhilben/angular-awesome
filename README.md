@@ -546,6 +546,8 @@ Head to the official [Angular Style Guide](https://angular.dev/style-guide), to 
 
 > 🗒️ **_References_** : <br /> https://ts.dev/style/
 
+</details>
+
 ### Single Responsibility Principle
 
 <details>
