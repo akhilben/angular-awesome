@@ -342,7 +342,7 @@ Head to the official [Angular Style Guide](https://angular.dev/style-guide), to 
 ### Naming
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand</summary><br/>
 
 #### Folders
 
@@ -520,7 +520,7 @@ Head to the official [Angular Style Guide](https://angular.dev/style-guide), to 
 ### Typescript Best Practices
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand</summary><br/>
 
 - Use strong typing: Take advantage of TypeScript's static types to catch errors during development and improve code readability.
 
@@ -545,6 +545,23 @@ Head to the official [Angular Style Guide](https://angular.dev/style-guide), to 
 > 💡 **_Tip_** : Check out a [sample `tsconfig.json` file](./samples/tsconfig.json)
 
 > 🗒️ **_References_** : <br /> https://ts.dev/style/
+
+### Single Responsibility Principle
+
+<details>
+  <summary>Click to expand</summary><br/>
+
+Apply the [single responsibility principle (SRP)](https://en.wikipedia.org/wiki/Single_responsibility_principle) to all components, services, and other symbols. This helps make the application cleaner, easier to read and maintain, and more testable.
+
+- Define one thing, such as a service or component, per file.
+
+- Consider limiting files to 400 lines of code.
+
+<br/>
+
+> 🗒️ **_References_** : <br /> https://angular.dev/style-guide#single-responsibility
+
+</details>
 
 ### Prettier
 
