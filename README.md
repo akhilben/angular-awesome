@@ -330,7 +330,7 @@ Closes #123
 
 <!-- Styleguide -->
 
-## `👷 Styleguide`
+## `📚 Styleguide`
 
 <details>
   <summary>Click to expand</summary>
@@ -738,231 +738,19 @@ The _features_ contains all the distinct features of the application. Each featu
 
 </details>
 
-### Prettier
-
-The **opinionated code formatter**, prettifies our code to look even more beautiful :heart*eyes:. First step is to install the Prettier plugin in your favorite IDE (go to [Choosing IDE](#sunglasses-choosing-ide)) or `npm install prettier` to make your team members reference the same configuration file regardless of the IDE. Don't forget to set the \_format on save* option in your IDE.
-
-```js
-// For VS Code
-“editor.formatOnSave”: true
-```
-
-Great :clap:! But, how will the prettier and tslint work together? It’s simple, we can **leave the code-quality rules for TSLint** to handle, and we can have **Prettier take care of formatting rules** by removing formatting rules from tslint.json.
-
-<br />
-
-> :gift: **_Resources_** : Check out [Setting up Prettier in an Angular CLI Project](https://medium.com/@victormejia/setting-up-prettier-in-an-angular-cli-project-2f50c3b9a537) by [Victor Mejia](https://medium.com/@victormejia).
-
-<br />
-
-> :bulb: **_Tip_** : Use [tslint-config-prettier](https://github.com/prettier/tslint-config-prettier) to use TSLint and Prettier without conflicts.
-
- <br />
- 
- ### Aliasing Folders
- You might have come across some import statements in codes which is way too long and dirty, like this ```import { RandomService } from '../../../../core/services/random.service'``` :dizzy_face:. To avaoid such situations, we can use aliases for folder paths **making the imports cleaner, readable and consistent**. So, how will we do this? Head to the `tsconfig.json` in your project root and add aliases to the `paths` property:
- 
- ```json
- "paths": {
-      "@app/*": ["./src/app/*"],
-      "@shared/*": ["./src/app/shared/*"],
-      "@core/*": ["./src/app/core/*"],
-      "@env/*": ["environments/*"]
-    }
-```
-Awesome :sunglasses:! Now we can import with more cleaner statements like : 
-```js
-import { RandomService } from '@core/services/random.service'
-```
- <br />
- 
- Ok, but hold on, what about imports for style processors like scss? Angular have a solution for that as well :beers:. Head on to `angular.json` and add a property to the `options` property (the property inside which you add additional scripts/styles).
- 
- ```json
- "stylePreprocessorOptions": {
-		"includePaths": [
-			"src/theme/"
-		]
-	}
- ```
- 
- (:page_with_curl: Note that we have included the path in assumption that scss files are inside `theme` folder) Cool :snowman:! Now we can import like :
- 
- ```css
- @import "variables";
- ```
- <br />
- 
- > :gift: **_Resources_** : <br />
- 	1. Check out [6 Best Practices & Pro Tips when using Angular CLI](https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81) by [@tomastrajan](https://medium.com/@tomastrajan). <br />
- 	2. Check out [Angular - Shortcut to Importing Styles Files in Components](https://scotch.io/tutorials/angular-shortcut-to-importing-styles-files-in-components) on [scotch.io](https://scotch.io/)
- 
- </details>
-
-<br />
-   
-| :heart: _Takeaway_ : Setup tslint for code quality rules and Prettier for code formatting rules and use pre-commit hooks to check for lint issues. Add aliases for folders to remove relative paths in import statements. |
-| :--- |
-
-<br />
-
-🔝 [Back to Contents](#-table-of-contents)
-
-<br />
-
-<!-- FOLDER STRUCTURE -->
-
-## `📚 Folder Structure`
-
-<details>
-  <summary>Click to expand</summary>
-  
-  Finding a scalable and clean folder structure architecture is always hard. Without a proper architecture, you will end up having a really clumsy and hard to maintain piece of codes :worried:. There are several blogs/repos which specifies a proper architecture for Angular applications, and each one is a bit different. This section is just a suggestion for architecting a proper folder structure; so just take away the main points and choose a suitable one for yourself (blogs and repos attached in `resources` at the end of this section). **A good guideline to follow is to split our application into at least three different modules — Core, Shared and Feature.** Okay, let's dive into it one by one :dolphin:.
-	
-### Core Module
-Ideally, the `CoreModule` contains files that are singleton, that is, those files which we only need to load at run-time. The module can contain **singleton services, core components, guards, interceptors, constants, enums and core models**. The core module should be imported only once, which is inside `AppModule`.
-
-```
-|-- 📁 core
-|      |-- 📁 components
-|      |      |-- 📁 shells
-|      |      |-- 📁 header
-|      |      |-- 📁 page-not-found
-|      |      ...
-|      |-- 📁 guards
-|      |      |-- 📄 auth.guard.ts
-|      |      ...
-|      |-- 📁 interceptors
-|      |      |-- 📄 api-prefix.interceptor.ts
-|      |      |-- 📄 error-handler.interceptor.ts
-|      |      ...
-|      |-- 📁 services
-|      |      |-- 📄 utility.service.ts
-|      |      |-- 📄 authentication.service.ts
-|      |      ...
-|      |-- 📁 enums
-|      |-- 📁 models
-|      |-- 📁 constants
-|      |-- 📄 core.module.ts
-|      |-- 📄 ensureModuleLoadedOnceGuard.ts
-|      |-- 📄 logger.service.ts
-```
-
-<br />
-
-> :bulb: **_Tips_** : Add a check in the `CoreModule` constructor and throw an error if already loaded or add a guard for the same to avoid accidental imports (refer [here](https://github.com/ngx-rocket/starter-kit/blob/master/src/app/%40core/core.module.ts)) .<br />
-> Add a logger system in `logger.service.ts` file (refer [here](https://github.com/ngx-rocket/starter-kit/blob/master/src/app/%40core/logger.service.ts)).
-
-<br />
-
-### Shared Module
-
-`SharedModule` is the module where all our **shared or _dumb components_, directives and pipes** go. We can also **add any third-party components/directives/pipes** (like [Angular Material](https://material.angular.io/) components) which will be needed throughout our application, to the `imports` and `exports` of the module. This module can be then imported to each _feature module_.
-
-```
-|-- 📁 shared
-|      |-- 📁 components
-|      |      |-- 📁 loader
-|      |      |-- 📁 confirmation-dialog
-|      |      ...
-|      |-- 📁 directives
-|      |      |-- 📄 drag-drop.directive.ts
-|      |      |-- 📄 scroll-spy.directive.ts
-|      |      ...
-|      |-- 📁 pipes
-|      |      |-- 📄 custom-date.pipe.ts
-|      |      |-- 📄 safe.pipe.ts
-|      |      ...
-|      |-- 📁 models
-|      |      |-- 📄 user.ts
-|      |      |-- 📄 api-response.ts
-|      |-- 📄 shared.module.ts
-```
-
-<br />
-
-> :page*with_curl: \*\*\_Note*\*\* : Don't forget to add the components, directives and pipes to the `exports` inside `shared.module.ts`.
-
-<br />
-
-### Feature Modules
-
-It's recommended to create feature modules **for every independent feature** of our application. Ideally, **feature modules shouldn't be dependant on other modules other than the services provided by CoreModule and features exported by SharedModule**. A feature module directory can contain `components`, `pages`, `services` etc. that is specific to the corresponding feature.
-<br /><br />
-The `pages` folder contains higher level components or even lazy loaded modules. We can refer to a `page` as the parent component which contains several other child components which ultimately makes up a _page_. The `components` folder contains components which are consumed by various `pages` of the corresponding feature.
-
-```
-|-- 📁 modules
-|      |-- 📁 home
-|      |      |-- 📁 components
-|      |      |      |-- 📁 table
-|      |      |      ...
-|      |      |-- 📁 pages
-|      |      |      |-- 📁 home
-|      |      |      |-- 📁 details
-|      |      |      ...
-|      |      ...
-|      |      |-- 📄 home-routing.module.ts
-|      |      |-- 📄 home.module.ts
-|      |-- 📁 users
-|      |      |-- 📁 components
-|      |      |-- 📁 pages
-|      |      ...
-|      |      |-- 📄 users-routing.module.ts
-|      |      |-- 📄 users.module.ts
-```
-
-<br />
-
-### Styling
-
-It's preferred to add a `theme` folder inside `src` to include custom themes and scss variables.
-
-```
-|-- 📁 theme
-|      |-- 📁 partials
-|      |-- 📄 variables.scss
-|      |      ...
-|      |-- 📄 theme.scss
-```
-
-Now we can import the `theme.scss` in our main `styles.scss` where we add global styles and import other style files.
-
 </details>
 
-<br />
-
-> :gift: **_Resources_** : <br /> 1. Check out [Choosing The Right File Structure for Angular in 2020 and Beyond 📕!](https://itnext.io/choosing-the-right-file-structure-for-angular-in-2020-and-beyond-a53a71f7eb05) by [Mathis Garberg](https://itnext.io/@mathis.garberg). <br /> 2. Check out [How to architect epic Angular app in less than 10 minutes! ⏱️😅](https://medium.com/@tomastrajan/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656) by [Tomas Trajan](https://medium.com/@tomastrajan). <br /> 3. Check out [Angular Folder Structure](https://medium.com/@motcowley/angular-folder-structure-d1809be95542) by [Tom Cowley](https://medium.com/@motcowley). <br /> 4. Check out the excellent folder structure in these [starter kits](#-using-starter-kits).
-
-<br />
-
-| :heart: _Takeaway_ : Split our application into at least three different modules — Core, Shared and Feature; below is the bigger picture 🖼️ : |
-| :-------------------------------------------------------------------------------------------------------------------------------------------- |
-
-```
-src/
-|-- 📁 app
-|      |-- 📁 core            	    core module (singleton services, single-use components, interceptors, guards etc.)
-|      |-- 📁 shared          	    shared module  (common components, directives and pipes)
-|      |-- 📁 modules         	    feature modules (each containing pages, components, services etc.)
-|      |-- 📄 app.component.*
-|      |-- 📄 app.module.ts
-|      |-- 📄 app-routing.module.ts
-|      +- ...
-|-- 📁 assets
-|-- 📁 environments
-|-- 📁 theme                  	    app global scss variables, partials and theme
-|-- 📁 translations/                translations files
-|-- 📄 index.html
-+- ...
-|-- 📄 main.ts
-```
+| ❤️ _Takeaway_ :                                                                                                                                                                                   |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1. Use proper and consistent naming for files, folders, classes, interfaces, enums, contstants and functions.                                                                                     |
+| 2. Use strict typing and follow other best practices of TypeScript to ensure code maintainability, scalability, and reliability, while also catching errors early and improving code readability. |
+| 3. Apply the single responsibility principle (SRP) to all components, services, and other symbols.                                                                                                |
+| 4. Use a proper design pattern such as the container-presentation pattern to separate concerns, promote loose coupling, and enhance the overall structure and maintainability of your codebase.   |
+| 5. Divide your application into at least three main folders: core, shared, and features.                                                                                                          |
 
 <br />
 
 🔝 [Back to Contents](#-table-of-contents)
-
-<br />
 
 ## `⚡ Performance Cheatsheet`
 
