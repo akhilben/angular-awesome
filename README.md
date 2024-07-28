@@ -328,64 +328,203 @@ Closes #123
 
 <br />
 
-<!-- CONFIGURING -->
+<!-- Styleguide -->
 
-## `👷 Configuring Your Project`
+## `👷 Styleguide`
 
 <details>
   <summary>Click to expand</summary>
   
-  There is no doubt that Angular CLI has covered most of the recommended configurations out of the box for us. But we can still make it better :heart_eyes_cat:!
-  
-  ### TSLint (⚠️ Deprecated from Angular 11)
-  Angular CLI generates a basic set of tslint rules for us for **static code analysis** using [codelyzer](https://github.com/mgechev/codelyzer) by [Minko Gechev](https://github.com/mgechev). Below is the recommended configuration:
-  ```js
-  {
-  // The rules component-selector and directive-selector have the following arguments:
-  // [ENABLED, "attribute" | "element", "prefix" | ["listOfPrefixes"], "camelCase" | "kebab-case"]
-  "component-selector": [true, "element", ["cmp-prefix1", "cmp-prefix2"], "kebab-case"],
-  "directive-selector": [true, "attribute", ["dir-prefix1", "dir-prefix2"], "camelCase"],
+  This chapter serves as a valuable resource for establishing consistent coding practices and stylistic conventions when developing Angular applications. It covers various aspects of Angular development, including component structure, naming conventions, code formatting, and more. By following the guidelines presented in the Angular Styleguide, you can ensure code consistency, improve collaboration among team members, and enhance the overall quality of your Angular projects. Whether you are a beginner or an experienced Angular developer, this chapter provides essential guidance to help you write Angular code that is easy to understand, maintain, and extend.
 
-"component-max-inline-declarations": true,
-"contextual-lifecycle": true,
-"no-conflicting-lifecycle": true,
-"no-host-metadata-property": true,
-"no-input-rename": true,
-"no-inputs-metadata-property": true,
-"no-output-native": true,
-"no-output-on-prefix": true,
-"no-output-rename": true,
-"no-outputs-metadata-property": true,
-"no-queries-metadata-property": true,
-"prefer-inline-decorator": true,
-"template-banana-in-box": true,
-"template-no-negated-async": true,
-"use-lifecycle-interface": true,
-"use-pipe-transform-interface": true,
+Head to the official [Angular Style Guide](https://angular.dev/style-guide), to learn in detail. Meanwhile, let's take a look at the main concepts.
 
-// The rules component-class-suffix and directive-class-suffix have the following arguments:
-// [ENABLED, "suffix" | ["listOfSuffixes"]]
-// Where "suffix" is/are your custom(s) suffix(es), for instance "Page" for Ionic components.
-"component-class-suffix": [true, "Component"],
-"directive-class-suffix": [true, "Directive"]
-}
+### Naming
 
-````
+<details>
+  <summary>Click to expand</summary>
 
-<br />
+#### Folders
 
-> :bulb: **_Tips_** : Want to add more rules on top of the Angular CLI configuration? It's highly recommended to use the [Angular TSLint Preset](https://github.com/mgechev/tslint-angular) by [Minko Gechev](https://github.com/mgechev).<br />
-It's highly recommended to use [Husky 🐶](https://github.com/typicode/husky) to check for lint issues on a git commit hook and avoid bad commit/push.
+- Use consistent names for all folders after what they represent.
 
-<br />
+- Use kebab case for folder names. Use dashes to separate words in the name.
+
+  eg : `my-feature`
+
+#### Files
+
+- Use consistent type names for all files following a pattern that describes the file's feature then its type. Use dots to separate the descriptive name (feature) from the type. A recommended pattern is `feature.type.ts`.
+
+- Use kebab case for file names. Use dashes to separate words in the descriptive name (feature).
+
+  eg : `feature-name.type.ts`
+
+- Use conventional type names including `.service`, `.component`, `.pipe`, `.guard`, `.spec` and `.directive`. Invent additional type names if you must but take care not to create too many.
+
+  eg : `home.component.ts`, `home.spec.ts`, `number-only.directive.ts`
+
+- Use consistent names for all assets named after what they represent.
+
+#### Services
+
+- Use consistent names for all services named after their feature.
+
+- Use pascal case for class names.
+
+  eg : `DashboardService`
+
+- Suffix a service class name with `Service`. For example, something that gets data or heroes should be called a `DataService` or a `HeroService`. A few terms are unambiguously services. They typically indicate agency by ending in _"-er"_. You may prefer to name a service that logs messages `Logger` rather than `LoggerService`. Decide if this exception is agreeable in your project. As always, strive for consistency.
+
+#### Components
+
+- Use pascal case for class names.
+
+- Use consistent names for all components named after their feature.
+
+- Suffix a component class name with Component.
+
+  eg : `DashboardComponent`
+
+  Use _dashed-case_ or _kebab-case_ for naming the element selectors of components. If using a custom prefix, use a prefix that identifies the feature area or the application itself. Generally it's more safer to use _app-_ prefix to avoid any possible conflicts with a third-party library component, or new HTML tags in the future.
+  eg : `app-dashboard`
+
+#### Directives
+
+- Use pascal case for class names.
+
+- Use consistent names for all directives named after their feature.
+
+- Suffix a directive class name with `Directive`.
+
+  eg : `TrimDirective`
+
+- Use lower camel case for naming the selectors of directives. If using custom prefix, avoid using _ng_ as prefix because that prefix is reserved for Angular and using it could cause bugs that are difficult to diagnose. Generally it's more safer to use app prefix to avoid any possible conflicts with a third-party library directive, or new HTML directives in the future.
+
+  eg : `appTrim`
+
+#### Pipes
+
+- Use upper camel case for class names.
+
+- Use consistent names for all pipes named after their feature.
+
+- Suffix a pipe class name with `Pipe`.
+
+  eg : `MyCustomPipe`
+
+- Use lower camel case for the selector name strings, and avoid using dash case or kebab case.
+
+  eg : `timeFormat`
+
+#### Guards
+
+- Use pascal case for guards class names, or camel case if using guard function.
+
+- Use consistent names for all pipes named after their feature.
+
+- Suffix a guard class name with `Guard`.
+
+  eg : `AuthenticationGuard` (when using a class), `featureFlagGuard` (when using a function)
+
+#### Tests
+
+- Name test specification description the same as the component class name they test.
+
+  eg : name both component and spec description as `DashboardComponent`
+
+- Name test specification files the same as the component they test with a suffix of `.spec`.
+
+  eg : `dashboard.spec.ts`
+
+#### Functions
+
+- Use camel case for function names.
+
+  eg : `myFunction()`
+
+- Use meaningful names that accurately describe what the function does.
+
+  eg: `calculateTotal()`
+
+- Use whole words in names when possible, and avoid abbreviations and acronyms.
+
+- You may use `_` for private functions. But always make sure you use `private` keyword as a prefix to the function name to make it actually private.
+
+#### Properties
+
+- Use camel case for property names.
+
+  eg : `myProperty`
+
+- Use meaningful property names that accurately describe the purpose or content of the property.
+
+  eg : `firstName = 'John'`
+
+- Use whole words in names when possible, and avoid abbreviations and acronyms.
+
+- You may use `_` for private variables. But always make sure you use `private` keyword as a prefix to the property name to make it actually private.
+
+- Avoid using _`#private`_ identifiers as it can cause substantial emit size and performance regressions when down-leveled by TypeScript, and are unsupported before ES2015. Instead, you can use TypeScript's `private` visibility annotation.
+
+  eg :
+
+  ```ts
+  private firstName = 'John'
+  ```
+
+- You may use $ postfix for observables.
+
+  eg : `myObservable$`
+
+#### Constants
+
+- Use upper snake case for constant names.
+
+  eg :
+
+  ```ts
+  export const MAX_LENGTH = 10;
+  ```
+
+- Use meaningful names that accurately describe the purpose or content of the constant.
+
+- Use whole words in names when possible, and avoid abbreviations and acronyms.
+
+#### Interfaces
+
+- Use pascal case for interface names.
+
+  eg : `ProductData`
+
+- Use meaningful names that accurately describe the purpose or content of the interface or type.
+
+- Use whole words in names when possible, and avoid abbreviations and acronyms.
+
+#### Enums
+
+- Use pascal case for enum names.
+
+  eg : `ProductType`
+
+- Use meaningful names that accurately describe the purpose or content of the enum.
+
+- Use whole words in names when possible, and avoid abbreviations and acronyms.
+
+<br/>
+
+> 🗒️ **_References_** : <br /> https://angular.dev/style-guide <br /> https://ts.dev/style/#syntax
+
+</details>
 
 ### Prettier
-The **opinionated code formatter**, prettifies our code to look even more beautiful :heart_eyes:. First step is to install the Prettier plugin in your favorite IDE (go to [Choosing IDE](#sunglasses-choosing-ide)) or `npm install prettier` to make your team members reference the same configuration file regardless of the IDE. Don't forget to set the _format on save_ option in your IDE.
+
+The **opinionated code formatter**, prettifies our code to look even more beautiful :heart*eyes:. First step is to install the Prettier plugin in your favorite IDE (go to [Choosing IDE](#sunglasses-choosing-ide)) or `npm install prettier` to make your team members reference the same configuration file regardless of the IDE. Don't forget to set the \_format on save* option in your IDE.
 
 ```js
 // For VS Code
 “editor.formatOnSave”: true
-````
+```
 
 Great :clap:! But, how will the prettier and tslint work together? It’s simple, we can **leave the code-quality rules for TSLint** to handle, and we can have **Prettier take care of formatting rules** by removing formatting rules from tslint.json.
 
