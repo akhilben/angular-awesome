@@ -803,7 +803,7 @@ There may be some cases where this is unavoidable, but for most cases this can b
     }
     ```
 
-    > 🗒️ **_References_** : <br/> - https://angular.dev/guide/pipes/change-detection#detecting-pure-changes-to-primitives-and-object-references <br/> - https://angular.dev/best-practices/slow-computations#identifying-slow-computations
+> 🗒️ **_References_** : <br/> - https://angular.dev/guide/pipes/change-detection#detecting-pure-changes-to-primitives-and-object-references <br/> - https://angular.dev/best-practices/slow-computations#identifying-slow-computations
 
 </details>
 
@@ -826,8 +826,6 @@ The value of the `track` expression determines a key used to associate array ite
 @for (item of items; track item.id) { {{ item.name }} }
 ```
 
-<br />
-
 > 🗒️ **_References_** : https://angular.dev/guide/templates/control-flow#for-block---repeaters
 
 </details>
@@ -849,35 +847,35 @@ There are various ways to unsubscribe observables:
 
 1. Make use of `takeUntilDestroyed`, an operator which completes the observable when the calling context (component, directive, service, etc) is destroyed.
 
-```ts
-private readonly _destroyRef = inject(DestroyRef);
-...
+   ```ts
+   private readonly _destroyRef = inject(DestroyRef);
+   ...
 
-merge(fromEvent(window, 'online'), fromEvent(window, 'offline'))
-  .pipe(
-    map(() => navigator.onLine),
-      // add the below line
-    takeUntilDestroyed(this._destroyRef),
-  )
-  .subscribe((online) => {
-    if (online) {
-      this._offlineSnackbar?.dismiss();
-      return;
-    }
+   merge(fromEvent(window, 'online'), fromEvent(window, 'offline'))
+     .pipe(
+       map(() => navigator.onLine),
+         // add the below line
+       takeUntilDestroyed(this._destroyRef),
+     )
+     .subscribe((online) => {
+       if (online) {
+         this._offlineSnackbar?.dismiss();
+         return;
+       }
 
-    this.openOfflineAlert();
-});
-```
+       this.openOfflineAlert();
+   });
+   ```
 
 2. If you need to subscribe to an observable only once, use `take(1)`.
 
-```ts
-sampleObservable$
-.pipe(
-  take(1)
-)
-.subscribe(item => // logic);
-```
+   ```ts
+   sampleObservable$
+   .pipe(
+     take(1)
+   )
+   .subscribe(item => // logic);
+   ```
 
 <br />
 
@@ -885,20 +883,20 @@ sampleObservable$
 
 </details>
 
-### 5. Use async pipe
+### 4. Use async pipe
 
 <details>
   <summary>Click to expand</summary>
 
-In the previous section, we learnt about unsubscribing observables. But there is a much more efficient way for the same problem, the magical `async` pipe :dizzy:. It's recommended to avoid subscribing to observables from components and instead subscribe to the observables from the template.
+In the previous section, we learnt about unsubscribing observables. But there is a much more efficient way for the same problem, the magical `async` pipe. It's recommended to avoid subscribing to observables from components and instead subscribe to the observables from the template.
 
 #### Why?
 
-Because subscriptions can lead to memory leaks if not properly unsubscribed and it's an additional overhead to do so :weary:.
+Subscriptions can lead to memory leaks if not properly unsubscribed and it's an additional overhead to do so.
 
 #### Solution:
 
-Fear not! Angular have a magic potion up the sleeves just for **automatically managing subscriptions** - `async` pipe :crystal_ball:. Yes, it magically handles the subscriptions for us; no more memory leaks by forgetting to unsubscribe observables :smirk:. Use it whenever it's possible to.
+The `async` pipe eliminates the need to manually subscribe to observables or promises in the component class, allowing you to directly bind the asynchronous data to the template.
 
 ```html
 <p>{{ someObservable$ | async }}</p>
@@ -906,29 +904,94 @@ Fear not! Angular have a magic potion up the sleeves just for **automatically ma
 <p>{{ (someOtherObservable$ | async).value }}</p>
 ```
 
+> 🗒️ **_References_** : <br/> - https://angular.dev/guide/pipes/unwrapping-data-observables <br/> - https://angular.dev/guide/http/making-requests#best-practices
+
 </details>
 
-### 6. Lazy load modules
+### 5. Use Signals
 
 <details>
   <summary>Click to expand</summary>
 
-Lazy loading is said to be one of the most powerfull feature of Angular. It's recommended to **lazy load your feature modules whenever it's possible to.**
+Angular Signals is a system that granularly tracks how and where your state is used throughout an application, allowing the framework to optimize rendering updates.
 
 #### Why?
 
-By default, webpack (the default bundler of Angular), bundles all your code into one large bundle. This will largely increase the initial rendering time since the browser has to downlaod that one single large file initially itself, leading to a bad user experience :rage:.
+In Angular, detecting changes and reacting to them can be complex and may introduce performance concerns. Updating only a piece of UI when a change is detected was not possible due to it's complexity until signals arrived in Angular.
+
+#### Solution
+
+A signal is a wrapper around a value that notifies interested consumers when that value changes. Signals can contain any value, from simple primitives to complex data structures.You read a signal's value by calling its getter function, which allows Angular to track where the signal is used. Signals may be either writable or read-only.
+
+```ts
+const count = signal(0);
+
+// Signals are getter functions - calling them reads their value.
+console.log("The count is: " + count());
+
+// Increment the count by 1.
+count.update((value) => value + 1);
+
+// Define computed signals using the computed function and specifying a derivation:
+const doubleCount: Signal<number> = computed(() => count() * 2);
+```
+
+> 🗒️ **_References_** : https://angular.dev/guide/signals
+
+</details>
+
+### 6. Lazy load components
+
+<details>
+  <summary>Click to expand</summary>
+
+Lazy loading is said to be one of the most powerful feature of Angular. It's recommended to lazy load your components whenever it's possible to.
+
+#### Why?
+
+By default, _esbuild_(the default bundler of Angular), bundles all your code into one large `main.js` bundle. This will largely increase the initial rendering time since the browser has to download that one single large file initially itself substntially reducing _Largest Contentful Paint_ (LCP) and _Time to First Byte_ (TTFB), leading to a bad user experience.
 
 #### Solution:
 
-Angular offers a powefull solution to that problem. **Split your code to separate bundles and load them on demand :muscle:.** And we do that via 'lazy loading'. This will **reduce the initial rendering time** since the browser has to download only a small file that contains the code for just your initial page. The browser will be fed the other files on-demand, i.e, when the user needs it (by navigating to a certain page).
+Angular offers couple of powerful solutions to that problem. Split your code to separate bundles and load them on demand. And we do that via 'lazy loading'. This will reduce the initial rendering time since the browser has to download only a small file that contains the code for just your initial page. The browser will be fed the other files on-demand, i.e., when the user needs it. The two different approaches are :
 
-```js
-// Note that the below syntax is valid for Angular 8 and above.
-{ path: 'home',  loadChildren: () => import('./home.module').then(module => module.HomeModule) }
+##### 1. Lazy Load Routes
+
+This is a technique where individual components associated with a route are loaded dynamically, on-demand, instead of being included in the initial bundle with the help of Angular's `loadComponent` property. This property allows you to specify a path to a component file that contains the component you want to lazy load.
+
+```ts
+export const routes: Routes = [
+  {
+    path: "reset-password",
+    loadComponent: () =>
+      import(
+        "./authentication/pages/reset-password/reset-password.component"
+      ).then((c) => c.ResetPasswordComponent),
+  },
+];
 ```
 
 > :page*facing_up: \*\*\_Note*\*\* : Do not lazy load the default route, as the browser will have to download an extra lazy loaded chunk after downloading the main chunk and parse it. This will slow down the initial rendering time.
+
+##### 2. Use Angular's Defferable Views
+
+Sometimes lazy loading route components are not just enough, we may need to defer heavy components inside the template of a route component. Angular's deferrable views, also known as `@defer` blocks, are a powerful tool that can be used to reduce the initial bundle size of your application or defer heavy components that may not ever be loaded until a later time. Deferrable views can be used in component template to defer the loading of select dependencies within that template. Those dependencies include components, directives, and pipes, and any associated CSS.
+
+```html
+@defer {
+<large-component />
+}
+```
+
+Deferrable views also support a series of triggers, prefeching, and several sub blocks used for _placeholder_, _loading_, and _error_ state management. You can also create custom conditions with when and prefetch when. See [Angular Deferrable Views](https://angular.dev/guide/defer) for more details.
+
+```html
+@defer (on viewport) {
+<calendar-cmp />
+} @placeholder {
+<div>Calendar placeholder</div>
+}
+```
 
 </details>
 
